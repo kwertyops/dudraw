@@ -1,0 +1,24 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "dudraw"
+version = "1.1.4"
+dependencies = [
+    'pygame >= 2.0.0',
+]
+authors = [
+    {name="Andrew Hannum", email="andrew.hannum@du.edu"},
+]
+description = "A fork of Princeton's stddraw for use in classes at the University of Denver"
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://ritchieschool.du.edu/academics-education/departments/computer-science"
