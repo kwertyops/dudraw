@@ -13,7 +13,7 @@ import sys
 import math
 from typing import Sequence
 
-from dudraw.color import *
+from .color import *
 
 os.environ['PYGAME_HIDE_SUPPORT_PROMPT'] = 'hide'
 import pygame
@@ -119,6 +119,11 @@ def _user_x(x:float) -> float:
 def _user_y(y:float) -> float:
     return _ymax - y * (_ymax - _ymin) / _canvas_height
 
+def _pen_radius_pixels() -> float:
+    return min(_factor_x(_pen_radius), _factor_y(_pen_radius))
+
+def _line_width_pixels() -> float:
+    return max(_pen_radius_pixels() * 2.0, 1.0)
 
 # -----------------------------------------------------------------------
 # End added by Alan J. Broder
@@ -156,13 +161,13 @@ def get_canvas_width() -> float:
     """
     Return the width of the current canvas
     """
-    return _canvas_width
+    return abs(_xmax - _xmin)
 
 def get_canvas_height() -> float:
     """
     Return the height of the current canvas
     """
-    return _canvas_height
+    return abs(_ymax - _ymin)
 
 def get_pixel_color(x:float, y:float) -> pygame.Color:
     """
@@ -303,8 +308,10 @@ def point(x:float, y:float):
     _make_sure_window_created()
     x = float(x)
     y = float(y)
-    # If the radius is too small, then simply draw a pixel.
-    if _pen_radius <= 1.0:
+    line_width = _line_width_pixels()
+
+    # If the point is going to be 1 pixel wide, just draw a pixel.
+    if line_width < 2.0:
         _pixel(x, y)
     else:
         xs = _scale_x(x)
@@ -313,10 +320,10 @@ def point(x:float, y:float):
             _surface,
             _pygame_color(_pen_color),
             pygame.Rect(
-                xs - _pen_radius,
-                ys - _pen_radius,
-                _pen_radius * 2.0,
-                _pen_radius * 2.0),
+                xs - line_width / 2,
+                ys - line_width / 2,
+                line_width,
+                line_width),
             0)
 
 
@@ -342,31 +349,24 @@ def line(x0:float, y0:float, x1:float, y1:float):
     """
     Draw on the background canvas a line from (x0, y0) to (x1, y1).
     """
-
-    THICK_LINE_CUTOFF = 3  # pixels
-
     _make_sure_window_created()
 
     x0 = float(x0)
     y0 = float(y0)
     x1 = float(x1)
     y1 = float(y1)
+    line_width = _line_width_pixels()
 
-    line_width = _pen_radius * 2.0
-    if line_width == 0.0: line_width = 1.0
-    if line_width < THICK_LINE_CUTOFF:
-        x0s = _scale_x(x0)
-        y0s = _scale_y(y0)
-        x1s = _scale_x(x1)
-        y1s = _scale_y(y1)
-        pygame.draw.line(
-            _surface,
-            _pygame_color(_pen_color),
-            (x0s, y0s),
-            (x1s, y1s),
-            int(round(line_width)))
-    else:
-        _thick_line(x0, y0, x1, y1, _pen_radius / _DEFAULT_CANVAS_SIZE)
+    x0s = _scale_x(x0)
+    y0s = _scale_y(y0)
+    x1s = _scale_x(x1)
+    y1s = _scale_y(y1)
+    pygame.draw.line(
+        _surface,
+        _pygame_color(_pen_color),
+        (x0s, y0s),
+        (x1s, y1s),
+        int(round(line_width)))
 
 
 def circle(x:float, y:float, r:float):
@@ -375,11 +375,14 @@ def circle(x:float, y:float, r:float):
     (x, y).
     """
     _make_sure_window_created()
+
     x = float(x)
     y = float(y)
     r = float(r)
     ws = _factor_x(2.0 * r)
     hs = _factor_y(2.0 * r)
+    line_width = _line_width_pixels()
+
     # If the radius is too small, then simply draw a pixel.
     if (ws <= 1.0) and (hs <= 1.0):
         _pixel(x, y)
@@ -390,7 +393,7 @@ def circle(x:float, y:float, r:float):
             _surface,
             _pygame_color(_pen_color),
             pygame.Rect(xs - ws / 2.0, ys - hs / 2.0, ws, hs),
-            int(round(_pen_radius)))
+            int(round(line_width)))
 
 
 def filled_circle(x:float, y:float, r:float):
@@ -429,6 +432,8 @@ def ellipse(x:float, y:float, semi_major_axis:float, semi_minor_axis:float):
     semi_minor_axis = float(semi_minor_axis)
     ws = _factor_x(2.0 * semi_major_axis)
     hs = _factor_y(2.0 * semi_minor_axis)
+    line_width = _line_width_pixels()
+
     # If the radius is too small, then simply draw a pixel.
     if (ws <= 1.0) and (hs <= 1.0):
         _pixel(x, y)
@@ -439,7 +444,7 @@ def ellipse(x:float, y:float, semi_major_axis:float, semi_minor_axis:float):
             _surface,
             _pygame_color(_pen_color),
             pygame.Rect(xs - ws / 2.0, ys - hs / 2.0, ws, hs),
-            int(round(_pen_radius)))
+            int(round(line_width)))
 
 
 def filled_ellipse(x:float, y:float, semi_major_axis:float, semi_minor_axis:float):
@@ -481,6 +486,8 @@ def rectangle(x:float, y:float, half_width:float, half_height:float):
     half_height = 2 * float(half_height)
     ws = _factor_x(half_width)
     hs = _factor_y(half_height)
+    line_width = _line_width_pixels()
+
     # If the rectangle is too small, then simply draw a pixel.
     if (ws <= 1.0) and (hs <= 1.0):
         _pixel(x, y)
@@ -491,7 +498,7 @@ def rectangle(x:float, y:float, half_width:float, half_height:float):
             _surface,
             _pygame_color(_pen_color),
             pygame.Rect(xs, ys - hs, ws, hs),
-            int(round(_pen_radius)))
+            int(round(line_width)))
 
 
 def filled_rectangle(x:float, y:float, half_width:float, half_height:float):
@@ -545,6 +552,7 @@ def polygon(x:Sequence[float], y:Sequence[float]):
     """
     global _surface
     _make_sure_window_created()
+    line_width = _line_width_pixels()
     # Scale X and Y values.
     x_scaled = []
     for xi in x:
@@ -560,7 +568,7 @@ def polygon(x:Sequence[float], y:Sequence[float]):
         _surface,
         _pygame_color(_pen_color),
         points,
-        int(round(_pen_radius)))
+        int(round(line_width)))
 
 
 def filled_polygon(x:Sequence[float], y:Sequence[float]):
@@ -688,6 +696,7 @@ def sector(x:float, y:float, r:float, angle1:float, angle2:float):
     x = float(x)
     y = float(y)
     r = float(r)
+    line_width = _line_width_pixels()
     angle1 = float(angle1)
     angle2 = float(angle2)
     while (angle2 - angle1) < 0:
@@ -714,7 +723,7 @@ def sector(x:float, y:float, r:float, angle1:float, angle2:float):
         _surface,
         _pygame_color(_pen_color),
         points,
-        int(round(_pen_radius)))
+        int(round(line_width)))
 
 
 def filled_sector(x:float, y:float, r:float, angle1:float, angle2:float):
@@ -768,6 +777,7 @@ def elliptical_sector(x:float, y:float, semi_major_axis:float, semi_minor_axis:f
     y = float(y)
     semi_major_axis = float(semi_major_axis)
     semi_minor_axis = float(semi_minor_axis)
+    line_width = _line_width_pixels()
     angle1 = float(angle1)
     angle2 = float(angle2)
     while (angle2 - angle1) < 0:
@@ -794,7 +804,7 @@ def elliptical_sector(x:float, y:float, semi_major_axis:float, semi_minor_axis:f
         _surface,
         _pygame_color(_pen_color),
         points,
-        int(round(_pen_radius)))
+        int(round(line_width)))
 
 
 def filled_elliptical_sector(x:float, y:float, semi_major_axis:float, semi_minor_axis:float, angle1:float, angle2:float):

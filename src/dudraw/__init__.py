@@ -1,1 +1,1 @@
-from dudraw.dudraw import *
+from .dudraw import *
