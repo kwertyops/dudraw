@@ -147,7 +147,7 @@ def set_canvas_size(w:float=_DEFAULT_CANVAS_SIZE, h:float=_DEFAULT_CANVAS_SIZE):
     _canvas_width = w
     _canvas_height = h
     _background = pygame.display.set_mode([w, h])
-    # pygame.display.set_caption('dudraw window (r-click to save)')
+    pygame.display.set_caption('')
     _surface = pygame.Surface((w, h))
     _surface.fill(_pygame_color(WHITE))
     _window_created = True
@@ -961,6 +961,11 @@ def save(f:str):
     Save the window canvas to file f.
     """
     _make_sure_window_created()
+
+    if f.split('.')[-1].lower() not in ('png', 'bmp', 'jpg', 'tga'):
+        f += '.png'
+        print(("WARNING: Missing valid image file extension "
+               "(png, bmp, jpg, tga). Falling back to .png file."))
 
     # if sys.hexversion >= 0x03000000:
     #    # Hack because Pygame without full image support
