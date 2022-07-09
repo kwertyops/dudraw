@@ -35,7 +35,7 @@ _DEFAULT_XMAX = 1.0
 _DEFAULT_YMIN = 0.0
 _DEFAULT_YMAX = 1.0
 _DEFAULT_CANVAS_SIZE = 512
-_DEFAULT_PEN_WIDTH = 1.0 / 512  # should correspond to a width of 1 pixel on the canvas.
+_DEFAULT_PEN_WIDTH = 0.0  # should correspond to a width of 1 pixel on the canvas.
 _DEFAULT_PEN_COLOR = BLACK
 
 _DEFAULT_FONT_FAMILY = "Helvetica"
@@ -414,18 +414,18 @@ def filled_circle(x: float, y: float, r: float):
         pygame.draw.ellipse(_surface, _pygame_color(_pen_color), pygame.Rect(xs - ws / 2.0, ys - hs / 2.0, ws, hs), 0)
 
 
-def ellipse(x: float, y: float, semi_major_axis: float, semi_minor_axis: float):
+def ellipse(x: float, y: float, half_width: float, half_height: float):
     """
     Draw on the background canvas an ellipse centered at (x, y) with
-    a width of semi_major_axis, and a height of semi_minor_axis.
+    a width of 2.0 * half_width, and a height of 2.0 * half_height.
     """
     _make_sure_window_created()
     x = float(x)
     y = float(y)
-    semi_major_axis = float(semi_major_axis)
-    semi_minor_axis = float(semi_minor_axis)
-    ws = _factor_x(2.0 * semi_major_axis)
-    hs = _factor_y(2.0 * semi_minor_axis)
+    half_width = float(half_width)
+    half_height = float(half_height)
+    ws = _factor_x(2.0 * half_width)
+    hs = _factor_y(2.0 * half_height)
     line_width = _line_width_pixels()
     if (ws <= 1.0) and (hs <= 1.0):
         # If the radius is too small, then simply draw a pixel.
@@ -441,18 +441,18 @@ def ellipse(x: float, y: float, semi_major_axis: float, semi_minor_axis: float):
         )
 
 
-def filled_ellipse(x: float, y: float, semi_major_axis: float, semi_minor_axis: float):
+def filled_ellipse(x: float, y: float, half_width: float, half_height: float):
     """
     Draw on the background canvas a filled ellipse centered at (x, y)
-    with a width of semi_major_axis, and a height of semi_minor_axis.
+    with a width of 2.0 * half_width, and a height of 2.0 * half_height.
     """
     _make_sure_window_created()
     x = float(x)
     y = float(y)
-    semi_major_axis = float(semi_major_axis)
-    semi_minor_axis = float(semi_minor_axis)
-    ws = _factor_x(2.0 * semi_major_axis)
-    hs = _factor_y(2.0 * semi_minor_axis)
+    half_width = float(half_width)
+    half_height = float(half_height)
+    ws = _factor_x(2.0 * half_width)
+    hs = _factor_y(2.0 * half_height)
     if (ws <= 1.0) and (hs <= 1.0):
         # If the radius is too small, then simply draw a pixel.
         _pixel(x, y)
@@ -633,32 +633,32 @@ def arc(x: float, y: float, r: float, angle1: float, angle2: float):
         line(x0, y0, x1, y1)
 
 
-def elliptical_arc(x: float, y: float, semi_major_axis: float, semi_minor_axis: float, angle1: float, angle2: float):
+def elliptical_arc(x: float, y: float, half_width: float, half_height: float, angle1: float, angle2: float):
     """
     Draw an arc portion between angle1 and angle2, of the
     circumference of an ellipse centered at (x, y) with a width
-    of semi_major_axis, and a height of semi_minor_axis.
+    of half_width, and a height of 2.0 * half_height.
     """
     _make_sure_window_created()
     x = float(x)
     y = float(y)
-    semi_major_axis = float(semi_major_axis)
-    semi_minor_axis = float(semi_minor_axis)
+    half_width = float(half_width)
+    half_height = float(half_height)
     angle1 = float(angle1)
     angle2 = float(angle2)
     while (angle2 - angle1) < 0:
         angle2 += 360
-    circle_points = 4 * (_factor_x(semi_major_axis) + _factor_y(semi_minor_axis))
+    circle_points = 4 * (_factor_x(half_width) + _factor_y(half_height))
     num_points = circle_points * ((angle2 - angle1) / 360)
     for i in range(0, int(num_points)):
         angle_in = angle1 + (i * 360 / circle_points)
         angle_in = angle_in * math.pi / 180
-        x0 = (math.cos(angle_in) * semi_major_axis) + x
-        y0 = (math.sin(angle_in) * semi_minor_axis) + y
+        x0 = (math.cos(angle_in) * half_width) + x
+        y0 = (math.sin(angle_in) * half_height) + y
         angle_out = angle1 + ((i + 1) * 360 / circle_points)
         angle_out = angle_out * math.pi / 180
-        x1 = (math.cos(angle_out) * semi_major_axis) + x
-        y1 = (math.sin(angle_out) * semi_minor_axis) + y
+        x1 = (math.cos(angle_out) * half_width) + x
+        y1 = (math.sin(angle_out) * half_height) + y
         line(x0, y0, x1, y1)
 
 
@@ -733,36 +733,36 @@ def filled_sector(x: float, y: float, r: float, angle1: float, angle2: float):
     pygame.draw.polygon(_surface, _pygame_color(_pen_color), points, 0)
 
 
-def elliptical_sector(x: float, y: float, semi_major_axis: float, semi_minor_axis: float, angle1: float, angle2: float):
+def elliptical_sector(x: float, y: float, half_width: float, half_height: float, angle1: float, angle2: float):
     """
     Draw a sector portion between angle1 and angle2, of the
     interior of an ellipse centered at (x, y) with a width
-    of semi_major_axis, and a height of semi_minor_axis.
+    of half_width, and a height of 2.0 * half_height.
     """
     global _surface
     _make_sure_window_created()
     x = float(x)
     y = float(y)
-    semi_major_axis = float(semi_major_axis)
-    semi_minor_axis = float(semi_minor_axis)
+    half_width = float(half_width)
+    half_height = float(half_height)
     line_width = _line_width_pixels()
     angle1 = float(angle1)
     angle2 = float(angle2)
     while (angle2 - angle1) < 0:
         angle2 += 360
-    circle_points = 4 * (_factor_x(semi_major_axis) + _factor_y(semi_minor_axis))
+    circle_points = 4 * (_factor_x(half_width) + _factor_y(half_height))
     num_points = circle_points * ((angle2 - angle1) / 360)
     xvals = [x]
     yvals = [y]
     for i in range(0, int(num_points) + 1):
         angle = angle1 + (i * 360 / circle_points)
         angle = angle * math.pi / 180
-        x0 = (math.cos(angle) * semi_major_axis) + x
-        y0 = (math.sin(angle) * semi_minor_axis) + y
+        x0 = (math.cos(angle) * half_width) + x
+        y0 = (math.sin(angle) * half_height) + y
         xvals.append(x0)
         yvals.append(y0)
-    xvals.append((math.cos(angle2 * math.pi / 180) * semi_major_axis) + x)
-    yvals.append((math.sin(angle2 * math.pi / 180) * semi_minor_axis) + y)
+    xvals.append((math.cos(angle2 * math.pi / 180) * half_width) + x)
+    yvals.append((math.sin(angle2 * math.pi / 180) * half_height) + y)
     xvals.append(x)
     yvals.append(y)
     points = []
@@ -772,36 +772,36 @@ def elliptical_sector(x: float, y: float, semi_major_axis: float, semi_minor_axi
 
 
 def filled_elliptical_sector(
-    x: float, y: float, semi_major_axis: float, semi_minor_axis: float, angle1: float, angle2: float
+    x: float, y: float, half_width: float, half_height: float, angle1: float, angle2: float
 ):
     """
     Draw a filled sector portion between angle1 and angle2, of
     the interior of an ellipse centered at (x, y) with a width
-    of semi_major_axis, and a height of semi_minor_axis.
+    of half_width, and a height of 2.0 * half_height.
     """
     global _surface
     _make_sure_window_created()
     x = float(x)
     y = float(y)
-    semi_major_axis = float(semi_major_axis)
-    semi_minor_axis = float(semi_minor_axis)
+    half_width = float(half_width)
+    half_height = float(half_height)
     angle1 = float(angle1)
     angle2 = float(angle2)
     while (angle2 - angle1) < 0:
         angle2 += 360
-    circle_points = 4 * (_factor_x(semi_major_axis) + _factor_y(semi_minor_axis))
+    circle_points = 4 * (_factor_x(half_width) + _factor_y(half_height))
     num_points = circle_points * ((angle2 - angle1) / 360)
     xvals = [x]
     yvals = [y]
     for i in range(0, int(num_points) + 1):
         angle = angle1 + (i * 360 / circle_points)
         angle = angle * math.pi / 180
-        x0 = (math.cos(angle) * semi_major_axis) + x
-        y0 = (math.sin(angle) * semi_minor_axis) + y
+        x0 = (math.cos(angle) * half_width) + x
+        y0 = (math.sin(angle) * half_height) + y
         xvals.append(x0)
         yvals.append(y0)
-    xvals.append((math.cos(angle2 * math.pi / 180) * semi_major_axis) + x)
-    yvals.append((math.sin(angle2 * math.pi / 180) * semi_minor_axis) + y)
+    xvals.append((math.cos(angle2 * math.pi / 180) * half_width) + x)
+    yvals.append((math.sin(angle2 * math.pi / 180) * half_height) + y)
     xvals.append(x)
     yvals.append(y)
     points = []
@@ -880,7 +880,7 @@ def text(x: float, y: float, s: str):
     _surface.blit(text, textpos)
 
 
-def picture(pic: pygame.Surface, x: float = None, y: float = None):
+def picture(pic_path: str, x: float = None, y: float = None):
     """
     Draw pic on the background canvas centered at (x, y).  pic is an
     object of class picture.Picture. x and y default to the midpoint
@@ -897,10 +897,10 @@ def picture(pic: pygame.Surface, x: float = None, y: float = None):
     y = float(y)
     xs = _scale_x(x)
     ys = _scale_y(y)
-    ws = pic.width()
-    hs = pic.height()
-    picSurface = pic._surface  # violates encapsulation
-    _surface.blit(picSurface, [xs - ws / 2.0, ys - hs / 2.0, ws, hs])
+    pic = pygame.image.load(pic_path)
+    ws = pic.get_width()
+    hs = pic.get_height()
+    _surface.blit(pic, [xs - ws / 2.0, ys - hs / 2.0, ws, hs])
 
 
 def clear(c: Color = WHITE):
@@ -927,9 +927,8 @@ def save(f: str):
     Save the window canvas to file f.
     """
     _make_sure_window_created()
-    if f.split(".")[-1].lower() not in ("png", "bmp", "jpg", "tga"):
-        f += ".png"
-        print(("WARNING: Missing valid image file extension " "(png, bmp, jpg, tga). Falling back to .png file."))
+    if f.split(".")[-1].lower() != "jpg":
+        f += ".jpg"
     pygame.image.save(_surface, f)
 
 
@@ -958,7 +957,7 @@ def _show_and_wait_forever():
         _check_for_events()
 
 
-def show(msec: float = float("inf")):
+def show(msec: float = 0.0):
     """
     Copy the background canvas to the window canvas, and
     then wait for msec milliseconds. msec defaults to infinity.

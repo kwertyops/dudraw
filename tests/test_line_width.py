@@ -25,4 +25,4 @@ dudraw.line(0, 300, 400, 300)
 dudraw.set_pen_width(20.0)
 dudraw.ellipse(dudraw.get_canvas_width()/2, dudraw.get_canvas_height()/2, dudraw.get_canvas_width()/2, dudraw.get_canvas_height()/2)
 
-dudraw.show()
+dudraw.show(float("inf"))
