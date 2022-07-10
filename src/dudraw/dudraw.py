@@ -927,7 +927,7 @@ def save(f: str):
     Save the window canvas to file f.
     """
     _make_sure_window_created()
-    if f.split(".")[-1].lower() != "jpg":
+    if not f.lower().endswith(".jpg"):
         f += ".jpg"
     pygame.image.save(_surface, f)
 
