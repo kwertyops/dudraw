@@ -20,10 +20,6 @@ import pygame
 import pygame.gfxdraw
 import pygame.font
 
-import tkinter as Tkinter
-import tkinter.messagebox as tkMessageBox
-import tkinter.filedialog as tkFileDialog
-
 # -----------------------------------------------------------------------
 
 # Default Sizes and Values
@@ -361,11 +357,20 @@ def line(x0: float, y0: float, x1: float, y1: float):
     x1 = float(x1)
     y1 = float(y1)
     line_width = _line_width_pixels()
-    x0s = _scale_x(x0)
-    y0s = _scale_y(y0)
-    x1s = _scale_x(x1)
-    y1s = _scale_y(y1)
-    pygame.draw.line(_surface, _pygame_color(_pen_color), (x0s, y0s), (x1s, y1s), int(round(line_width)))
+
+    if line_width < 2.0:
+        x0s = _scale_x(x0)
+        y0s = _scale_y(y0)
+        x1s = _scale_x(x1)
+        y1s = _scale_y(y1)
+        pygame.draw.line(_surface, _pygame_color(_pen_color), (x0s, y0s), (x1s, y1s), int(line_width))
+    else:
+        vec = pygame.Vector2(x1 - x0, y1 - y0)
+        w = vec.rotate(90).normalize()
+        w.scale_to_length(line_width/2.0)
+        xs = [x0 + w.x, x0 - w.x, x1 - w.x, x1 + w.x,]
+        ys = [y0 + w.y, y0 - w.y, y1 - w.y, y1 + w.y,]
+        filled_polygon(xs, ys)
 
 
 def circle(x: float, y: float, r: float):
@@ -618,9 +623,7 @@ def arc(x: float, y: float, r: float, angle1: float, angle2: float):
     while (angle2 - angle1) < 0:
         angle2 += 360
     circle_points = 4 * (_factor_x(r) + _factor_y(r))
-    print(circle_points)
     num_points = circle_points * ((angle2 - angle1) / 360)
-    print(num_points)
     for i in range(0, int(num_points)):
         angle_in = angle1 + (i * 360 / circle_points)
         angle_in = angle_in * math.pi / 180
@@ -693,9 +696,8 @@ def sector(x: float, y: float, r: float, angle1: float, angle2: float):
     xvals.append(x)
     yvals.append(y)
     points = []
-    for i in range(len(xvals)):
-        points.append((_scale_x(xvals[i]), _scale_y(yvals[i])))
-    pygame.draw.polygon(_surface, _pygame_color(_pen_color), points, int(round(line_width)))
+    for i in range(1, len(xvals)):
+        line(xvals[i-1], yvals[i-1], xvals[i], yvals[i])
 
 
 def filled_sector(x: float, y: float, r: float, angle1: float, angle2: float):
@@ -837,7 +839,6 @@ def filled_annulus(x: float, y: float, r1: float, r2: float):
     yvals = []
     for i in range(0, int(circle1_points) + 1):
         angle = i * 360 / circle1_points
-        print(angle)
         angle = angle * math.pi / 180
         x0 = (math.cos(angle) * r1) + x
         y0 = (math.sin(angle) * r1) + y
@@ -849,7 +850,6 @@ def filled_annulus(x: float, y: float, r1: float, r2: float):
     yvals.append(y)
     for i in range(int(circle2_points), -1, -1):
         angle = i * 360 / circle2_points
-        print(angle)
         angle = angle * math.pi / 180
         x0 = (math.cos(angle) * r2) + x
         y0 = (math.sin(angle) * r2) + y
@@ -1111,44 +1111,6 @@ pygame.font.init()
 
 # -----------------------------------------------------------------------
 
-# Functions for displaying Tkinter dialog boxes in child processes.
-
-
-def _get_file_name():
-    """
-    Display a dialog box that asks the user for a file name.
-    """
-    root = Tkinter.Tk()
-    root.withdraw()
-    reply = tkFileDialog.asksaveasfilename(initialdir=".")
-    sys.stdout.write(reply)
-    sys.stdout.flush()
-    sys.exit()
-
-
-def _confirm_file_save():
-    """
-    Display a dialog box that confirms a file save operation.
-    """
-    root = Tkinter.Tk()
-    root.withdraw()
-    tkMessageBox.showinfo(title="File Save Confirmation", message="The drawing was saved to the file.")
-    sys.exit()
-
-
-def _report_file_save_error(msg):
-    """
-    Display a dialog box that reports a msg.  msg is a string which
-    describes an error in a file save operation.
-    """
-    root = Tkinter.Tk()
-    root.withdraw()
-    tkMessageBox.showerror(title="File Save Error", message=msg)
-    sys.exit()
-
-
-# -----------------------------------------------------------------------
-
 
 def _regression_test():
     """
@@ -1302,16 +1264,7 @@ def _main():
     Dispatch to a function that does regression testing, or to a
     dialog-box-handling function.
     """
-    import sys
-
-    if len(sys.argv) == 1:
-        _regression_test()
-    elif sys.argv[1] == "getFileName":
-        _get_file_name()
-    elif sys.argv[1] == "confirmFileSave":
-        _confirm_file_save()
-    elif sys.argv[1] == "reportFileSaveError":
-        _report_file_save_error(sys.argv[2])
+    _regression_test()
 
 
 if __name__ == "__main__":
