@@ -85,6 +85,14 @@ def _pygame_color(c: Color) -> pygame.Color:
     return pygame.Color(r, g, b)
 
 
+def _ccw(a,b,c):
+    return (c[1]-a[1]) * (b[0]-a[0]) > (b[1]-a[1]) * (c[0]-a[0])
+
+
+def _intersect(a, b, c, d):
+    return _ccw(a, c, d) != _ccw(b, c, d) and _ccw(a, b, c) != _ccw(a, b, d)
+
+
 # -----------------------------------------------------------------------
 
 # Private functions to scale and factor X and Y values.
@@ -96,6 +104,10 @@ def _scale_x(x: float) -> float:
 
 def _scale_y(y: float) -> float:
     return _canvas_height * (_ymax - y) / (_ymax - _ymin)
+
+
+def _scale_point(p: Sequence[float]) -> Sequence[float]:
+    return (_scale_x(p[0]), _scale_y(p[1]))
 
 
 def _factor_x(w: float) -> float:
@@ -555,8 +567,15 @@ def polyline(x: Sequence[float], y: Sequence[float]):
             ba = pygame.math.Vector2(a[0] - b[0], a[1] - b[1]).normalize()
             w = ba.rotate(90).normalize()
             w.scale_to_length(line_width/2.0)
-            inner_points.append((b[0] + w.x, b[1] + w.y))
-            outer_points.append((b[0] - w.x, b[1] - w.y))
+            if _intersect(inner_points[-1],
+                          (b[0] + w.x, b[1] + w.y), 
+                          outer_points[-1], 
+                          (b[0] - w.x, b[1] - w.y)):
+                outer_points.append((b[0] + w.x, b[1] + w.y))
+                inner_points.append((b[0] - w.x, b[1] - w.y))
+            else:
+                inner_points.append((b[0] + w.x, b[1] + w.y))
+                outer_points.append((b[0] - w.x, b[1] - w.y))
         else:
             ba = pygame.math.Vector2(a[0] - b[0], a[1] - b[1]).normalize()
             bc = pygame.math.Vector2(c[0] - b[0], c[1] - b[1]).normalize()
@@ -571,23 +590,13 @@ def polyline(x: Sequence[float], y: Sequence[float]):
                 outer_points.append((b[0] + ba.x + bc.x, b[1] + ba.y + bc.y))
                 inner_points.append((b[0] - ba.x - bc.x, b[1] - ba.y - bc.y))
 
-    x = [p[0] for p in inner_points]
-    y = [p[1] for p in inner_points]
-    x.extend([p[0] for p in reversed(outer_points)])
-    y.extend([p[1] for p in reversed(outer_points)])    
-
-    # Scale X and Y values.
-    x_scaled = []
-    for xi in x:
-        x_scaled.append(_scale_x(float(xi)))
-    y_scaled = []
-    for yi in y:
-        y_scaled.append(_scale_y(float(yi)))
-    points = []
-    for i in range(len(x)):
-        points.append((x_scaled[i], y_scaled[i]))
-    points.append((x_scaled[0], y_scaled[0]))
-    pygame.draw.polygon(_surface, _pygame_color(_pen_color), points, 0)
+    for i in range(len(inner_points)-1):
+        points = (
+            _scale_point(inner_points[i]),
+            _scale_point(inner_points[i+1]),
+            _scale_point(outer_points[i+1]),
+            _scale_point(outer_points[i]))
+        pygame.draw.polygon(_surface, _pygame_color(_pen_color), points, 0)
 
 
 def polygon(x: Sequence[float], y: Sequence[float]):
@@ -618,27 +627,13 @@ def polygon(x: Sequence[float], y: Sequence[float]):
             outer_points.append((b[0] + ba.x + bc.x, b[1] + ba.y + bc.y))
             inner_points.append((b[0] - ba.x - bc.x, b[1] - ba.y - bc.y))
 
-    x = [p[0] for p in inner_points]
-    y = [p[1] for p in inner_points]
-    x.append(inner_points[0][0])
-    y.append(inner_points[0][1])
-    x.append(outer_points[0][0])
-    y.append(outer_points[0][1])
-    x.extend([p[0] for p in reversed(outer_points)])
-    y.extend([p[1] for p in reversed(outer_points)])    
-
-    # Scale X and Y values.
-    x_scaled = []
-    for xi in x:
-        x_scaled.append(_scale_x(float(xi)))
-    y_scaled = []
-    for yi in y:
-        y_scaled.append(_scale_y(float(yi)))
-    points = []
-    for i in range(len(x)):
-        points.append((x_scaled[i], y_scaled[i]))
-    points.append((x_scaled[0], y_scaled[0]))
-    pygame.draw.polygon(_surface, _pygame_color(_pen_color), points, 0)
+    for i in range(-1, len(inner_points)-1):
+        points = (
+            _scale_point(inner_points[i]),
+            _scale_point(inner_points[i+1]),
+            _scale_point(outer_points[i+1]),
+            _scale_point(outer_points[i]))
+        pygame.draw.polygon(_surface, _pygame_color(_pen_color), points, 0)
 
 
 def filled_polygon(x: Sequence[float], y: Sequence[float]):
