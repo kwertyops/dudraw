@@ -530,14 +530,52 @@ def filled_square(x: float, y: float, r: float):
     filled_rectangle(x - r, y - r, 2.0 * r, 2.0 * r)
 
 
-def polygon(x: Sequence[float], y: Sequence[float]):
+def polyline(x: Sequence[float], y: Sequence[float]):
     """
-    Draw on the background canvas a polygon with coordinates
+    Draw on the background canvas a polyline with coordinates
     (x[i], y[i]).
     """
     global _surface
     _make_sure_window_created()
     line_width = _line_width_pixels()
+    inner_points = []
+    outer_points = []
+
+    for i in range(len(x)):
+        a = (x[i-1], y[i-1])
+        b = (x[i], y[i])
+        c = (x[(i+1)%len(x)], y[(i+1)%len(x)])
+        if i == 0:
+            bc = pygame.math.Vector2(c[0] - b[0], c[1] - b[1]).normalize()
+            w = bc.rotate(90).normalize()
+            w.scale_to_length(line_width/2.0)
+            inner_points.append((b[0] + w.x, b[1] + w.y))
+            outer_points.append((b[0] - w.x, b[1] - w.y))
+        elif i == len(x) - 1:
+            ba = pygame.math.Vector2(a[0] - b[0], a[1] - b[1]).normalize()
+            w = ba.rotate(90).normalize()
+            w.scale_to_length(line_width/2.0)
+            inner_points.append((b[0] + w.x, b[1] + w.y))
+            outer_points.append((b[0] - w.x, b[1] - w.y))
+        else:
+            ba = pygame.math.Vector2(a[0] - b[0], a[1] - b[1]).normalize()
+            bc = pygame.math.Vector2(c[0] - b[0], c[1] - b[1]).normalize()
+            angle = math.acos(ba.dot(bc))
+            turn = ba.rotate(90).dot(bc) < 0.0
+            ba.scale_to_length(line_width / (2.0 * math.sin(angle)))
+            bc.scale_to_length(line_width / (2.0 * math.sin(angle)))
+            if turn:
+                inner_points.append((b[0] + ba.x + bc.x, b[1] + ba.y + bc.y))
+                outer_points.append((b[0] - ba.x - bc.x, b[1] - ba.y - bc.y))
+            else:
+                outer_points.append((b[0] + ba.x + bc.x, b[1] + ba.y + bc.y))
+                inner_points.append((b[0] - ba.x - bc.x, b[1] - ba.y - bc.y))
+
+    x = [p[0] for p in inner_points]
+    y = [p[1] for p in inner_points]
+    x.extend([p[0] for p in reversed(outer_points)])
+    y.extend([p[1] for p in reversed(outer_points)])    
+
     # Scale X and Y values.
     x_scaled = []
     for xi in x:
@@ -549,7 +587,58 @@ def polygon(x: Sequence[float], y: Sequence[float]):
     for i in range(len(x)):
         points.append((x_scaled[i], y_scaled[i]))
     points.append((x_scaled[0], y_scaled[0]))
-    pygame.draw.polygon(_surface, _pygame_color(_pen_color), points, int(round(line_width)))
+    pygame.draw.polygon(_surface, _pygame_color(_pen_color), points, 0)
+
+
+def polygon(x: Sequence[float], y: Sequence[float]):
+    """
+    Draw on the background canvas a polygon with coordinates
+    (x[i], y[i]).
+    """
+    global _surface
+    _make_sure_window_created()
+    line_width = _line_width_pixels()
+    inner_points = []
+    outer_points = []
+
+    for i in range(len(x)):
+        a = (x[i-1], y[i-1])
+        b = (x[i], y[i])
+        c = (x[(i+1)%len(x)], y[(i+1)%len(x)])
+        ba = pygame.math.Vector2(a[0] - b[0], a[1] - b[1]).normalize()
+        bc = pygame.math.Vector2(c[0] - b[0], c[1] - b[1]).normalize()
+        angle = math.acos(ba.dot(bc))
+        turn = ba.rotate(90).dot(bc) < 0.0
+        ba.scale_to_length(line_width / (2.0 * math.sin(angle)))
+        bc.scale_to_length(line_width / (2.0 * math.sin(angle)))
+        if turn:
+            inner_points.append((b[0] + ba.x + bc.x, b[1] + ba.y + bc.y))
+            outer_points.append((b[0] - ba.x - bc.x, b[1] - ba.y - bc.y))
+        else:
+            outer_points.append((b[0] + ba.x + bc.x, b[1] + ba.y + bc.y))
+            inner_points.append((b[0] - ba.x - bc.x, b[1] - ba.y - bc.y))
+
+    x = [p[0] for p in inner_points]
+    y = [p[1] for p in inner_points]
+    x.append(inner_points[0][0])
+    y.append(inner_points[0][1])
+    x.append(outer_points[0][0])
+    y.append(outer_points[0][1])
+    x.extend([p[0] for p in reversed(outer_points)])
+    y.extend([p[1] for p in reversed(outer_points)])    
+
+    # Scale X and Y values.
+    x_scaled = []
+    for xi in x:
+        x_scaled.append(_scale_x(float(xi)))
+    y_scaled = []
+    for yi in y:
+        y_scaled.append(_scale_y(float(yi)))
+    points = []
+    for i in range(len(x)):
+        points.append((x_scaled[i], y_scaled[i]))
+    points.append((x_scaled[0], y_scaled[0]))
+    pygame.draw.polygon(_surface, _pygame_color(_pen_color), points, 0)
 
 
 def filled_polygon(x: Sequence[float], y: Sequence[float]):
@@ -624,16 +713,16 @@ def arc(x: float, y: float, r: float, angle1: float, angle2: float):
         angle2 += 360
     circle_points = 4 * (_factor_x(r) + _factor_y(r))
     num_points = circle_points * ((angle2 - angle1) / 360)
-    for i in range(0, int(num_points)):
+    xs = []
+    ys = []
+    for i in range(0, int(num_points) + 1):
         angle_in = angle1 + (i * 360 / circle_points)
         angle_in = angle_in * math.pi / 180
         x0 = (math.cos(angle_in) * r) + x
         y0 = (math.sin(angle_in) * r) + y
-        angle_out = angle1 + ((i + 1) * 360 / circle_points)
-        angle_out = angle_out * math.pi / 180
-        x1 = (math.cos(angle_out) * r) + x
-        y1 = (math.sin(angle_out) * r) + y
-        line(x0, y0, x1, y1)
+        xs.append(x0)
+        ys.append(y0)
+    polyline(xs, ys)
 
 
 def elliptical_arc(x: float, y: float, half_width: float, half_height: float, angle1: float, angle2: float):
@@ -653,16 +742,16 @@ def elliptical_arc(x: float, y: float, half_width: float, half_height: float, an
         angle2 += 360
     circle_points = 4 * (_factor_x(half_width) + _factor_y(half_height))
     num_points = circle_points * ((angle2 - angle1) / 360)
-    for i in range(0, int(num_points)):
+    xs = []
+    ys = []
+    for i in range(0, int(num_points) + 1):
         angle_in = angle1 + (i * 360 / circle_points)
         angle_in = angle_in * math.pi / 180
         x0 = (math.cos(angle_in) * half_width) + x
         y0 = (math.sin(angle_in) * half_height) + y
-        angle_out = angle1 + ((i + 1) * 360 / circle_points)
-        angle_out = angle_out * math.pi / 180
-        x1 = (math.cos(angle_out) * half_width) + x
-        y1 = (math.sin(angle_out) * half_height) + y
-        line(x0, y0, x1, y1)
+        xs.append(x0)
+        ys.append(y0)
+    polyline(xs, ys)
 
 
 def sector(x: float, y: float, r: float, angle1: float, angle2: float):
@@ -695,9 +784,7 @@ def sector(x: float, y: float, r: float, angle1: float, angle2: float):
     yvals.append((math.sin(angle2 * math.pi / 180) * r) + y)
     xvals.append(x)
     yvals.append(y)
-    points = []
-    for i in range(1, len(xvals)):
-        line(xvals[i-1], yvals[i-1], xvals[i], yvals[i])
+    polygon(xvals[:-1], yvals[:-1])
 
 
 def filled_sector(x: float, y: float, r: float, angle1: float, angle2: float):
@@ -767,10 +854,7 @@ def elliptical_sector(x: float, y: float, half_width: float, half_height: float,
     yvals.append((math.sin(angle2 * math.pi / 180) * half_height) + y)
     xvals.append(x)
     yvals.append(y)
-    points = []
-    for i in range(len(xvals)):
-        points.append((_scale_x(xvals[i]), _scale_y(yvals[i])))
-    pygame.draw.polygon(_surface, _pygame_color(_pen_color), points, int(round(line_width)))
+    polygon(xvals[:-1], yvals[:-1])
 
 
 def filled_elliptical_sector(

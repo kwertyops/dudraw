@@ -15,7 +15,7 @@ dudraw.clear(dudraw.LIGHT_GRAY)
 # OUTLINE SHAPES
 ##################################
 
-outline_scale = 0.5
+outline_scale = 1.0
 
 # draw a vertical line, from (10,10) to (10,100)
 dudraw.line(10, 10, 10, 190)
