@@ -1,0 +1,3407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+          "DTD/xhtml1-strict.dtd">
+<html>
+  
+
+  <head>
+    
+    <title>dudraw.dudraw</title>
+    <meta name="generator" content="pydoctor 22.5.1"> 
+        
+    </meta>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 maximum-scale=1" />
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="apidocs.css" />
+    <link rel="stylesheet" type="text/css" href="extra.css" />
+</head>
+
+  <body>
+
+    
+
+    <nav class="navbar navbar-default mainnavbar">
+      
+  
+  <div class="container-fluid">
+
+
+    <div class="navbar-header">
+      
+      <div class="navlinks">
+        <span class="navbar-brand">
+          dudraw <a href="index.html">API Documentation</a>
+        </span>
+
+        <a href="moduleIndex.html">
+          Modules
+        </a>
+
+        <a href="classIndex.html">
+          Classes
+        </a>
+
+        <a href="nameIndex.html">
+          Names
+        </a>
+
+        <div id="search-box-container">
+          <div class="input-group">
+            <input id="search-box" type="search" name="search-query" placeholder="Search..." aria-label="Search" minlength="2" class="form-control" autocomplete="off" />
+            
+            <span class="input-group-btn">
+              <a style="display: none;" class="btn btn-default" id="search-clear-button" title="Clear" onclick="clearSearch()"><img src="fonts/x-circle.svg" alt="Clear" /></a>
+              <a class="btn btn-default" id="search-help-button" title="Help" onclick="toggleSearchHelpText()"><img src="fonts/info.svg" alt="Help" /></a>
+            </span>
+          </div>
+        </div>
+
+      </div>
+
+      <div id="search-results-container" style="display: none;">
+        
+        <div id="search-buttons">
+          <span class="label label-default" id="search-docstrings-button">
+          <label class="checkbox-inline">
+            <input type="checkbox" id="toggle-search-in-docstrings-checkbox" value="false" onclick="toggleSearchInDocstrings()">
+              search in docstrings
+            </input>
+          </label>
+          </span>
+          
+        </div>
+        
+        <noscript>
+            <h1>Cannot search: JavaScript is not supported/enabled in your browser.</h1>
+        </noscript>
+
+        <div class="hint" id="search-help-box">
+          <p class="rst-last">
+      
+            Search bar offers the following options:
+            <ul>   
+                <li>
+                  <strong>Term presence.</strong> The below example searches for documents that 
+                    must contain “foo”, might contain “bar” and must not contain “baz”: <code>+foo bar -baz</code>
+                </li> 
+
+                <li>
+                  <strong>Wildcards.</strong> The below example searches for documents with words beginning with “foo”: <code>foo*</code>
+                </li> 
+
+                <li>
+                  <strong>Search in specific fields.</strong> The following search matches all objects 
+                  in "twisted.mail" that matches “search”: <code>+qname:twisted.mail.* +search</code>
+
+                  <p>
+                    Possible fields: 'name', 'qname' (fully qualified name), 'docstring', and 'kind'.
+                    Last two fields are only applicable if "search in docstrings" is enabled.
+                  </p>
+                </li>
+
+                <li>
+                  <strong>Fuzzy matches.</strong> The following search matches all documents 
+                  that have a word within 1 edit distance of “foo”: <code>foo~1</code>
+                </li>
+            </ul>
+
+          </p>
+        </div>
+
+        <div id="search-status"> </div>
+
+        <div class="warning" id="search-warn-box" style="display: none;">
+          <p class="rst-last"><span id="search-warn"></span></p>
+        </div>
+
+        <table id="search-results">
+          <!-- Filled dynamically by JS -->
+        </table>
+        
+        <div style="margin-top: 8px;">
+          <p>Results provided by <a href="https://lunrjs.com">Lunr.js</a></p>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+</nav>
+    
+    <div class="container-fluid">
+
+      <!-- Side navigation -->
+      <div class="sidebarcontainer" style="display: none;">
+        
+        <div class="sidebar"><nav class="sidebar">
+  
+
+  <div>
+
+      <div class="thingTitle">
+        <span>Module</span>
+        <code class="thisobject"><a href="dudraw.dudraw.html" class="internal-link" title="This module">dudraw</a></code> 
+      </div>
+      
+      <div>
+        
+
+        
+         
+
+        
+        
+
+        <div class="childrenKindTitle">Functions</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#annulus" class="internal-link" title="dudraw.dudraw.annulus">annulus</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#arc" class="internal-link" title="dudraw.dudraw.arc">arc</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#circle" class="internal-link" title="dudraw.dudraw.circle">circle</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#clear" class="internal-link" title="dudraw.dudraw.clear">clear</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#clear_rgb" class="internal-link" title="dudraw.dudraw.clear_rgb">clear<wbr></wbr>_rgb</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#ellipse" class="internal-link" title="dudraw.dudraw.ellipse">ellipse</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#elliptical_arc" class="internal-link" title="dudraw.dudraw.elliptical_arc">elliptical<wbr></wbr>_arc</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#elliptical_sector" class="internal-link" title="dudraw.dudraw.elliptical_sector">elliptical<wbr></wbr>_sector</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#filled_annulus" class="internal-link" title="dudraw.dudraw.filled_annulus">filled<wbr></wbr>_annulus</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#filled_circle" class="internal-link" title="dudraw.dudraw.filled_circle">filled<wbr></wbr>_circle</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#filled_ellipse" class="internal-link" title="dudraw.dudraw.filled_ellipse">filled<wbr></wbr>_ellipse</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#filled_elliptical_sector" class="internal-link" title="dudraw.dudraw.filled_elliptical_sector">filled<wbr></wbr>_elliptical<wbr></wbr>_sector</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#filled_polygon" class="internal-link" title="dudraw.dudraw.filled_polygon">filled<wbr></wbr>_polygon</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#filled_quadrilateral" class="internal-link" title="dudraw.dudraw.filled_quadrilateral">filled<wbr></wbr>_quadrilateral</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#filled_rectangle" class="internal-link" title="dudraw.dudraw.filled_rectangle">filled<wbr></wbr>_rectangle</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#filled_sector" class="internal-link" title="dudraw.dudraw.filled_sector">filled<wbr></wbr>_sector</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#filled_square" class="internal-link" title="dudraw.dudraw.filled_square">filled<wbr></wbr>_square</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#filled_triangle" class="internal-link" title="dudraw.dudraw.filled_triangle">filled<wbr></wbr>_triangle</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#get_canvas_height" class="internal-link" title="dudraw.dudraw.get_canvas_height">get<wbr></wbr>_canvas<wbr></wbr>_height</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#get_canvas_width" class="internal-link" title="dudraw.dudraw.get_canvas_width">get<wbr></wbr>_canvas<wbr></wbr>_width</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#get_pen_color" class="internal-link" title="dudraw.dudraw.get_pen_color">get<wbr></wbr>_pen<wbr></wbr>_color</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#get_pixel_color" class="internal-link" title="dudraw.dudraw.get_pixel_color">get<wbr></wbr>_pixel<wbr></wbr>_color</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#has_next_key_typed" class="internal-link" title="dudraw.dudraw.has_next_key_typed">has<wbr></wbr>_next<wbr></wbr>_key<wbr></wbr>_typed</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#line" class="internal-link" title="dudraw.dudraw.line">line</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#mouse_pressed" class="internal-link" title="dudraw.dudraw.mouse_pressed">mouse<wbr></wbr>_pressed</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#mouse_x" class="internal-link" title="dudraw.dudraw.mouse_x">mouse<wbr></wbr>_x</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#mouse_y" class="internal-link" title="dudraw.dudraw.mouse_y">mouse<wbr></wbr>_y</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#next_key_typed" class="internal-link" title="dudraw.dudraw.next_key_typed">next<wbr></wbr>_key<wbr></wbr>_typed</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#picture" class="internal-link" title="dudraw.dudraw.picture">picture</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#point" class="internal-link" title="dudraw.dudraw.point">point</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#polygon" class="internal-link" title="dudraw.dudraw.polygon">polygon</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#polyline" class="internal-link" title="dudraw.dudraw.polyline">polyline</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#quadrilateral" class="internal-link" title="dudraw.dudraw.quadrilateral">quadrilateral</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#rectangle" class="internal-link" title="dudraw.dudraw.rectangle">rectangle</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#save" class="internal-link" title="dudraw.dudraw.save">save</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#sector" class="internal-link" title="dudraw.dudraw.sector">sector</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#set_canvas_size" class="internal-link" title="dudraw.dudraw.set_canvas_size">set<wbr></wbr>_canvas<wbr></wbr>_size</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#set_font_family" class="internal-link" title="dudraw.dudraw.set_font_family">set<wbr></wbr>_font<wbr></wbr>_family</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#set_font_size" class="internal-link" title="dudraw.dudraw.set_font_size">set<wbr></wbr>_font<wbr></wbr>_size</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#set_pen_color" class="internal-link" title="dudraw.dudraw.set_pen_color">set<wbr></wbr>_pen<wbr></wbr>_color</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#set_pen_color_rgb" class="internal-link" title="dudraw.dudraw.set_pen_color_rgb">set<wbr></wbr>_pen<wbr></wbr>_color<wbr></wbr>_rgb</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#set_pen_width" class="internal-link" title="dudraw.dudraw.set_pen_width">set<wbr></wbr>_pen<wbr></wbr>_width</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#set_scale" class="internal-link" title="dudraw.dudraw.set_scale">set<wbr></wbr>_scale</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#set_x_scale" class="internal-link" title="dudraw.dudraw.set_x_scale">set<wbr></wbr>_x<wbr></wbr>_scale</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#set_y_scale" class="internal-link" title="dudraw.dudraw.set_y_scale">set<wbr></wbr>_y<wbr></wbr>_scale</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#show" class="internal-link" title="dudraw.dudraw.show">show</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#square" class="internal-link" title="dudraw.dudraw.square">square</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#text" class="internal-link" title="dudraw.dudraw.text">text</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#triangle" class="internal-link" title="dudraw.dudraw.triangle">triangle</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_ccw" class="internal-link" title="dudraw.dudraw._ccw">_ccw</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_check_for_events" class="internal-link" title="dudraw.dudraw._check_for_events">_check<wbr></wbr>_for<wbr></wbr>_events</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_factor_x" class="internal-link" title="dudraw.dudraw._factor_x">_factor<wbr></wbr>_x</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_factor_y" class="internal-link" title="dudraw.dudraw._factor_y">_factor<wbr></wbr>_y</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_intersect" class="internal-link" title="dudraw.dudraw._intersect">_intersect</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_line_width_pixels" class="internal-link" title="dudraw.dudraw._line_width_pixels">_line<wbr></wbr>_width<wbr></wbr>_pixels</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_main" class="internal-link" title="dudraw.dudraw._main">_main</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_make_sure_window_created" class="internal-link" title="dudraw.dudraw._make_sure_window_created">_make<wbr></wbr>_sure<wbr></wbr>_window<wbr></wbr>_created</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_pen_width_pixels" class="internal-link" title="dudraw.dudraw._pen_width_pixels">_pen<wbr></wbr>_width<wbr></wbr>_pixels</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_pixel" class="internal-link" title="dudraw.dudraw._pixel">_pixel</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_pygame_color" class="internal-link" title="dudraw.dudraw._pygame_color">_pygame<wbr></wbr>_color</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_regression_test" class="internal-link" title="dudraw.dudraw._regression_test">_regression<wbr></wbr>_test</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_scale_point" class="internal-link" title="dudraw.dudraw._scale_point">_scale<wbr></wbr>_point</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_scale_x" class="internal-link" title="dudraw.dudraw._scale_x">_scale<wbr></wbr>_x</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_scale_y" class="internal-link" title="dudraw.dudraw._scale_y">_scale<wbr></wbr>_y</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_show" class="internal-link" title="dudraw.dudraw._show">_show</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_show_and_wait_forever" class="internal-link" title="dudraw.dudraw._show_and_wait_forever">_show<wbr></wbr>_and<wbr></wbr>_wait<wbr></wbr>_forever</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_thick_line" class="internal-link" title="dudraw.dudraw._thick_line">_thick<wbr></wbr>_line</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_user_x" class="internal-link" title="dudraw.dudraw._user_x">_user<wbr></wbr>_x</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_user_y" class="internal-link" title="dudraw.dudraw._user_y">_user<wbr></wbr>_y</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+
+        <div class="childrenKindTitle">Variables</div>
+        <ul>
+    
+    <li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_BORDER" class="internal-link" title="dudraw.dudraw._BORDER">_BORDER</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_DEFAULT_CANVAS_SIZE" class="internal-link" title="dudraw.dudraw._DEFAULT_CANVAS_SIZE">_DEFAULT<wbr></wbr>_CANVAS<wbr></wbr>_SIZE</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_DEFAULT_FONT_FAMILY" class="internal-link" title="dudraw.dudraw._DEFAULT_FONT_FAMILY">_DEFAULT<wbr></wbr>_FONT<wbr></wbr>_FAMILY</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_DEFAULT_FONT_SIZE" class="internal-link" title="dudraw.dudraw._DEFAULT_FONT_SIZE">_DEFAULT<wbr></wbr>_FONT<wbr></wbr>_SIZE</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_DEFAULT_PEN_WIDTH" class="internal-link" title="dudraw.dudraw._DEFAULT_PEN_WIDTH">_DEFAULT<wbr></wbr>_PEN<wbr></wbr>_WIDTH</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_DEFAULT_XMAX" class="internal-link" title="dudraw.dudraw._DEFAULT_XMAX">_DEFAULT<wbr></wbr>_XMAX</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_DEFAULT_XMIN" class="internal-link" title="dudraw.dudraw._DEFAULT_XMIN">_DEFAULT<wbr></wbr>_XMIN</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_DEFAULT_YMAX" class="internal-link" title="dudraw.dudraw._DEFAULT_YMAX">_DEFAULT<wbr></wbr>_YMAX</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_DEFAULT_YMIN" class="internal-link" title="dudraw.dudraw._DEFAULT_YMIN">_DEFAULT<wbr></wbr>_YMIN</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_canvas_height" class="internal-link" title="dudraw.dudraw._canvas_height">_canvas<wbr></wbr>_height</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_canvas_width" class="internal-link" title="dudraw.dudraw._canvas_width">_canvas<wbr></wbr>_width</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_keys_typed" class="internal-link" title="dudraw.dudraw._keys_typed">_keys<wbr></wbr>_typed</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_mouse_pos" class="internal-link" title="dudraw.dudraw._mouse_pos">_mouse<wbr></wbr>_pos</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_mouse_pressed" class="internal-link" title="dudraw.dudraw._mouse_pressed">_mouse<wbr></wbr>_pressed</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_pen_width" class="internal-link" title="dudraw.dudraw._pen_width">_pen<wbr></wbr>_width</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_window_created" class="internal-link" title="dudraw.dudraw._window_created">_window<wbr></wbr>_created</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_xmax" class="internal-link" title="dudraw.dudraw._xmax">_xmax</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_xmin" class="internal-link" title="dudraw.dudraw._xmin">_xmin</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_ymax" class="internal-link" title="dudraw.dudraw._ymax">_ymax</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_ymin" class="internal-link" title="dudraw.dudraw._ymin">_ymin</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+         
+        
+      </div>
+  </div><div>
+
+      <div class="thingTitle">
+        <span>Package</span>
+        <code><a href="index.html" class="internal-link" title="The parent of this module">dudraw</a></code> 
+      </div>
+      
+      <div>
+        
+
+        <div class="childrenKindTitle">Modules</div>
+        <ul>
+    
+    <li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="dudraw.color.html" class="internal-link" title="dudraw.color">color</a></code>
+            </div>
+        
+
+    </li><li class=" thisobject">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="dudraw.dudraw.html" class="internal-link" title="dudraw.dudraw">dudraw</a></code>
+            </div>
+        
+
+    </li>
+</ul> 
+
+        
+        
+
+        
+         
+
+        
+         
+
+        
+         
+
+        
+         
+        
+      </div>
+  </div>
+
+</nav>
+        </div>
+        <div id="collapseSideBar">
+          <a class="btn btn-link" onclick="toggleSideBarCollapse()" title="Toggle Sidebar Collapse">
+          </a>
+        </div> 
+        <script src="sidebartoggle.js" type="text/javascript"></script>
+       
+      </div>
+
+      <div id="main" class="">
+        
+
+        
+
+        <div class="page-header">
+          <h1 class="module"><code><code><a href="index.html" class="internal-link">dudraw</a></code><wbr></wbr>.<code><a href="dudraw.dudraw.html" class="internal-link" title="dudraw.dudraw">dudraw</a></code></code></h1>
+          <div id="showPrivate">
+            <button class="btn btn-link" onclick="togglePrivate()">Toggle Private API</button>
+          </div>
+        </div>
+
+        <div class="categoryHeader">
+          module documentation
+        </div>
+
+        <div class="extrasDocstring">
+          
+          <p></p>
+        </div>
+
+        <div class="moduleDocstring">
+          <div><p>dudraw.py</p>
+<p>The dudraw module defines functions that allow the user to create a drawing.  A drawing appears on the canvas.  The canvas appears in the window.  As a convenience, the module also imports the commonly used Color objects defined in the color module.</p>
+</div>
+        </div>
+
+        <div id="splitTables">
+          <table class="children sortable" id="id4">
+  
+  
+  <tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#annulus" class="internal-link" title="dudraw.dudraw.annulus">annulus</a></code></td>
+    <td>Draw an annulus centered at (x, y) with outer radius r1, and inner radius r2.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#arc" class="internal-link" title="dudraw.dudraw.arc">arc</a></code></td>
+    <td>Draw an arc portion between angle1 and angle2, of the circumference of a circle centered at (x, y) with a radius r.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#circle" class="internal-link" title="dudraw.dudraw.circle">circle</a></code></td>
+    <td>Draw on the background canvas a circle of radius r centered on (x, y).</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#clear" class="internal-link" title="dudraw.dudraw.clear">clear</a></code></td>
+    <td>Clear the background canvas to color c, where c is an object of class Color. c defaults to dudraw.WHITE.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#clear_rgb" class="internal-link" title="dudraw.dudraw.clear_rgb">clear<wbr></wbr>_rgb</a></code></td>
+    <td>Clear the background canvas to color c, where c is an object of class Color. c defaults to dudraw.WHITE.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#ellipse" class="internal-link" title="dudraw.dudraw.ellipse">ellipse</a></code></td>
+    <td>Draw on the background canvas an ellipse centered at (x, y) with a width of 2.0 * half_width, and a height of 2.0 * half_height.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#elliptical_arc" class="internal-link" title="dudraw.dudraw.elliptical_arc">elliptical<wbr></wbr>_arc</a></code></td>
+    <td>Draw an arc portion between angle1 and angle2, of the circumference of an ellipse centered at (x, y) with a width of half_width, and a height of 2.0 * half_height.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#elliptical_sector" class="internal-link" title="dudraw.dudraw.elliptical_sector">elliptical<wbr></wbr>_sector</a></code></td>
+    <td>Draw a sector portion between angle1 and angle2, of the interior of an ellipse centered at (x, y) with a width of half_width, and a height of 2.0 * half_height.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#filled_annulus" class="internal-link" title="dudraw.dudraw.filled_annulus">filled<wbr></wbr>_annulus</a></code></td>
+    <td>Draw a filled annulus centered at (x, y) with outer radius r1, and inner radius r2.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#filled_circle" class="internal-link" title="dudraw.dudraw.filled_circle">filled<wbr></wbr>_circle</a></code></td>
+    <td>Draw on the background canvas a filled circle of radius r centered on (x, y).</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#filled_ellipse" class="internal-link" title="dudraw.dudraw.filled_ellipse">filled<wbr></wbr>_ellipse</a></code></td>
+    <td>Draw on the background canvas a filled ellipse centered at (x, y) with a width of 2.0 * half_width, and a height of 2.0 * half_height.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#filled_elliptical_sector" class="internal-link" title="dudraw.dudraw.filled_elliptical_sector">filled<wbr></wbr>_elliptical<wbr></wbr>_sector</a></code></td>
+    <td>Draw a filled sector portion between angle1 and angle2, of the interior of an ellipse centered at (x, y) with a width of half_width, and a height of 2.0 * half_height.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#filled_polygon" class="internal-link" title="dudraw.dudraw.filled_polygon">filled<wbr></wbr>_polygon</a></code></td>
+    <td>Draw on the background canvas a filled polygon with coordinates (x[i], y[i]).</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#filled_quadrilateral" class="internal-link" title="dudraw.dudraw.filled_quadrilateral">filled<wbr></wbr>_quadrilateral</a></code></td>
+    <td>Draw a filled quadrilateral on the canvas with corners at (x0, y0), (x1, y1), (x2, y2), and (x3, y3).</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#filled_rectangle" class="internal-link" title="dudraw.dudraw.filled_rectangle">filled<wbr></wbr>_rectangle</a></code></td>
+    <td>Draw on the background canvas a rectangle of width (2 * halfWidth and height (2 * halfHeight) centered at point (x, y).</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#filled_sector" class="internal-link" title="dudraw.dudraw.filled_sector">filled<wbr></wbr>_sector</a></code></td>
+    <td>Draw a filled sector portion between angle1 and angle2, of the interior of a circle centered at (x, y) with a radius r.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#filled_square" class="internal-link" title="dudraw.dudraw.filled_square">filled<wbr></wbr>_square</a></code></td>
+    <td>Draw on the background canvas a filled square whose sides are of length 2r, centered on (x, y).</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#filled_triangle" class="internal-link" title="dudraw.dudraw.filled_triangle">filled<wbr></wbr>_triangle</a></code></td>
+    <td>Draw a filled triangle on the canvas with corners at (x0, y0), (x1, y1), and (x2, y2).</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_canvas_height" class="internal-link" title="dudraw.dudraw.get_canvas_height">get<wbr></wbr>_canvas<wbr></wbr>_height</a></code></td>
+    <td>Return the height of the current canvas</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_canvas_width" class="internal-link" title="dudraw.dudraw.get_canvas_width">get<wbr></wbr>_canvas<wbr></wbr>_width</a></code></td>
+    <td>Return the width of the current canvas</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_pen_color" class="internal-link" title="dudraw.dudraw.get_pen_color">get<wbr></wbr>_pen<wbr></wbr>_color</a></code></td>
+    <td>Returns the value of _penColor as an object of class Color.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#get_pixel_color" class="internal-link" title="dudraw.dudraw.get_pixel_color">get<wbr></wbr>_pixel<wbr></wbr>_color</a></code></td>
+    <td>Return the color of the pixel at the given user coordinates</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#has_next_key_typed" class="internal-link" title="dudraw.dudraw.has_next_key_typed">has<wbr></wbr>_next<wbr></wbr>_key<wbr></wbr>_typed</a></code></td>
+    <td>Return True if the queue of keys the user typed is not empty. Otherwise return False.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#line" class="internal-link" title="dudraw.dudraw.line">line</a></code></td>
+    <td>Draw on the background canvas a line from (x0, y0) to (x1, y1).</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#mouse_pressed" class="internal-link" title="dudraw.dudraw.mouse_pressed">mouse<wbr></wbr>_pressed</a></code></td>
+    <td>Return True if the mouse has been left-clicked since the last time mousePressed was called, and False otherwise.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#mouse_x" class="internal-link" title="dudraw.dudraw.mouse_x">mouse<wbr></wbr>_x</a></code></td>
+    <td>Return the x coordinate in user space of the location at which the mouse was most recently left-clicked. If a left-click hasn't happened yet, raise an exception, since mouseX() shouldn't be called until mousePressed() returns True.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#mouse_y" class="internal-link" title="dudraw.dudraw.mouse_y">mouse<wbr></wbr>_y</a></code></td>
+    <td>Return the y coordinate in user space of the location at which the mouse was most recently left-clicked. If a left-click hasn't happened yet, raise an exception, since mouseY() shouldn't be called until mousePressed() returns True.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#next_key_typed" class="internal-link" title="dudraw.dudraw.next_key_typed">next<wbr></wbr>_key<wbr></wbr>_typed</a></code></td>
+    <td>Remove the first key from the queue of keys that the the user typed, and return that key.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#picture" class="internal-link" title="dudraw.dudraw.picture">picture</a></code></td>
+    <td>Draw pic on the background canvas centered at (x, y).  pic is an object of class picture.Picture. x and y default to the midpoint of the background canvas.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#point" class="internal-link" title="dudraw.dudraw.point">point</a></code></td>
+    <td>Draw on the background canvas a point at (x, y).</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#polygon" class="internal-link" title="dudraw.dudraw.polygon">polygon</a></code></td>
+    <td>Draw on the background canvas a polygon with coordinates (x[i], y[i]).</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#polyline" class="internal-link" title="dudraw.dudraw.polyline">polyline</a></code></td>
+    <td>Draw on the background canvas a polyline with coordinates (x[i], y[i]).</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#quadrilateral" class="internal-link" title="dudraw.dudraw.quadrilateral">quadrilateral</a></code></td>
+    <td>Draw a quadrilateral on the canvas with corners at (x0, y0), (x1, y1), (x2, y2), and (x3, y3).</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#rectangle" class="internal-link" title="dudraw.dudraw.rectangle">rectangle</a></code></td>
+    <td>Draw on the background canvas a rectangle of width (2 * halfWidth and height (2 * halfHeight) centered at point (x, y).</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#save" class="internal-link" title="dudraw.dudraw.save">save</a></code></td>
+    <td>Save the window canvas to file f.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#sector" class="internal-link" title="dudraw.dudraw.sector">sector</a></code></td>
+    <td>Draw a sector portion between angle1 and angle2, of the interior of a circle centered at (x, y) with a radius r.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#set_canvas_size" class="internal-link" title="dudraw.dudraw.set_canvas_size">set<wbr></wbr>_canvas<wbr></wbr>_size</a></code></td>
+    <td>Set the size of the canvas to w pixels wide and h pixels high. Calling this function is optional. If you call it, you must do so before calling any drawing function.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#set_font_family" class="internal-link" title="dudraw.dudraw.set_font_family">set<wbr></wbr>_font<wbr></wbr>_family</a></code></td>
+    <td>Set the font family to f (e.g. 'Helvetica' or 'Courier').</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#set_font_size" class="internal-link" title="dudraw.dudraw.set_font_size">set<wbr></wbr>_font<wbr></wbr>_size</a></code></td>
+    <td>Set the font size to s (e.g. 12 or 16).</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#set_pen_color" class="internal-link" title="dudraw.dudraw.set_pen_color">set<wbr></wbr>_pen<wbr></wbr>_color</a></code></td>
+    <td>Set the pen color to c, where c is an object of class Color. c defaults to dudraw.BLACK.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#set_pen_color_rgb" class="internal-link" title="dudraw.dudraw.set_pen_color_rgb">set<wbr></wbr>_pen<wbr></wbr>_color<wbr></wbr>_rgb</a></code></td>
+    <td>Set the pen color to c, where c is an object of class Color. c defaults to dudraw.BLACK.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#set_pen_width" class="internal-link" title="dudraw.dudraw.set_pen_width">set<wbr></wbr>_pen<wbr></wbr>_width</a></code></td>
+    <td>Set the pen radius to r, thus affecting the subsequent drawing of points and lines. If r is 0.0, then points will be drawn with the minimum possible radius and lines with the minimum possible width.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#set_scale" class="internal-link" title="dudraw.dudraw.set_scale">set<wbr></wbr>_scale</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#set_x_scale" class="internal-link" title="dudraw.dudraw.set_x_scale">set<wbr></wbr>_x<wbr></wbr>_scale</a></code></td>
+    <td>Set the x-scale of the canvas such that the minimum x value is min and the maximum x value is max.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#set_y_scale" class="internal-link" title="dudraw.dudraw.set_y_scale">set<wbr></wbr>_y<wbr></wbr>_scale</a></code></td>
+    <td>Set the y-scale of the canvas such that the minimum y value is min and the maximum y value is max.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#show" class="internal-link" title="dudraw.dudraw.show">show</a></code></td>
+    <td>Copy the background canvas to the window canvas, and then wait for msec milliseconds. msec defaults to infinity.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#square" class="internal-link" title="dudraw.dudraw.square">square</a></code></td>
+    <td>Draw on the background canvas a square whose sides are of length 2r, centered on (x, y).</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#text" class="internal-link" title="dudraw.dudraw.text">text</a></code></td>
+    <td>Draw string s on the background canvas centered at (x, y).</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#triangle" class="internal-link" title="dudraw.dudraw.triangle">triangle</a></code></td>
+    <td>Draw a triangle on the canvas with corners at (x0, y0), (x1, y1), and (x2, y2).</td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_ccw" class="internal-link" title="dudraw.dudraw._ccw">_ccw</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_check_for_events" class="internal-link" title="dudraw.dudraw._check_for_events">_check<wbr></wbr>_for<wbr></wbr>_events</a></code></td>
+    <td>Check if any new event has occured (such as a key typed or button pressed).  If a key has been typed, then put that key in a queue.</td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_factor_x" class="internal-link" title="dudraw.dudraw._factor_x">_factor<wbr></wbr>_x</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_factor_y" class="internal-link" title="dudraw.dudraw._factor_y">_factor<wbr></wbr>_y</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_intersect" class="internal-link" title="dudraw.dudraw._intersect">_intersect</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_line_width_pixels" class="internal-link" title="dudraw.dudraw._line_width_pixels">_line<wbr></wbr>_width<wbr></wbr>_pixels</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_main" class="internal-link" title="dudraw.dudraw._main">_main</a></code></td>
+    <td>Dispatch to a function that does regression testing, or to a dialog-box-handling function.</td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_make_sure_window_created" class="internal-link" title="dudraw.dudraw._make_sure_window_created">_make<wbr></wbr>_sure<wbr></wbr>_window<wbr></wbr>_created</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_pen_width_pixels" class="internal-link" title="dudraw.dudraw._pen_width_pixels">_pen<wbr></wbr>_width<wbr></wbr>_pixels</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_pixel" class="internal-link" title="dudraw.dudraw._pixel">_pixel</a></code></td>
+    <td>Draw on the background canvas a pixel at (x, y).</td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_pygame_color" class="internal-link" title="dudraw.dudraw._pygame_color">_pygame<wbr></wbr>_color</a></code></td>
+    <td>Convert c, an object of type Color, to an equivalent object of type pygame.Color.  Return the result.</td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_regression_test" class="internal-link" title="dudraw.dudraw._regression_test">_regression<wbr></wbr>_test</a></code></td>
+    <td>Perform regression testing.</td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_scale_point" class="internal-link" title="dudraw.dudraw._scale_point">_scale<wbr></wbr>_point</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_scale_x" class="internal-link" title="dudraw.dudraw._scale_x">_scale<wbr></wbr>_x</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_scale_y" class="internal-link" title="dudraw.dudraw._scale_y">_scale<wbr></wbr>_y</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_show" class="internal-link" title="dudraw.dudraw._show">_show</a></code></td>
+    <td>Copy the background canvas to the window canvas.</td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_show_and_wait_forever" class="internal-link" title="dudraw.dudraw._show_and_wait_forever">_show<wbr></wbr>_and<wbr></wbr>_wait<wbr></wbr>_forever</a></code></td>
+    <td>Copy the background canvas to the window canvas. Then wait forever, that is, until the user closes the dudraw window.</td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_thick_line" class="internal-link" title="dudraw.dudraw._thick_line">_thick<wbr></wbr>_line</a></code></td>
+    <td>Draw on the background canvas a line from (x0, y0) to (x1, y1). Draw the line with a pen whose radius is r.</td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_user_x" class="internal-link" title="dudraw.dudraw._user_x">_user<wbr></wbr>_x</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="function private">
+    
+    <td>Function</td>
+    <td><code><a href="#_user_y" class="internal-link" title="dudraw.dudraw._user_y">_user<wbr></wbr>_y</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_BORDER" class="internal-link" title="dudraw.dudraw._BORDER">_BORDER</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_DEFAULT_CANVAS_SIZE" class="internal-link" title="dudraw.dudraw._DEFAULT_CANVAS_SIZE">_DEFAULT<wbr></wbr>_CANVAS<wbr></wbr>_SIZE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_DEFAULT_FONT_FAMILY" class="internal-link" title="dudraw.dudraw._DEFAULT_FONT_FAMILY">_DEFAULT<wbr></wbr>_FONT<wbr></wbr>_FAMILY</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_DEFAULT_FONT_SIZE" class="internal-link" title="dudraw.dudraw._DEFAULT_FONT_SIZE">_DEFAULT<wbr></wbr>_FONT<wbr></wbr>_SIZE</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_DEFAULT_PEN_WIDTH" class="internal-link" title="dudraw.dudraw._DEFAULT_PEN_WIDTH">_DEFAULT<wbr></wbr>_PEN<wbr></wbr>_WIDTH</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_DEFAULT_XMAX" class="internal-link" title="dudraw.dudraw._DEFAULT_XMAX">_DEFAULT<wbr></wbr>_XMAX</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_DEFAULT_XMIN" class="internal-link" title="dudraw.dudraw._DEFAULT_XMIN">_DEFAULT<wbr></wbr>_XMIN</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_DEFAULT_YMAX" class="internal-link" title="dudraw.dudraw._DEFAULT_YMAX">_DEFAULT<wbr></wbr>_YMAX</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="constant private">
+    
+    <td>Constant</td>
+    <td><code><a href="#_DEFAULT_YMIN" class="internal-link" title="dudraw.dudraw._DEFAULT_YMIN">_DEFAULT<wbr></wbr>_YMIN</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_canvas_height" class="internal-link" title="dudraw.dudraw._canvas_height">_canvas<wbr></wbr>_height</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_canvas_width" class="internal-link" title="dudraw.dudraw._canvas_width">_canvas<wbr></wbr>_width</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_keys_typed" class="internal-link" title="dudraw.dudraw._keys_typed">_keys<wbr></wbr>_typed</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_mouse_pos" class="internal-link" title="dudraw.dudraw._mouse_pos">_mouse<wbr></wbr>_pos</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_mouse_pressed" class="internal-link" title="dudraw.dudraw._mouse_pressed">_mouse<wbr></wbr>_pressed</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_pen_width" class="internal-link" title="dudraw.dudraw._pen_width">_pen<wbr></wbr>_width</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_window_created" class="internal-link" title="dudraw.dudraw._window_created">_window<wbr></wbr>_created</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_xmax" class="internal-link" title="dudraw.dudraw._xmax">_xmax</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_xmin" class="internal-link" title="dudraw.dudraw._xmin">_xmin</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_ymax" class="internal-link" title="dudraw.dudraw._ymax">_ymax</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_ymin" class="internal-link" title="dudraw.dudraw._ymin">_ymin</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr>
+</table>
+          
+
+            
+        </div>
+
+        <div id="childList">
+          <div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.annulus">
+    
+  </a>
+  <a name="annulus">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">annulus</span>(x, y, r1, r2):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Draw an annulus centered at (x, y) with outer radius r1, and inner radius r2.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r1:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r2:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.arc">
+    
+  </a>
+  <a name="arc">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">arc</span>(x, y, r, angle1, angle2):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Draw an arc portion between angle1 and angle2, of the circumference of a circle centered at (x, y) with a radius r.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">angle1:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">angle2:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.circle">
+    
+  </a>
+  <a name="circle">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">circle</span>(x, y, r):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Draw on the background canvas a circle of radius r centered on (x, y).</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.clear">
+    
+  </a>
+  <a name="clear">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">clear</span>(c=<a href="dudraw.color.html#WHITE" class="internal-link" title="dudraw.color.WHITE">WHITE</a>):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Clear the background canvas to color c, where c is an object of class Color. c defaults to dudraw.WHITE.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">c:</span><code><a href="dudraw.color.Color.html" class="internal-link" title="dudraw.color.Color">Color</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.clear_rgb">
+    
+  </a>
+  <a name="clear_rgb">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">clear_rgb</span>(r=255, g=255, b=255):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Clear the background canvas to color c, where c is an object of class Color. c defaults to dudraw.WHITE.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">g:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">b:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.ellipse">
+    
+  </a>
+  <a name="ellipse">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">ellipse</span>(x, y, half_width, half_height):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Draw on the background canvas an ellipse centered at (x, y) with a width of 2.0 * half_width, and a height of 2.0 * half_height.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">half<wbr></wbr>_width:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">half<wbr></wbr>_height:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.elliptical_arc">
+    
+  </a>
+  <a name="elliptical_arc">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">elliptical_arc</span>(x, y, half_width, half_height, angle1, angle2):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Draw an arc portion between angle1 and angle2, of the circumference of an ellipse centered at (x, y) with a width of half_width, and a height of 2.0 * half_height.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">half<wbr></wbr>_width:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">half<wbr></wbr>_height:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">angle1:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">angle2:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.elliptical_sector">
+    
+  </a>
+  <a name="elliptical_sector">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">elliptical_sector</span>(x, y, half_width, half_height, angle1, angle2):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Draw a sector portion between angle1 and angle2, of the interior of an ellipse centered at (x, y) with a width of half_width, and a height of 2.0 * half_height.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">half<wbr></wbr>_width:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">half<wbr></wbr>_height:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">angle1:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">angle2:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.filled_annulus">
+    
+  </a>
+  <a name="filled_annulus">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">filled_annulus</span>(x, y, r1, r2):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Draw a filled annulus centered at (x, y) with outer radius r1, and inner radius r2.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r1:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r2:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.filled_circle">
+    
+  </a>
+  <a name="filled_circle">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">filled_circle</span>(x, y, r):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Draw on the background canvas a filled circle of radius r centered on (x, y).</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.filled_ellipse">
+    
+  </a>
+  <a name="filled_ellipse">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">filled_ellipse</span>(x, y, half_width, half_height):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Draw on the background canvas a filled ellipse centered at (x, y) with a width of 2.0 * half_width, and a height of 2.0 * half_height.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">half<wbr></wbr>_width:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">half<wbr></wbr>_height:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.filled_elliptical_sector">
+    
+  </a>
+  <a name="filled_elliptical_sector">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">filled_elliptical_sector</span>(x, y, half_width, half_height, angle1, angle2):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Draw a filled sector portion between angle1 and angle2, of the interior of an ellipse centered at (x, y) with a width of half_width, and a height of 2.0 * half_height.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">half<wbr></wbr>_width:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">half<wbr></wbr>_height:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">angle1:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">angle2:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.filled_polygon">
+    
+  </a>
+  <a name="filled_polygon">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">filled_polygon</span>(x, y):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Draw on the background canvas a filled polygon with coordinates (x[i], y[i]).</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>Sequence[<wbr></wbr>float]</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>Sequence[<wbr></wbr>float]</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.filled_quadrilateral">
+    
+  </a>
+  <a name="filled_quadrilateral">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">filled_quadrilateral</span>(x0, y0, x1, y1, x2, y2, x3, y3):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Draw a filled quadrilateral on the canvas with corners at (x0, y0), (x1, y1), (x2, y2), and (x3, y3).</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x0:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y0:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x1:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y1:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x2:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y2:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x3:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y3:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.filled_rectangle">
+    
+  </a>
+  <a name="filled_rectangle">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">filled_rectangle</span>(x, y, half_width, half_height):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Draw on the background canvas a rectangle of width (2 * halfWidth and height (2 * halfHeight) centered at point (x, y).</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">half<wbr></wbr>_width:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">half<wbr></wbr>_height:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.filled_sector">
+    
+  </a>
+  <a name="filled_sector">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">filled_sector</span>(x, y, r, angle1, angle2):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Draw a filled sector portion between angle1 and angle2, of the interior of a circle centered at (x, y) with a radius r.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">angle1:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">angle2:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.filled_square">
+    
+  </a>
+  <a name="filled_square">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">filled_square</span>(x, y, r):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Draw on the background canvas a filled square whose sides are of length 2r, centered on (x, y).</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.filled_triangle">
+    
+  </a>
+  <a name="filled_triangle">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">filled_triangle</span>(x0, y0, x1, y1, x2, y2):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Draw a filled triangle on the canvas with corners at (x0, y0), (x1, y1), and (x2, y2).</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x0:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y0:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x1:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y1:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x2:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y2:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.get_canvas_height">
+    
+  </a>
+  <a name="get_canvas_height">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_canvas_height</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Return the height of the current canvas</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.get_canvas_width">
+    
+  </a>
+  <a name="get_canvas_width">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_canvas_width</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Return the width of the current canvas</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.get_pen_color">
+    
+  </a>
+  <a name="get_pen_color">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_pen_color</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Returns the value of _penColor as an object of class Color.</p>
+</div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.get_pixel_color">
+    
+  </a>
+  <a name="get_pixel_color">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">get_pixel_color</span>(x, y):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Return the color of the pixel at the given user coordinates</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>pygame.Color</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.has_next_key_typed">
+    
+  </a>
+  <a name="has_next_key_typed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">has_next_key_typed</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Return True if the queue of keys the user typed is not empty. Otherwise return False.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>bool</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.line">
+    
+  </a>
+  <a name="line">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">line</span>(x0, y0, x1, y1):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Draw on the background canvas a line from (x0, y0) to (x1, y1).</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x0:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y0:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x1:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y1:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.mouse_pressed">
+    
+  </a>
+  <a name="mouse_pressed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">mouse_pressed</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Return True if the mouse has been left-clicked since the last time mousePressed was called, and False otherwise.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>bool</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.mouse_x">
+    
+  </a>
+  <a name="mouse_x">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">mouse_x</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Return the x coordinate in user space of the location at which the mouse was most recently left-clicked. If a left-click hasn't happened yet, raise an exception, since mouseX() shouldn't be called until mousePressed() returns True.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.mouse_y">
+    
+  </a>
+  <a name="mouse_y">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">mouse_y</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Return the y coordinate in user space of the location at which the mouse was most recently left-clicked. If a left-click hasn't happened yet, raise an exception, since mouseY() shouldn't be called until mousePressed() returns True.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.next_key_typed">
+    
+  </a>
+  <a name="next_key_typed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">next_key_typed</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Remove the first key from the queue of keys that the the user typed, and return that key.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>str</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.picture">
+    
+  </a>
+  <a name="picture">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">picture</span>(pic_path, x=None, y=None):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Draw pic on the background canvas centered at (x, y).  pic is an object of class picture.Picture. x and y default to the midpoint of the background canvas.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">pic<wbr></wbr>_path:</span><code>str</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.point">
+    
+  </a>
+  <a name="point">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">point</span>(x, y):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Draw on the background canvas a point at (x, y).</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.polygon">
+    
+  </a>
+  <a name="polygon">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">polygon</span>(x, y):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Draw on the background canvas a polygon with coordinates (x[i], y[i]).</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>Sequence[<wbr></wbr>float]</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>Sequence[<wbr></wbr>float]</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.polyline">
+    
+  </a>
+  <a name="polyline">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">polyline</span>(x, y):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Draw on the background canvas a polyline with coordinates (x[i], y[i]).</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>Sequence[<wbr></wbr>float]</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>Sequence[<wbr></wbr>float]</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.quadrilateral">
+    
+  </a>
+  <a name="quadrilateral">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">quadrilateral</span>(x0, y0, x1, y1, x2, y2, x3, y3):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Draw a quadrilateral on the canvas with corners at (x0, y0), (x1, y1), (x2, y2), and (x3, y3).</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x0:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y0:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x1:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y1:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x2:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y2:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x3:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y3:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.rectangle">
+    
+  </a>
+  <a name="rectangle">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">rectangle</span>(x, y, half_width, half_height):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Draw on the background canvas a rectangle of width (2 * halfWidth and height (2 * halfHeight) centered at point (x, y).</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">half<wbr></wbr>_width:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">half<wbr></wbr>_height:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.save">
+    
+  </a>
+  <a name="save">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">save</span>(f):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Save the window canvas to file f.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">f:</span><code>str</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.sector">
+    
+  </a>
+  <a name="sector">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">sector</span>(x, y, r, angle1, angle2):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Draw a sector portion between angle1 and angle2, of the interior of a circle centered at (x, y) with a radius r.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">angle1:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">angle2:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.set_canvas_size">
+    
+  </a>
+  <a name="set_canvas_size">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_canvas_size</span>(w=<a href="#_DEFAULT_CANVAS_SIZE" class="internal-link" title="dudraw.dudraw._DEFAULT_CANVAS_SIZE">_DEFAULT_CANVAS_SIZE</a>, h=<a href="#_DEFAULT_CANVAS_SIZE" class="internal-link" title="dudraw.dudraw._DEFAULT_CANVAS_SIZE">_DEFAULT_CANVAS_SIZE</a>):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Set the size of the canvas to w pixels wide and h pixels high. Calling this function is optional. If you call it, you must do so before calling any drawing function.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">w:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">h:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.set_font_family">
+    
+  </a>
+  <a name="set_font_family">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_font_family</span>(f=<a href="#_DEFAULT_FONT_FAMILY" class="internal-link" title="dudraw.dudraw._DEFAULT_FONT_FAMILY">_DEFAULT_FONT_FAMILY</a>):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Set the font family to f (e.g. 'Helvetica' or 'Courier').</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">f:</span><code>str</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.set_font_size">
+    
+  </a>
+  <a name="set_font_size">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_font_size</span>(s=<a href="#_DEFAULT_FONT_SIZE" class="internal-link" title="dudraw.dudraw._DEFAULT_FONT_SIZE">_DEFAULT_FONT_SIZE</a>):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Set the font size to s (e.g. 12 or 16).</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">s:</span><code>int</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.set_pen_color">
+    
+  </a>
+  <a name="set_pen_color">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_pen_color</span>(c=<a href="dudraw.color.html#BLACK" class="internal-link" title="dudraw.color.BLACK">_DEFAULT_PEN_COLOR</a>):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Set the pen color to c, where c is an object of class Color. c defaults to dudraw.BLACK.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">c:</span><code><a href="dudraw.color.Color.html" class="internal-link" title="dudraw.color.Color">Color</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.set_pen_color_rgb">
+    
+  </a>
+  <a name="set_pen_color_rgb">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_pen_color_rgb</span>(r=255, g=255, b=255):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Set the pen color to c, where c is an object of class Color. c defaults to dudraw.BLACK.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r:</span><code>int</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">g:</span><code>int</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">b:</span><code>int</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.set_pen_width">
+    
+  </a>
+  <a name="set_pen_width">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_pen_width</span>(w=<a href="#_DEFAULT_PEN_WIDTH" class="internal-link" title="dudraw.dudraw._DEFAULT_PEN_WIDTH">_DEFAULT_PEN_WIDTH</a>):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Set the pen radius to r, thus affecting the subsequent drawing of points and lines. If r is 0.0, then points will be drawn with the minimum possible radius and lines with the minimum possible width.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">w:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.set_scale">
+    
+  </a>
+  <a name="set_scale">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_scale</span>(min, max):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">min:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">max:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.set_x_scale">
+    
+  </a>
+  <a name="set_x_scale">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_x_scale</span>(min=<a href="#_DEFAULT_XMIN" class="internal-link" title="dudraw.dudraw._DEFAULT_XMIN">_DEFAULT_XMIN</a>, max=<a href="#_DEFAULT_XMAX" class="internal-link" title="dudraw.dudraw._DEFAULT_XMAX">_DEFAULT_XMAX</a>):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Set the x-scale of the canvas such that the minimum x value is min and the maximum x value is max.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">min:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">max:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.set_y_scale">
+    
+  </a>
+  <a name="set_y_scale">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">set_y_scale</span>(min=<a href="#_DEFAULT_YMIN" class="internal-link" title="dudraw.dudraw._DEFAULT_YMIN">_DEFAULT_YMIN</a>, max=<a href="#_DEFAULT_YMAX" class="internal-link" title="dudraw.dudraw._DEFAULT_YMAX">_DEFAULT_YMAX</a>):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Set the y-scale of the canvas such that the minimum y value is min and the maximum y value is max.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">min:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">max:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.show">
+    
+  </a>
+  <a name="show">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">show</span>(msec=0.0):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Copy the background canvas to the window canvas, and then wait for msec milliseconds. msec defaults to infinity.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">msec:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.square">
+    
+  </a>
+  <a name="square">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">square</span>(x, y, r):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Draw on the background canvas a square whose sides are of length 2r, centered on (x, y).</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.text">
+    
+  </a>
+  <a name="text">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">text</span>(x, y, s):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Draw string s on the background canvas centered at (x, y).</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">s:</span><code>str</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.triangle">
+    
+  </a>
+  <a name="triangle">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">triangle</span>(x0, y0, x1, y1, x2, y2):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Draw a triangle on the canvas with corners at (x0, y0), (x1, y1), and (x2, y2).</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x0:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y0:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x1:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y1:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x2:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y2:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="dudraw.dudraw._ccw">
+    
+  </a>
+  <a name="_ccw">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_ccw</span>(a, b, c):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="dudraw.dudraw._check_for_events">
+    
+  </a>
+  <a name="_check_for_events">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_check_for_events</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Check if any new event has occured (such as a key typed or button pressed).  If a key has been typed, then put that key in a queue.</p>
+</div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="dudraw.dudraw._factor_x">
+    
+  </a>
+  <a name="_factor_x">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_factor_x</span>(w):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">w:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="dudraw.dudraw._factor_y">
+    
+  </a>
+  <a name="_factor_y">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_factor_y</span>(h):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">h:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="dudraw.dudraw._intersect">
+    
+  </a>
+  <a name="_intersect">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_intersect</span>(a, b, c, d):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="dudraw.dudraw._line_width_pixels">
+    
+  </a>
+  <a name="_line_width_pixels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_line_width_pixels</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="dudraw.dudraw._main">
+    
+  </a>
+  <a name="_main">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_main</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Dispatch to a function that does regression testing, or to a dialog-box-handling function.</p>
+</div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="dudraw.dudraw._make_sure_window_created">
+    
+  </a>
+  <a name="_make_sure_window_created">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_make_sure_window_created</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="dudraw.dudraw._pen_width_pixels">
+    
+  </a>
+  <a name="_pen_width_pixels">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_pen_width_pixels</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="dudraw.dudraw._pixel">
+    
+  </a>
+  <a name="_pixel">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_pixel</span>(x, y):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Draw on the background canvas a pixel at (x, y).</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="dudraw.dudraw._pygame_color">
+    
+  </a>
+  <a name="_pygame_color">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_pygame_color</span>(c):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Convert c, an object of type Color, to an equivalent object of type pygame.Color.  Return the result.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">c:</span><code><a href="dudraw.color.Color.html" class="internal-link" title="dudraw.color.Color">Color</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>pygame.Color</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="dudraw.dudraw._regression_test">
+    
+  </a>
+  <a name="_regression_test">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_regression_test</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Perform regression testing.</p>
+</div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="dudraw.dudraw._scale_point">
+    
+  </a>
+  <a name="_scale_point">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_scale_point</span>(p):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">p:</span><code>Sequence[<wbr></wbr>float]</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>Sequence[<wbr></wbr>float]</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="dudraw.dudraw._scale_x">
+    
+  </a>
+  <a name="_scale_x">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_scale_x</span>(x):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="dudraw.dudraw._scale_y">
+    
+  </a>
+  <a name="_scale_y">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_scale_y</span>(y):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="dudraw.dudraw._show">
+    
+  </a>
+  <a name="_show">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_show</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Copy the background canvas to the window canvas.</p>
+</div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="dudraw.dudraw._show_and_wait_forever">
+    
+  </a>
+  <a name="_show_and_wait_forever">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_show_and_wait_forever</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Copy the background canvas to the window canvas. Then wait forever, that is, until the user closes the dudraw window.</p>
+</div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="dudraw.dudraw._thick_line">
+    
+  </a>
+  <a name="_thick_line">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_thick_line</span>(x0, y0, x1, y1, r):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Draw on the background canvas a line from (x0, y0) to (x1, y1). Draw the line with a pen whose radius is r.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x0:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y0:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x1:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y1:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="dudraw.dudraw._user_x">
+    
+  </a>
+  <a name="_user_x">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_user_x</span>(x):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="basefunction private">
+  
+  
+  <a name="dudraw.dudraw._user_y">
+    
+  </a>
+  <a name="_user_y">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">_user_y</span>(y):
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="dudraw.dudraw._BORDER">
+    
+  </a>
+  <a name="_BORDER">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_BORDER</span>: <code>float</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>0.0</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="dudraw.dudraw._DEFAULT_CANVAS_SIZE">
+    
+  </a>
+  <a name="_DEFAULT_CANVAS_SIZE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_DEFAULT_CANVAS_SIZE</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>512</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="dudraw.dudraw._DEFAULT_FONT_FAMILY">
+    
+  </a>
+  <a name="_DEFAULT_FONT_FAMILY">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_DEFAULT_FONT_FAMILY</span>: <code>str</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code><span class="rst-variable-quote">'</span><span class="rst-variable-string">Helvetica</span><span class="rst-variable-quote">'</span></code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="dudraw.dudraw._DEFAULT_FONT_SIZE">
+    
+  </a>
+  <a name="_DEFAULT_FONT_SIZE">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_DEFAULT_FONT_SIZE</span>: <code>int</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>12</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="dudraw.dudraw._DEFAULT_PEN_WIDTH">
+    
+  </a>
+  <a name="_DEFAULT_PEN_WIDTH">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_DEFAULT_PEN_WIDTH</span>: <code>float</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>0.0</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="dudraw.dudraw._DEFAULT_XMAX">
+    
+  </a>
+  <a name="_DEFAULT_XMAX">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_DEFAULT_XMAX</span>: <code>float</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>1.0</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="dudraw.dudraw._DEFAULT_XMIN">
+    
+  </a>
+  <a name="_DEFAULT_XMIN">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_DEFAULT_XMIN</span>: <code>float</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>0.0</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="dudraw.dudraw._DEFAULT_YMAX">
+    
+  </a>
+  <a name="_DEFAULT_YMAX">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_DEFAULT_YMAX</span>: <code>float</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>1.0</code></pre></td></tr></table>
+  </div>
+</div><div class="baseconstant private">
+  
+  
+  <a name="dudraw.dudraw._DEFAULT_YMIN">
+    
+  </a>
+  <a name="_DEFAULT_YMIN">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_DEFAULT_YMIN</span>: <code>float</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    <table class="valueTable"><tr class="fieldStart"><td class="fieldName">Value</td></tr><tr><td><pre class="constant-value"><code>0.0</code></pre></td></tr></table>
+  </div>
+</div><div class="basevariable private">
+  
+  
+  <a name="dudraw.dudraw._canvas_height">
+    
+  </a>
+  <a name="_canvas_height">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_canvas_height</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable private">
+  
+  
+  <a name="dudraw.dudraw._canvas_width">
+    
+  </a>
+  <a name="_canvas_width">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_canvas_width</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable private">
+  
+  
+  <a name="dudraw.dudraw._keys_typed">
+    
+  </a>
+  <a name="_keys_typed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_keys_typed</span>: <code>list</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable private">
+  
+  
+  <a name="dudraw.dudraw._mouse_pos">
+    
+  </a>
+  <a name="_mouse_pos">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_mouse_pos</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable private">
+  
+  
+  <a name="dudraw.dudraw._mouse_pressed">
+    
+  </a>
+  <a name="_mouse_pressed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_mouse_pressed</span>: <code>bool</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable private">
+  
+  
+  <a name="dudraw.dudraw._pen_width">
+    
+  </a>
+  <a name="_pen_width">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_pen_width</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable private">
+  
+  
+  <a name="dudraw.dudraw._window_created">
+    
+  </a>
+  <a name="_window_created">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_window_created</span>: <code>bool</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable private">
+  
+  
+  <a name="dudraw.dudraw._xmax">
+    
+  </a>
+  <a name="_xmax">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_xmax</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable private">
+  
+  
+  <a name="dudraw.dudraw._xmin">
+    
+  </a>
+  <a name="_xmin">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_xmin</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable private">
+  
+  
+  <a name="dudraw.dudraw._ymax">
+    
+  </a>
+  <a name="_ymax">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_ymax</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable private">
+  
+  
+  <a name="dudraw.dudraw._ymin">
+    
+  </a>
+  <a name="_ymin">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_ymin</span> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div>
+        </div>
+      
+      </div>
+    </div>
+
+    <footer class="navbar navbar-default">
+
+  
+  <div class="container">
+    <a href="index.html">API Documentation</a> for dudraw,
+  generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
+    22.5.1 at 2022-07-13 15:26:34.
+  </div>
+
+  <!-- Search related scripts needs to be loaded at the end of HTML 
+    parsing not to introduce overhead and display HTML data asap -->
+  <script src="ajax.js" type="text/javascript"></script>
+  <script src="searchlib.js" type="text/javascript"></script>
+  <script src="search.js" type="text/javascript"></script>
+
+</footer>
+  
+    <script src="pydoctor.js" type="text/javascript"></script>
+
+  </body>
+</html>
