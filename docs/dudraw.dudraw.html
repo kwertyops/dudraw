@@ -1182,7 +1182,7 @@
     
     <td>Function</td>
     <td><code><a href="#clear_rgb" class="internal-link" title="dudraw.dudraw.clear_rgb">clear<wbr></wbr>_rgb</a></code></td>
-    <td>Clear the background canvas to color c, where c is an object of class Color. c defaults to dudraw.WHITE.</td>
+    <td>Clear the background canvas to color defined by r, g, and b. Defaults to white (255, 255, 255).</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -1252,12 +1252,12 @@
     
     <td>Function</td>
     <td><code><a href="#get_canvas_height" class="internal-link" title="dudraw.dudraw.get_canvas_height">get<wbr></wbr>_canvas<wbr></wbr>_height</a></code></td>
-    <td>Return the height of the current canvas</td>
+    <td>Return the height of the current canvas.</td>
   </tr><tr class="function">
     
     <td>Function</td>
     <td><code><a href="#get_canvas_width" class="internal-link" title="dudraw.dudraw.get_canvas_width">get<wbr></wbr>_canvas<wbr></wbr>_width</a></code></td>
-    <td>Return the width of the current canvas</td>
+    <td>Return the width of the current canvas.</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -1267,7 +1267,7 @@
     
     <td>Function</td>
     <td><code><a href="#get_pixel_color" class="internal-link" title="dudraw.dudraw.get_pixel_color">get<wbr></wbr>_pixel<wbr></wbr>_color</a></code></td>
-    <td>Return the color of the pixel at the given user coordinates</td>
+    <td>Return the color of the pixel at the given user coordinates.</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -1302,7 +1302,7 @@
     
     <td>Function</td>
     <td><code><a href="#picture" class="internal-link" title="dudraw.dudraw.picture">picture</a></code></td>
-    <td>Draw pic on the background canvas centered at (x, y).  pic is an object of class picture.Picture. x and y default to the midpoint of the background canvas.</td>
+    <td>Draw pic on the background canvas centered at (x, y). Filepath is specified as a string, and (x, y) defaults to the midpoint of the background canvas.</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -1332,7 +1332,7 @@
     
     <td>Function</td>
     <td><code><a href="#save" class="internal-link" title="dudraw.dudraw.save">save</a></code></td>
-    <td>Save the window canvas to file f.</td>
+    <td>Save the window canvas as a .jpg to filepath specified.</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -1362,7 +1362,7 @@
     
     <td>Function</td>
     <td><code><a href="#set_pen_color_rgb" class="internal-link" title="dudraw.dudraw.set_pen_color_rgb">set<wbr></wbr>_pen<wbr></wbr>_color<wbr></wbr>_rgb</a></code></td>
-    <td>Set the pen color to c, where c is an object of class Color. c defaults to dudraw.BLACK.</td>
+    <td>Set the pen color using red, green, and blue values. Defaults to black.</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -1372,7 +1372,7 @@
     
     <td>Function</td>
     <td><code><a href="#set_scale" class="internal-link" title="dudraw.dudraw.set_scale">set<wbr></wbr>_scale</a></code></td>
-    <td><span class="undocumented">Undocumented</span></td>
+    <td>Set the x-scale and y-scale of the canvas to the same range for both directions.</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -1387,7 +1387,7 @@
     
     <td>Function</td>
     <td><code><a href="#show" class="internal-link" title="dudraw.dudraw.show">show</a></code></td>
-    <td>Copy the background canvas to the window canvas, and then wait for msec milliseconds. msec defaults to infinity.</td>
+    <td>Copy the background canvas to the window canvas, and then wait for msec milliseconds. msec defaults to 0.0.</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -1708,7 +1708,7 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Clear the background canvas to color c, where c is an object of class Color. c defaults to dudraw.WHITE.</p>
+    <div><p>Clear the background canvas to color defined by r, g, and b. Defaults to white (255, 255, 255).</p>
 <table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">g:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">b:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
@@ -1988,7 +1988,7 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Return the height of the current canvas</p>
+    <div><p>Return the height of the current canvas.</p>
 <table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
@@ -2008,7 +2008,7 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Return the width of the current canvas</p>
+    <div><p>Return the width of the current canvas.</p>
 <table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
@@ -2048,8 +2048,8 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Return the color of the pixel at the given user coordinates</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>pygame.Color</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+    <div><p>Return the color of the pixel at the given user coordinates.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="dudraw.color.Color.html" class="internal-link" title="dudraw.color.Color">Color</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -2182,14 +2182,14 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">picture</span>(pic_path, x=None, y=None):
+    <span class="py-keyword">def</span> <span class="py-defname">picture</span>(filepath, x=None, y=None):
     
   </div>
   <div class="docstring functionBody">
     
     
-    <div><p>Draw pic on the background canvas centered at (x, y).  pic is an object of class picture.Picture. x and y default to the midpoint of the background canvas.</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">pic<wbr></wbr>_path:</span><code>str</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+    <div><p>Draw pic on the background canvas centered at (x, y). Filepath is specified as a string, and (x, y) defaults to the midpoint of the background canvas.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">filepath:</span><code>str</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -2302,14 +2302,14 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">save</span>(f):
+    <span class="py-keyword">def</span> <span class="py-defname">save</span>(filepath):
     
   </div>
   <div class="docstring functionBody">
     
     
-    <div><p>Save the window canvas to file f.</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">f:</span><code>str</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+    <div><p>Save the window canvas as a .jpg to filepath specified.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">filepath:</span><code>str</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -2428,7 +2428,7 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Set the pen color to c, where c is an object of class Color. c defaults to dudraw.BLACK.</p>
+    <div><p>Set the pen color using red, green, and blue values. Defaults to black.</p>
 <table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r:</span><code>int</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">g:</span><code>int</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">b:</span><code>int</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
@@ -2468,7 +2468,8 @@
   <div class="docstring functionBody">
     
     
-    <div><p class="undocumented">Undocumented</p><table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">min:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">max:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+    <div><p>Set the x-scale and y-scale of the canvas to the same range for both directions.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">min:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">max:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -2527,7 +2528,7 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Copy the background canvas to the window canvas, and then wait for msec milliseconds. msec defaults to infinity.</p>
+    <div><p>Copy the background canvas to the window canvas, and then wait for msec milliseconds. msec defaults to 0.0.</p>
 <table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">msec:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction">
@@ -3390,7 +3391,7 @@
   <div class="container">
     <a href="index.html">API Documentation</a> for dudraw,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    22.5.1 at 2022-07-13 15:26:34.
+    22.5.1 at 2022-07-14 08:12:33.
   </div>
 
   <!-- Search related scripts needs to be loaded at the end of HTML 

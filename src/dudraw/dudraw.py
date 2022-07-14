@@ -175,24 +175,25 @@ def set_canvas_size(w: float = _DEFAULT_CANVAS_SIZE, h: float = _DEFAULT_CANVAS_
 
 def get_canvas_width() -> float:
     """
-    Return the width of the current canvas
+    Return the width of the current canvas.
     """
     return abs(_xmax - _xmin)
 
 
 def get_canvas_height() -> float:
     """
-    Return the height of the current canvas
+    Return the height of the current canvas.
     """
     return abs(_ymax - _ymin)
 
 
-def get_pixel_color(x: float, y: float) -> pygame.Color:
+def get_pixel_color(x: float, y: float) -> Color:
     """
-    Return the color of the pixel at the given user coordinates
+    Return the color of the pixel at the given user coordinates.
     """
     _make_sure_window_created()
-    return _surface.get_at((int(_scale_x(x)), int(_scale_y(y))))
+    c = _surface.get_at((int(_scale_x(x)), int(_scale_y(y))))
+    return Color(c[0], c[1], c[2])
 
 
 def set_x_scale(min: float = _DEFAULT_XMIN, max: float = _DEFAULT_XMAX):
@@ -227,12 +228,11 @@ def set_y_scale(min: float = _DEFAULT_YMIN, max: float = _DEFAULT_YMAX):
     _ymax = max + _BORDER * size
 
 
-def set_scale():
-    set_x_scale()
-    set_y_scale()
-
-
 def set_scale(min: float, max: float):
+    """
+    Set the x-scale and y-scale of the canvas to the same range for
+    both directions.
+    """
     set_x_scale(min, max)
     set_y_scale(min, max)
 
@@ -263,8 +263,8 @@ def set_pen_color(c: Color = _DEFAULT_PEN_COLOR):
 
 def set_pen_color_rgb(r: int = 255, g: int = 255, b: int = 255):
     """
-    Set the pen color to c, where c is an object of class Color.
-    c defaults to dudraw.BLACK.
+    Set the pen color using red, green, and blue values.
+    Defaults to black.
     """
     c = Color(r, g, b)
     global _pen_color
@@ -959,10 +959,10 @@ def text(x: float, y: float, s: str):
     _surface.blit(text, textpos)
 
 
-def picture(pic_path: str, x: float = None, y: float = None):
+def picture(filepath: str, x: float = None, y: float = None):
     """
-    Draw pic on the background canvas centered at (x, y).  pic is an
-    object of class picture.Picture. x and y default to the midpoint
+    Draw pic on the background canvas centered at (x, y). Filepath
+    is specified as a string, and (x, y) defaults to the midpoint
     of the background canvas.
     """
     global _surface
@@ -976,7 +976,7 @@ def picture(pic_path: str, x: float = None, y: float = None):
     y = float(y)
     xs = _scale_x(x)
     ys = _scale_y(y)
-    pic = pygame.image.load(pic_path)
+    pic = pygame.image.load(filepath)
     ws = pic.get_width()
     hs = pic.get_height()
     _surface.blit(pic, [xs - ws / 2.0, ys - hs / 2.0, ws, hs])
@@ -993,22 +993,22 @@ def clear(c: Color = WHITE):
 
 def clear_rgb(r: float = 255, g: float = 255, b: float = 255):
     """
-    Clear the background canvas to color c, where c is an
-    object of class Color. c defaults to dudraw.WHITE.
+    Clear the background canvas to color defined by
+    r, g, and b. Defaults to white (255, 255, 255).
     """
     c = Color(r, g, b)
     _make_sure_window_created()
     _surface.fill(_pygame_color(c))
 
 
-def save(f: str):
+def save(filepath: str):
     """
-    Save the window canvas to file f.
+    Save the window canvas as a .jpg to filepath specified. 
     """
     _make_sure_window_created()
-    if not f.lower().endswith(".jpg"):
-        f += ".jpg"
-    pygame.image.save(_surface, f)
+    if not filepath.lower().endswith(".jpg"):
+        filepath += ".jpg"
+    pygame.image.save(_surface, filepath)
 
 
 # -----------------------------------------------------------------------
@@ -1039,7 +1039,7 @@ def _show_and_wait_forever():
 def show(msec: float = 0.0):
     """
     Copy the background canvas to the window canvas, and
-    then wait for msec milliseconds. msec defaults to infinity.
+    then wait for msec milliseconds. msec defaults to 0.0.
     """
     if msec == float("inf"):
         _show_and_wait_forever()
