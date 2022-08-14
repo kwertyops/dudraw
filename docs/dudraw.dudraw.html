@@ -1172,7 +1172,7 @@
     
     <td>Function</td>
     <td><code><a href="#circle" class="internal-link" title="dudraw.dudraw.circle">circle</a></code></td>
-    <td>Draw on the canvas a circle of radius r centered on (x, y).</td>
+    <td>Draw on the background canvas a circle of radius r centered on (x, y).</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -1187,7 +1187,7 @@
     
     <td>Function</td>
     <td><code><a href="#ellipse" class="internal-link" title="dudraw.dudraw.ellipse">ellipse</a></code></td>
-    <td>Draw on the canvas an ellipse centered at (x, y) with a width of 2.0 * half_width, and a height of 2.0 * half_height.</td>
+    <td>Draw on the background canvas an ellipse centered at (x, y) with a width of 2.0 * half_width, and a height of 2.0 * half_height.</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -1207,12 +1207,12 @@
     
     <td>Function</td>
     <td><code><a href="#filled_circle" class="internal-link" title="dudraw.dudraw.filled_circle">filled<wbr></wbr>_circle</a></code></td>
-    <td>Draw on the canvas a filled circle of radius r centered on (x, y).</td>
+    <td>Draw on the background canvas a filled circle of radius r centered on (x, y).</td>
   </tr><tr class="function">
     
     <td>Function</td>
     <td><code><a href="#filled_ellipse" class="internal-link" title="dudraw.dudraw.filled_ellipse">filled<wbr></wbr>_ellipse</a></code></td>
-    <td>Draw on the canvas a filled ellipse centered at (x, y) with a width of 2.0 * half_width, and a height of 2.0 * half_height.</td>
+    <td>Draw on the background canvas a filled ellipse centered at (x, y) with a width of 2.0 * half_width, and a height of 2.0 * half_height.</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -1227,12 +1227,12 @@
     
     <td>Function</td>
     <td><code><a href="#filled_quadrilateral" class="internal-link" title="dudraw.dudraw.filled_quadrilateral">filled<wbr></wbr>_quadrilateral</a></code></td>
-    <td>Draw a filled quadrilateral on the canvas with corners at (x0, y0), (x1, y1), (x2, y2), and (x3, y3).</td>
+    <td>Draw a filled quadrilateral on the background canvas with corners at (x0, y0), (x1, y1), (x2, y2), and (x3, y3).</td>
   </tr><tr class="function">
     
     <td>Function</td>
     <td><code><a href="#filled_rectangle" class="internal-link" title="dudraw.dudraw.filled_rectangle">filled<wbr></wbr>_rectangle</a></code></td>
-    <td>Draw on the canvas a rectangle of width (2 * halfWidth and height (2 * halfHeight) centered at point (x, y).</td>
+    <td>Draw on the background canvas a rectangle of width (2 * halfWidth and height (2 * halfHeight) centered at point (x, y).</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -1242,12 +1242,12 @@
     
     <td>Function</td>
     <td><code><a href="#filled_square" class="internal-link" title="dudraw.dudraw.filled_square">filled<wbr></wbr>_square</a></code></td>
-    <td>Draw on the canvas a filled square whose sides are of length 2r, centered on (x, y).</td>
+    <td>Draw on the background canvas a filled square whose sides are of length 2r, centered on (x, y).</td>
   </tr><tr class="function">
     
     <td>Function</td>
     <td><code><a href="#filled_triangle" class="internal-link" title="dudraw.dudraw.filled_triangle">filled<wbr></wbr>_triangle</a></code></td>
-    <td>Draw a filled triangle on the canvas with corners at (x0, y0), (x1, y1), and (x2, y2).</td>
+    <td>Draw a filled triangle on the background canvas with corners at (x0, y0), (x1, y1), and (x2, y2).</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -1277,7 +1277,7 @@
     
     <td>Function</td>
     <td><code><a href="#line" class="internal-link" title="dudraw.dudraw.line">line</a></code></td>
-    <td>Draw on the canvas a line from (x0, y0) to (x1, y1).</td>
+    <td>Draw on the background canvas a line from (x0, y0) to (x1, y1).</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -1287,12 +1287,12 @@
     
     <td>Function</td>
     <td><code><a href="#mouse_x" class="internal-link" title="dudraw.dudraw.mouse_x">mouse<wbr></wbr>_x</a></code></td>
-    <td>Return the x coordinate in user space of the location at which the mouse was most recently left-clicked. If a left-click hasn't happened yet, raise an exception, since mouseX() shouldn't be called until mousePressed() returns True.</td>
+    <td>Return the x coordinate in user space of the location at which the mouse was most recently left-clicked.</td>
   </tr><tr class="function">
     
     <td>Function</td>
     <td><code><a href="#mouse_y" class="internal-link" title="dudraw.dudraw.mouse_y">mouse<wbr></wbr>_y</a></code></td>
-    <td>Return the y coordinate in user space of the location at which the mouse was most recently left-clicked. If a left-click hasn't happened yet, raise an exception, since mouseY() shouldn't be called until mousePressed() returns True.</td>
+    <td>Return the y coordinate in user space of the location at which the mouse was most recently left-clicked.</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -1302,7 +1302,7 @@
     
     <td>Function</td>
     <td><code><a href="#picture" class="internal-link" title="dudraw.dudraw.picture">picture</a></code></td>
-    <td>Draw pic on the background canvas centered at (x, y). Filepath is specified as a string, and (x, y) defaults to the midpoint of the background canvas.</td>
+    <td>Draw pic on the background canvas centered at (x, y).</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -1317,17 +1317,17 @@
     
     <td>Function</td>
     <td><code><a href="#polyline" class="internal-link" title="dudraw.dudraw.polyline">polyline</a></code></td>
-    <td>Draw on the canvas a polyline with coordinates (x[i], y[i]).</td>
+    <td>Draw on the background canvas a polyline with coordinates (x[i], y[i]).</td>
   </tr><tr class="function">
     
     <td>Function</td>
     <td><code><a href="#quadrilateral" class="internal-link" title="dudraw.dudraw.quadrilateral">quadrilateral</a></code></td>
-    <td>Draw a quadrilateral on the canvas with corners at (x0, y0), (x1, y1), (x2, y2), and (x3, y3).</td>
+    <td>Draw a quadrilateral on the background canvas with corners at (x0, y0), (x1, y1), (x2, y2), and (x3, y3).</td>
   </tr><tr class="function">
     
     <td>Function</td>
     <td><code><a href="#rectangle" class="internal-link" title="dudraw.dudraw.rectangle">rectangle</a></code></td>
-    <td>Draw on the canvas a rectangle of width (2 * halfWidth and height (2 * halfHeight) centered at point (x, y).</td>
+    <td>Draw on the background canvas a rectangle of width (2 * halfWidth and height (2 * halfHeight) centered at point (x, y).</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -1392,17 +1392,17 @@
     
     <td>Function</td>
     <td><code><a href="#square" class="internal-link" title="dudraw.dudraw.square">square</a></code></td>
-    <td>Draw on the canvas a square whose sides are of length 2r, centered on (x, y).</td>
+    <td>Draw on the background canvas a square whose sides are of length 2r, centered on (x, y).</td>
   </tr><tr class="function">
     
     <td>Function</td>
     <td><code><a href="#text" class="internal-link" title="dudraw.dudraw.text">text</a></code></td>
-    <td>Draw string s on the background canvas centered at (x, y).</td>
+    <td>Draw a line of string on the background canvas centered at (x, y).</td>
   </tr><tr class="function">
     
     <td>Function</td>
     <td><code><a href="#triangle" class="internal-link" title="dudraw.dudraw.triangle">triangle</a></code></td>
-    <td>Draw a triangle on the canvas with corners at (x0, y0), (x1, y1), and (x2, y2).</td>
+    <td>Draw a triangle on the background canvas with corners at (x0, y0), (x1, y1), and (x2, y2).</td>
   </tr><tr class="function private">
     
     <td>Function</td>
@@ -1492,7 +1492,7 @@
     
     <td>Function</td>
     <td><code><a href="#_thick_line" class="internal-link" title="dudraw.dudraw._thick_line">_thick<wbr></wbr>_line</a></code></td>
-    <td>Draw on the canvas a line from (x0, y0) to (x1, y1). Draw the line with a pen whose radius is r.</td>
+    <td>Draw on the background canvas a line from (x0, y0) to (x1, y1). Draw the line with a pen whose radius is r.</td>
   </tr><tr class="function private">
     
     <td>Function</td>
@@ -1629,7 +1629,8 @@
     
     
     <div><p>Draw an annulus centered at (x, y) with outer radius r1, and inner radius r2.</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc">_description_</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc">_description_</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r1:</span><code>float</code></td><td class="fieldArgDesc">_description_</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r2:</span><code>float</code></td><td class="fieldArgDesc">_description_</td></tr></table></div>
+<p>An annulus is a ring shape region between two circles centered at the same point but the outer circle r1 has larger radius than the inner circle r2</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the center of the two circles</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the center of the two circles</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r1:</span><code>float</code></td><td class="fieldArgDesc">radius of of the outer circle (larger radius)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r2:</span><code>float</code></td><td class="fieldArgDesc">radius of of the inner circle (smaller radius)</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -1669,7 +1670,7 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Draw on the canvas a circle of radius r centered on (x, y).</p>
+    <div><p>Draw on the background canvas a circle of radius r centered on (x, y).</p>
 <table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the center of the circle</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc">y-coordinate of the center of the circle</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r:</span><code>float</code></td><td class="fieldArgDesc">radius of the circle</td></tr></table></div>
   </div>
 </div><div class="basefunction">
@@ -1690,7 +1691,7 @@
     
     
     <div><p>Clear the background canvas to color c, where c is an object of class Color. c defaults to dudraw.WHITE.</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">c:</span><code><a href="dudraw.color.Color.html" class="internal-link" title="dudraw.color.Color">Color</a></code></td><td class="fieldArgDesc">_description_, defaults to WHITE</td></tr></table></div>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">c:</span><code><a href="dudraw.color.Color.html" class="internal-link" title="dudraw.color.Color">Color</a></code></td><td class="fieldArgDesc">the color to be used to clear the background, defaults to white</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -1710,7 +1711,7 @@
     
     
     <div><p>Clear the background canvas to color defined by r, g, and b. Defaults to white (255, 255, 255).</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r:</span><code>float</code></td><td class="fieldArgDesc">_description_, defaults to 255</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">g:</span><code>float</code></td><td class="fieldArgDesc">_description_, defaults to 255</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">b:</span><code>float</code></td><td class="fieldArgDesc">_description_, defaults to 255</td></tr></table></div>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r:</span><code>float</code></td><td class="fieldArgDesc">red color value. 0 for minimum red and 255 for maximum red, defaults to 255</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">g:</span><code>float</code></td><td class="fieldArgDesc">green color value. 0 for minimum red and 255 for maximum green, defaults to 255</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">b:</span><code>float</code></td><td class="fieldArgDesc">blue color value. 0 for minimum red and 255 for maximum blue, defaults to 255</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -1729,7 +1730,7 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Draw on the canvas an ellipse centered at (x, y) with a width of 2.0 * half_width, and a height of 2.0 * half_height.</p>
+    <div><p>Draw on the background canvas an ellipse centered at (x, y) with a width of 2.0 * half_width, and a height of 2.0 * half_height.</p>
 <table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the center of the ellipse</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc">y-coordinate of the center of the ellipse</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">half<wbr></wbr>_width:</span><code>float</code></td><td class="fieldArgDesc">half the width of the ellipse. Width is the maximum horizontal distance between two points on the surface of the ellipse</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">half<wbr></wbr>_height:</span><code>float</code></td><td class="fieldArgDesc">half the height of the ellipse. Height is the maximum vertical distance between two points on the surface of the ellipse</td></tr></table></div>
   </div>
 </div><div class="basefunction">
@@ -1771,7 +1772,8 @@
     
     
     <div><p>Draw a sector portion between angle1 and angle2, of the interior of an ellipse centered at (x, y) with a width of half_width, and a height of 2.0 * half_height.</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc">_description_</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc">_description_</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">half<wbr></wbr>_width:</span><code>float</code></td><td class="fieldArgDesc">_description_</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">half<wbr></wbr>_height:</span><code>float</code></td><td class="fieldArgDesc">_description_</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">angle1:</span><code>float</code></td><td class="fieldArgDesc">_description_</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">angle2:</span><code>float</code></td><td class="fieldArgDesc">_description_</td></tr></table></div>
+<p>This is like a slice of an elliptical shaped pizza. Note that the line of the arc of the sector starts at angle1 and goes to angle2 in counter clock-wise direction.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the center of the ellipse</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc">y-coordinate of the center of the ellipse</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">half<wbr></wbr>_width:</span><code>float</code></td><td class="fieldArgDesc">half the width of the ellipse. Width is the maximum horizontal distance between two points on the surface of the ellipse</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">half<wbr></wbr>_height:</span><code>float</code></td><td class="fieldArgDesc">half the height of the ellipse. Height is the maximum vertical distance between two points on the surface of the ellipse</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">angle1:</span><code>float</code></td><td class="fieldArgDesc">the starting angle of the arc</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">angle2:</span><code>float</code></td><td class="fieldArgDesc">the ending angle of the arc</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -1791,7 +1793,8 @@
     
     
     <div><p>Draw a filled annulus centered at (x, y) with outer radius r1, and inner radius r2.</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc">_description_</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc">_description_</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r1:</span><code>float</code></td><td class="fieldArgDesc">_description_</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r2:</span><code>float</code></td><td class="fieldArgDesc">_description_</td></tr></table></div>
+<p>An annulus is a ring shape region between two circles centered at the same point but the outer circle r1 has larger radius than the inner circle r2</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the center of the two circles</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the center of the two circles</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r1:</span><code>float</code></td><td class="fieldArgDesc">radius of of the outer circle (larger radius)</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r2:</span><code>float</code></td><td class="fieldArgDesc">radius of of the inner circle (smaller radius)</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -1810,7 +1813,7 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Draw on the canvas a filled circle of radius r centered on (x, y).</p>
+    <div><p>Draw on the background canvas a filled circle of radius r centered on (x, y).</p>
 <table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the center of the circle</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc">y-coordinate of the center of the circle</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r:</span><code>float</code></td><td class="fieldArgDesc">radius of the circle</td></tr></table></div>
   </div>
 </div><div class="basefunction">
@@ -1830,7 +1833,7 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Draw on the canvas a filled ellipse centered at (x, y) with a width of 2.0 * half_width, and a height of 2.0 * half_height.</p>
+    <div><p>Draw on the background canvas a filled ellipse centered at (x, y) with a width of 2.0 * half_width, and a height of 2.0 * half_height.</p>
 <table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the center of the ellipse</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc">y-coordinate of the center of the ellipse</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">half<wbr></wbr>_width:</span><code>float</code></td><td class="fieldArgDesc">half the width of the ellipse. Width is the maximum horizontal distance between two points on the surface of the ellipse</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">half<wbr></wbr>_height:</span><code>float</code></td><td class="fieldArgDesc">half the height of the ellipse. Height is the maximum vertical distance between two points on the surface of the ellipse</td></tr></table></div>
   </div>
 </div><div class="basefunction">
@@ -1851,7 +1854,8 @@
     
     
     <div><p>Draw a filled sector portion between angle1 and angle2, of the interior of an ellipse centered at (x, y) with a width of half_width, and a height of 2.0 * half_height.</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc">_description_</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc">_description_</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">half<wbr></wbr>_width:</span><code>float</code></td><td class="fieldArgDesc">_description_</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">half<wbr></wbr>_height:</span><code>float</code></td><td class="fieldArgDesc">_description_</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">angle1:</span><code>float</code></td><td class="fieldArgDesc">_description_</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">angle2:</span><code>float</code></td><td class="fieldArgDesc">_description_</td></tr></table></div>
+<p>This is like a slice of an elliptical shaped pizza. Note that the line of the arc of the sector starts at angle1 and goes to angle2 in counter clock-wise direction.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the center of the ellipse</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc">y-coordinate of the center of the ellipse</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">half<wbr></wbr>_width:</span><code>float</code></td><td class="fieldArgDesc">half the width of the ellipse. Width is the maximum horizontal distance between two points on the surface of the ellipse</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">half<wbr></wbr>_height:</span><code>float</code></td><td class="fieldArgDesc">half the height of the ellipse. Height is the maximum vertical distance between two points on the surface of the ellipse</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">angle1:</span><code>float</code></td><td class="fieldArgDesc">the starting angle of the arc</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">angle2:</span><code>float</code></td><td class="fieldArgDesc">the ending angle of the arc</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -1891,7 +1895,7 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Draw a filled quadrilateral on the canvas with corners at (x0, y0), (x1, y1), (x2, y2), and (x3, y3).</p>
+    <div><p>Draw a filled quadrilateral on the background canvas with corners at (x0, y0), (x1, y1), (x2, y2), and (x3, y3).</p>
 <table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x0:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the first point of the quadrilateral</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y0:</span><code>float</code></td><td class="fieldArgDesc">y-coordinate of the first point of the quadrilateral</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x1:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the second point of the quadrilateral</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y1:</span><code>float</code></td><td class="fieldArgDesc">y-coordinate of the second point of the quadrilateral</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x2:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the third point of the quadrilateral</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y2:</span><code>float</code></td><td class="fieldArgDesc">y-coordinate of the third point of the quadrilateral</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x3:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the fourth point of the quadrilateral</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y3:</span><code>float</code></td><td class="fieldArgDesc">y-coordinate of the fourth point of the quadrilateral</td></tr></table></div>
   </div>
 </div><div class="basefunction">
@@ -1911,7 +1915,7 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Draw on the canvas a rectangle of width (2 * halfWidth and height (2 * halfHeight) centered at point (x, y).</p>
+    <div><p>Draw on the background canvas a rectangle of width (2 * halfWidth and height (2 * halfHeight) centered at point (x, y).</p>
 <table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the center of the rectangle</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc">y-coordinate of the center of the rectangle</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">half<wbr></wbr>_width:</span><code>float</code></td><td class="fieldArgDesc">half the width of the rectangle</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">half<wbr></wbr>_height:</span><code>float</code></td><td class="fieldArgDesc">half the height of the rectangle</td></tr></table></div>
   </div>
 </div><div class="basefunction">
@@ -1932,7 +1936,8 @@
     
     
     <div><p>Draw a filled sector portion between angle1 and angle2, of the interior of a circle centered at (x, y) with a radius r.</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc">_description_</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc">_description_</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r:</span><code>float</code></td><td class="fieldArgDesc">_description_</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">angle1:</span><code>float</code></td><td class="fieldArgDesc">_description_</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">angle2:</span><code>float</code></td><td class="fieldArgDesc">_description_</td></tr></table></div>
+<p>This is like a slice of circle shaped pizza. Note that the line of the arc of the sector starts at angle1 and goes to angle2 in counter clock-wise direction.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the center of the circle</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc">y-coordinate of the center of the circle</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r:</span><code>float</code></td><td class="fieldArgDesc">the radius of the circle</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">angle1:</span><code>float</code></td><td class="fieldArgDesc">the starting angle of the arc</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">angle2:</span><code>float</code></td><td class="fieldArgDesc">the ending angle of the arc</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -1951,7 +1956,7 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Draw on the canvas a filled square whose sides are of length 2r, centered on (x, y).</p>
+    <div><p>Draw on the background canvas a filled square whose sides are of length 2r, centered on (x, y).</p>
 <table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the center of the square</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc">y-coordinate of the center of the square</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r:</span><code>float</code></td><td class="fieldArgDesc">half the width of the square</td></tr></table></div>
   </div>
 </div><div class="basefunction">
@@ -1971,7 +1976,7 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Draw a filled triangle on the canvas with corners at (x0, y0), (x1, y1), and (x2, y2).</p>
+    <div><p>Draw a filled triangle on the background canvas with corners at (x0, y0), (x1, y1), and (x2, y2).</p>
 <table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x0:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the first point of the triangle</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y0:</span><code>float</code></td><td class="fieldArgDesc">y-coordinate of the first point of the triangle</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x1:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the second point of the triangle</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y1:</span><code>float</code></td><td class="fieldArgDesc">y-coordinate of the second point of the triangle</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x2:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the third point of the triangle</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y2:</span><code>float</code></td><td class="fieldArgDesc">y-coordinate of the third point of the triangle</td></tr></table></div>
   </div>
 </div><div class="basefunction">
@@ -2072,7 +2077,7 @@
     
     
     <div><p>Return True if the queue of keys the user typed is not empty. Otherwise return False.</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>bool</code></td><td class="fieldArgDesc">_description_</td></tr></table></div>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>bool</code></td><td class="fieldArgDesc">true if a keyboard key is in the queue; false otherwise</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -2091,7 +2096,7 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Draw on the canvas a line from (x0, y0) to (x1, y1).</p>
+    <div><p>Draw on the background canvas a line from (x0, y0) to (x1, y1).</p>
 <p>The placement of the line on the canvas will depend on the values of (x1, y1), (x2, y2) as well as the x-scale and y-scale. Note that if the coordinates are outside the range of min and max x-scale or y-scale then the point won't appear on the canvas</p>
 <table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x0:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the first point of the line segment</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y0:</span><code>float</code></td><td class="fieldArgDesc">y-coordinate of the first point of the line segment</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x1:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the second point of the line segment</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y1:</span><code>float</code></td><td class="fieldArgDesc">y-coordinate of the second point of the line segment</td></tr></table></div>
   </div>
@@ -2113,7 +2118,7 @@
     
     
     <div><p>Return True if the mouse has been left-clicked since the last time mousePressed was called, and False otherwise.</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>bool</code></td><td class="fieldArgDesc">_description_</td></tr></table></div>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>bool</code></td><td class="fieldArgDesc">true if the left mouse button has been pressed; false otherwise</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -2132,8 +2137,9 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Return the x coordinate in user space of the location at which the mouse was most recently left-clicked. If a left-click hasn't happened yet, raise an exception, since mouseX() shouldn't be called until mousePressed() returns True.</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>float</code></td><td class="fieldArgDesc">_description_</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code>Exception</code></td><td>_description_</td></tr></table></div>
+    <div><p>Return the x coordinate in user space of the location at which the mouse was most recently left-clicked.</p>
+<p>If a left-click hasn't happened yet, raise an exception, since mouseX() shouldn't be called until mousePressed() returns True.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>float</code></td><td class="fieldArgDesc">the x-coordinate of the location of the mouse</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code>Exception</code></td><td>error if mouse has not been clicked yet</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -2152,8 +2158,9 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Return the y coordinate in user space of the location at which the mouse was most recently left-clicked. If a left-click hasn't happened yet, raise an exception, since mouseY() shouldn't be called until mousePressed() returns True.</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>float</code></td><td class="fieldArgDesc">_description_</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code>Exception</code></td><td>_description_</td></tr></table></div>
+    <div><p>Return the y coordinate in user space of the location at which the mouse was most recently left-clicked.</p>
+<p>If a left-click hasn't happened yet, raise an exception, since mouseY() shouldn't be called until mousePressed() returns True.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>float</code></td><td class="fieldArgDesc">the y-coordinate of the location of the mouse</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code>Exception</code></td><td>error if mouse has not been clicked yet</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -2173,7 +2180,7 @@
     
     
     <div><p>Remove the first key from the queue of keys that the the user typed, and return that key.</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>str</code></td><td class="fieldArgDesc">_description_</td></tr></table></div>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>str</code></td><td class="fieldArgDesc">a string representing the next key in the queue</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -2192,8 +2199,9 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Draw pic on the background canvas centered at (x, y). Filepath is specified as a string, and (x, y) defaults to the midpoint of the background canvas.</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">filepath:</span><code>str</code></td><td class="fieldArgDesc">_description_</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc">_description_, defaults to None</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc">_description_, defaults to None</td></tr></table></div>
+    <div><p>Draw pic on the background canvas centered at (x, y).</p>
+<p>The file can be of type .jpg, .png, .gif or .bmp.  Filepath is specified as a string, and (x, y) defaults to the midpoint of the background canvas.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">filepath:</span><code>str</code></td><td class="fieldArgDesc">a string representing the path of the image file</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the center of the image, defaults to x-coordinate of the center of the canvas</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc">y-coordinate of the center of the image, defaults to y-coordinate of the center of the canvas</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -2254,7 +2262,7 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Draw on the canvas a polyline with coordinates (x[i], y[i]).</p>
+    <div><p>Draw on the background canvas a polyline with coordinates (x[i], y[i]).</p>
 <p>The lists x and y must contain the same number of values. The two lists correspond to x-coordinates and y-coordinates of points (x[0], y[0]), (x[1], y[1]), (x[2], y[2]),..., (x[-1], y[-1]) on the polyline. Each point on the polyline connects to the point that follows it so (x_0, x_0) connects to (x[1], y[1]) with a straight line, then (x[1], y[1]) connects to (x[2], y[2]) and so on.</p>
 <table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>Sequence[<wbr></wbr>float]</code></td><td class="fieldArgDesc">a list of x-coordinates of the points on the polyline</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>Sequence[<wbr></wbr>float]</code></td><td class="fieldArgDesc">a list of y-coordinates of the points on the polyline</td></tr></table></div>
   </div>
@@ -2275,7 +2283,7 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Draw a quadrilateral on the canvas with corners at (x0, y0), (x1, y1), (x2, y2), and (x3, y3).</p>
+    <div><p>Draw a quadrilateral on the background canvas with corners at (x0, y0), (x1, y1), (x2, y2), and (x3, y3).</p>
 <table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x0:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the first point of the quadrilateral</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y0:</span><code>float</code></td><td class="fieldArgDesc">y-coordinate of the first point of the quadrilateral</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x1:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the second point of the quadrilateral</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y1:</span><code>float</code></td><td class="fieldArgDesc">y-coordinate of the second point of the quadrilateral</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x2:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the third point of the quadrilateral</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y2:</span><code>float</code></td><td class="fieldArgDesc">y-coordinate of the third point of the quadrilateral</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x3:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the fourth point of the quadrilateral</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y3:</span><code>float</code></td><td class="fieldArgDesc">y-coordinate of the fourth point of the quadrilateral</td></tr></table></div>
   </div>
 </div><div class="basefunction">
@@ -2295,7 +2303,7 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Draw on the canvas a rectangle of width (2 * halfWidth and height (2 * halfHeight) centered at point (x, y).</p>
+    <div><p>Draw on the background canvas a rectangle of width (2 * halfWidth and height (2 * halfHeight) centered at point (x, y).</p>
 <table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the center of the rectangle</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc">y-coordinate of the center of the rectangle</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">half<wbr></wbr>_width:</span><code>float</code></td><td class="fieldArgDesc">half the width of the rectangle</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">half<wbr></wbr>_height:</span><code>float</code></td><td class="fieldArgDesc">half the height of the rectangle</td></tr></table></div>
   </div>
 </div><div class="basefunction">
@@ -2316,7 +2324,7 @@
     
     
     <div><p>Save the window canvas as a .jpg to filepath specified.</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">filepath:</span><code>str</code></td><td class="fieldArgDesc">_description_</td></tr></table></div>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">filepath:</span><code>str</code></td><td class="fieldArgDesc">the path of a folder to which the image will be saved</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -2336,7 +2344,8 @@
     
     
     <div><p>Draw a sector portion between angle1 and angle2, of the interior of a circle centered at (x, y) with a radius r.</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc">_description_</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc">_description_</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r:</span><code>float</code></td><td class="fieldArgDesc">_description_</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">angle1:</span><code>float</code></td><td class="fieldArgDesc">_description_</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">angle2:</span><code>float</code></td><td class="fieldArgDesc">_description_</td></tr></table></div>
+<p>This is like a slice of circle shaped pizza. Note that the line of the arc of the sector starts at angle1 and goes to angle2 in counter clock-wise direction.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the center of the circle</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc">y-coordinate of the center of the circle</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r:</span><code>float</code></td><td class="fieldArgDesc">the radius of the circle</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">angle1:</span><code>float</code></td><td class="fieldArgDesc">the starting angle of the arc</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">angle2:</span><code>float</code></td><td class="fieldArgDesc">the ending angle of the arc</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -2543,7 +2552,8 @@
     
     
     <div><p>Copy the background canvas to the window canvas, and then wait for msec milliseconds. msec defaults to 0.0.</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">msec:</span><code>float</code></td><td class="fieldArgDesc">_description_, defaults to 0.0</td></tr></table></div>
+<p>Note that everything we draw is on the background canvas so won't show on the screen until we call show</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">msec:</span><code>float</code></td><td class="fieldArgDesc">amount of milliseconds to wait after show, defaults to 0.0</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -2562,7 +2572,7 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Draw on the canvas a square whose sides are of length 2r, centered on (x, y).</p>
+    <div><p>Draw on the background canvas a square whose sides are of length 2r, centered on (x, y).</p>
 <table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the center of the square</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc">y-coordinate of the center of the square</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r:</span><code>float</code></td><td class="fieldArgDesc">half the width of the square</td></tr></table></div>
   </div>
 </div><div class="basefunction">
@@ -2582,8 +2592,9 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Draw string s on the background canvas centered at (x, y).</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc">_description_</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc">_description_</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">s:</span><code>str</code></td><td class="fieldArgDesc">_description_</td></tr></table></div>
+    <div><p>Draw a line of string on the background canvas centered at (x, y).</p>
+<p>The string will appear on a single line. Note that (x, y) is the center of the rectangle that bounds the string. The string uses the current font and font size. Font and font size can be modified using the methods: set_font_family and set_font_size</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the center of the text</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc">y-coordinate of the center of the text</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">s:</span><code>str</code></td><td class="fieldArgDesc">the string that will be draw on the canvas</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -2602,7 +2613,7 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Draw a triangle on the canvas with corners at (x0, y0), (x1, y1), and (x2, y2).</p>
+    <div><p>Draw a triangle on the background canvas with corners at (x0, y0), (x1, y1), and (x2, y2).</p>
 <table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x0:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the first point of the triangle</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y0:</span><code>float</code></td><td class="fieldArgDesc">y-coordinate of the first point of the triangle</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x1:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the second point of the triangle</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y1:</span><code>float</code></td><td class="fieldArgDesc">y-coordinate of the second point of the triangle</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x2:</span><code>float</code></td><td class="fieldArgDesc">x-coordinate of the third point of the triangle</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y2:</span><code>float</code></td><td class="fieldArgDesc">y-coordinate of the third point of the triangle</td></tr></table></div>
   </div>
 </div><div class="basefunction private">
@@ -2952,7 +2963,7 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Draw on the canvas a line from (x0, y0) to (x1, y1). Draw the line with a pen whose radius is r.</p>
+    <div><p>Draw on the background canvas a line from (x0, y0) to (x1, y1). Draw the line with a pen whose radius is r.</p>
 <table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x0:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y0:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x1:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y1:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
   </div>
 </div><div class="basefunction private">
@@ -3405,7 +3416,7 @@
   <div class="container">
     <a href="index.html">API Documentation</a> for dudraw,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    22.5.1 at 2022-08-14 11:20:37.
+    22.5.1 at 2022-08-14 13:02:23.
   </div>
 
   <!-- Search related scripts needs to be loaded at the end of HTML 
