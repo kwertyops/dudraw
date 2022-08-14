@@ -1367,7 +1367,7 @@ def mouse_y() -> float:
     If a left-click hasn't happened yet, raise an exception, since mouseY() shouldn't be called until mousePressed() returns True.
 
     @raises Exception: error if mouse has not been clicked yet
-    @return: the y-coordinate of the location of the mouse
+    @return: the y-coordinate of the location of the mouse 
     """
     global _mouse_pos
     if _mouse_pos:
