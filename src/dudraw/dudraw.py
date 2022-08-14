@@ -390,7 +390,7 @@ def point(x: float, y: float):
 
 def _thick_line(x0: float, y0: float, x1: float, y1: float, r: float):
     """
-    Draw on the background canvas a line from (x0, y0) to (x1, y1).
+    Draw on the canvas a line from (x0, y0) to (x1, y1).
     Draw the line with a pen whose radius is r.
     """
     xs0 = _scale_x(x0)
@@ -407,7 +407,7 @@ def _thick_line(x0: float, y0: float, x1: float, y1: float, r: float):
 
 
 def line(x0: float, y0: float, x1: float, y1: float):
-    """Draw on the background canvas a line from (x0, y0) to (x1, y1).
+    """Draw on the canvas a line from (x0, y0) to (x1, y1).
 
     The placement of the line on the canvas will depend on the values of (x1, y1), (x2, y2) as well as the x-scale and y-scale. Note that if the coordinates are outside the range of min and max x-scale or y-scale then the point won't appear on the canvas
 
@@ -439,9 +439,12 @@ def line(x0: float, y0: float, x1: float, y1: float):
 
 
 def circle(x: float, y: float, r: float):
-    """
-    Draw on the background canvas a circle of radius r centered on
+    """Draw on the canvas a circle of radius r centered on
     (x, y).
+
+    @param x: x-coordinate of the center of the circle
+    @param y: y-coordinate of the center of the circle
+    @param r: radius of the circle
     """
     _make_sure_window_created()
     x = float(x)
@@ -465,9 +468,12 @@ def circle(x: float, y: float, r: float):
 
 
 def filled_circle(x: float, y: float, r: float):
-    """
-    Draw on the background canvas a filled circle of radius r
+    """Draw on the canvas a filled circle of radius r
     centered on (x, y).
+
+    @param x: x-coordinate of the center of the circle
+    @param y: y-coordinate of the center of the circle
+    @param r: radius of the circle
     """
     _make_sure_window_created()
     x = float(x)
@@ -485,9 +491,13 @@ def filled_circle(x: float, y: float, r: float):
 
 
 def ellipse(x: float, y: float, half_width: float, half_height: float):
-    """
-    Draw on the background canvas an ellipse centered at (x, y) with
+    """   Draw on the canvas an ellipse centered at (x, y) with
     a width of 2.0 * half_width, and a height of 2.0 * half_height.
+
+    @param x: x-coordinate of the center of the ellipse
+    @param y: y-coordinate of the center of the ellipse
+    @param half_width: half the width of the ellipse. Width is the maximum horizontal distance between two points on the surface of the ellipse 
+    @param half_height: half the height of the ellipse. Height is the maximum vertical distance between two points on the surface of the ellipse 
     """
     _make_sure_window_created()
     x = float(x)
@@ -512,9 +522,13 @@ def ellipse(x: float, y: float, half_width: float, half_height: float):
 
 
 def filled_ellipse(x: float, y: float, half_width: float, half_height: float):
-    """
-    Draw on the background canvas a filled ellipse centered at (x, y)
+    """Draw on the canvas a filled ellipse centered at (x, y)
     with a width of 2.0 * half_width, and a height of 2.0 * half_height.
+
+    @param x: x-coordinate of the center of the ellipse
+    @param y: y-coordinate of the center of the ellipse
+    @param half_width: half the width of the ellipse. Width is the maximum horizontal distance between two points on the surface of the ellipse 
+    @param half_height: half the height of the ellipse. Height is the maximum vertical distance between two points on the surface of the ellipse 
     """
     _make_sure_window_created()
     x = float(x)
@@ -533,9 +547,13 @@ def filled_ellipse(x: float, y: float, half_width: float, half_height: float):
 
 
 def rectangle(x: float, y: float, half_width: float, half_height: float):
-    """
-    Draw on the background canvas a rectangle of width (2 * halfWidth
+    """Draw on the canvas a rectangle of width (2 * halfWidth
     and height (2 * halfHeight) centered at point (x, y).
+
+    @param x: x-coordinate of the center of the rectangle
+    @param y: y-coordinate of the center of the rectangle
+    @param half_width: half the width of the rectangle
+    @param half_height: half the height of the rectangle
     """
     global _surface
     _make_sure_window_created()
@@ -556,9 +574,13 @@ def rectangle(x: float, y: float, half_width: float, half_height: float):
 
 
 def filled_rectangle(x: float, y: float, half_width: float, half_height: float):
-    """
-    Draw on the background canvas a rectangle of width (2 * halfWidth
+    """Draw on the canvas a rectangle of width (2 * halfWidth
     and height (2 * halfHeight) centered at point (x, y).
+
+    @param x: x-coordinate of the center of the rectangle
+    @param y: y-coordinate of the center of the rectangle
+    @param half_width: half the width of the rectangle
+    @param half_height: half the height of the rectangle
     """
     global _surface
     _make_sure_window_created()
@@ -578,27 +600,36 @@ def filled_rectangle(x: float, y: float, half_width: float, half_height: float):
 
 
 def square(x: float, y: float, r: float):
-    """
-    Draw on the background canvas a square whose sides are of length
+    """Draw on the canvas a square whose sides are of length
     2r, centered on (x, y).
+
+    @param x: x-coordinate of the center of the square
+    @param y: y-coordinate of the center of the square
+    @param r: half the width of the square
     """
     _make_sure_window_created()
     rectangle(x - r, y - r, 2.0 * r, 2.0 * r)
 
 
 def filled_square(x: float, y: float, r: float):
-    """
-    Draw on the background canvas a filled square whose sides are of
+    """Draw on the canvas a filled square whose sides are of
     length 2r, centered on (x, y).
+
+    @param x: x-coordinate of the center of the square
+    @param y: y-coordinate of the center of the square
+    @param r: half the width of the square
     """
     _make_sure_window_created()
     filled_rectangle(x - r, y - r, 2.0 * r, 2.0 * r)
 
 
 def polyline(x: Sequence[float], y: Sequence[float]):
-    """
-    Draw on the background canvas a polyline with coordinates
+    """Draw on the canvas a polyline with coordinates
     (x[i], y[i]).
+
+    The lists x and y must contain the same number of values. The two lists correspond to x-coordinates and y-coordinates of points (x[0], y[0]), (x[1], y[1]), (x[2], y[2]),..., (x[-1], y[-1]) on the polyline. Each point on the polyline connects to the point that follows it so (x_0, x_0) connects to (x[1], y[1]) with a straight line, then (x[1], y[1]) connects to (x[2], y[2]) and so on.
+    @param x: a list of x-coordinates of the points on the polyline 
+    @param y: a list of y-coordinates of the points on the polyline
     """
     global _surface
     _make_sure_window_created()
@@ -653,9 +684,12 @@ def polyline(x: Sequence[float], y: Sequence[float]):
 
 
 def polygon(x: Sequence[float], y: Sequence[float]):
-    """
-    Draw on the background canvas a polygon with coordinates
+    """Draw on the background canvas a polygon with coordinates
     (x[i], y[i]).
+
+    The lists x and y must contain the same number of values. The two lists correspond to x-coordinates and y-coordinates of points (x[0], y[0]), (x[1], y[1]), (x[2], y[2]),..., (x[-1], y[-1]) on the polygon. Each point on the polygon connects to the point that follows it so (x_0, x_0) connects to (x[1], y[1]) with a straight line, then (x[1], y[1]) connects to (x[2], y[2]) and so on until (x[-1], y[-1]) connects to (x[0], y[0]).
+    @param x: a list of x-coordinates of the points on the polygon 
+    @param y: a list of y-coordinates of the points on the polygon
     """
     global _surface
     _make_sure_window_created()
@@ -690,9 +724,13 @@ def polygon(x: Sequence[float], y: Sequence[float]):
 
 
 def filled_polygon(x: Sequence[float], y: Sequence[float]):
-    """
-    Draw on the background canvas a filled polygon with coordinates
+    """Draw on the background canvas a filled polygon with coordinates
     (x[i], y[i]).
+
+    The lists x and y must contain the same number of values. The two lists correspond to x-coordinates and y-coordinates of points (x[0], y[0]), (x[1], y[1]), (x[2], y[2]),..., (x[-1], y[-1]) on the polygon. Each point on the polygon connects to the point that follows it so (x_0, x_0) connects to (x[1], y[1]) with a straight line, then (x[1], y[1]) connects to (x[2], y[2]) and so on until (x[-1], y[-1]) connects to (x[0], y[0]).
+   
+    @param x: a list of x-coordinates of the points on the polygon 
+    @param y: a list of y-coordinates of the points on the polygon
     """
     global _surface
     _make_sure_window_created()
@@ -711,45 +749,80 @@ def filled_polygon(x: Sequence[float], y: Sequence[float]):
 
 
 def triangle(x0: float, y0: float, x1: float, y1: float, x2: float, y2: float):
-    """
-    Draw a triangle on the canvas with corners at (x0, y0),
+    """Draw a triangle on the canvas with corners at (x0, y0),
     (x1, y1), and (x2, y2).
+
+    @param x0: x-coordinate of the first point of the triangle
+    @param y0: y-coordinate of the first point of the triangle
+    @param x1: x-coordinate of the second point of the triangle
+    @param y1: y-coordinate of the second point of the triangle
+    @param x2: x-coordinate of the third point of the triangle
+    @param y2: y-coordinate of the third point of the triangle
     """
     _make_sure_window_created()
     polygon([x0, x1, x2], [y0, y1, y2])
 
 
 def filled_triangle(x0: float, y0: float, x1: float, y1: float, x2: float, y2: float):
-    """
-    Draw a filled triangle on the canvas with corners at
+    """Draw a filled triangle on the canvas with corners at
     (x0, y0), (x1, y1), and (x2, y2).
+
+    @param x0: x-coordinate of the first point of the triangle
+    @param y0: y-coordinate of the first point of the triangle
+    @param x1: x-coordinate of the second point of the triangle
+    @param y1: y-coordinate of the second point of the triangle
+    @param x2: x-coordinate of the third point of the triangle
+    @param y2: y-coordinate of the third point of the triangle
     """
     _make_sure_window_created()
     filled_polygon([x0, x1, x2], [y0, y1, y2])
 
 
 def quadrilateral(x0: float, y0: float, x1: float, y1: float, x2: float, y2: float, x3: float, y3: float):
-    """
-    Draw a quadrilateral on the canvas with corners at (x0, y0),
+    """Draw a quadrilateral on the canvas with corners at (x0, y0),
     (x1, y1), (x2, y2), and (x3, y3).
+
+    @param x0: x-coordinate of the first point of the quadrilateral
+    @param y0: y-coordinate of the first point of the quadrilateral
+    @param x1: x-coordinate of the second point of the quadrilateral
+    @param y1: y-coordinate of the second point of the quadrilateral
+    @param x2: x-coordinate of the third point of the quadrilateral
+    @param y2: y-coordinate of the third point of the quadrilateral
+    @param x3: x-coordinate of the fourth point of the quadrilateral
+    @param y3: y-coordinate of the fourth point of the quadrilateral
     """
     _make_sure_window_created()
     polygon([x0, x1, x2, x3], [y0, y1, y2, y3])
 
 
 def filled_quadrilateral(x0: float, y0: float, x1: float, y1: float, x2: float, y2: float, x3: float, y3: float):
-    """
-    Draw a filled quadrilateral on the canvas with corners at
+    """Draw a filled quadrilateral on the canvas with corners at
     (x0, y0), (x1, y1), (x2, y2), and (x3, y3).
+
+    @param x0: x-coordinate of the first point of the quadrilateral
+    @param y0: y-coordinate of the first point of the quadrilateral
+    @param x1: x-coordinate of the second point of the quadrilateral
+    @param y1: y-coordinate of the second point of the quadrilateral
+    @param x2: x-coordinate of the third point of the quadrilateral
+    @param y2: y-coordinate of the third point of the quadrilateral
+    @param x3: x-coordinate of the fourth point of the quadrilateral
+    @param y3: y-coordinate of the fourth point of the quadrilateral
     """
     _make_sure_window_created()
     filled_polygon([x0, x1, x2, x3], [y0, y1, y2, y3])
 
 
 def arc(x: float, y: float, r: float, angle1: float, angle2: float):
-    """
-    Draw an arc portion between angle1 and angle2, of the
+    """Draw an arc portion between angle1 and angle2, of the
     circumference of a circle centered at (x, y) with a radius r.
+
+    An arc is a contiguous portion of a circle between angle1 and angle2. Note that the line of arc starts at angle1 and goes to angle2 in counter clock-wise direction.
+
+    @param x: x-coordinate of the center of the circle 
+    @param y: y-coordinate of the center of the circle 
+    @param r: the radius of the circle
+    @param angle1: the starting angle of the arc 
+    @param angle2: the ending angle of the arc
     """
     _make_sure_window_created()
     x = float(x)
@@ -774,10 +847,18 @@ def arc(x: float, y: float, r: float, angle1: float, angle2: float):
 
 
 def elliptical_arc(x: float, y: float, half_width: float, half_height: float, angle1: float, angle2: float):
-    """
-    Draw an arc portion between angle1 and angle2, of the
+    """Draw an arc portion between angle1 and angle2, of the
     circumference of an ellipse centered at (x, y) with a width
     of half_width, and a height of 2.0 * half_height.
+
+    An arc is a contiguous portion of the ellipse between angle1 and angle2. Note that the line of arc starts at angle1 and goes to angle2 in counter clock-wise direction.
+
+    @param x: x-coordinate of the center of the ellipse
+    @param y: y-coordinate of the center of the ellipse
+    @param half_width: half the width of the ellipse. Width is the maximum horizontal distance between two points on the surface of the ellipse 
+    @param half_height: half the height of the ellipse. Height is the maximum vertical distance between two points on the surface of the ellipse 
+    @param angle1: the starting angle of the arc 
+    @param angle2: the ending angle of the arc
     """
     _make_sure_window_created()
     x = float(x)
@@ -803,9 +884,14 @@ def elliptical_arc(x: float, y: float, half_width: float, half_height: float, an
 
 
 def sector(x: float, y: float, r: float, angle1: float, angle2: float):
-    """
-    Draw a sector portion between angle1 and angle2, of the
+    """Draw a sector portion between angle1 and angle2, of the
     interior of a circle centered at (x, y) with a radius r.
+
+    @param x: _description_
+    @param y: _description_
+    @param r: _description_
+    @param angle1: _description_
+    @param angle2: _description_
     """
     global _surface
     _make_sure_window_created()
@@ -836,9 +922,14 @@ def sector(x: float, y: float, r: float, angle1: float, angle2: float):
 
 
 def filled_sector(x: float, y: float, r: float, angle1: float, angle2: float):
-    """
-    Draw a filled sector portion between angle1 and angle2, of the
+    """Draw a filled sector portion between angle1 and angle2, of the
     interior of a circle centered at (x, y) with a radius r.
+
+    @param x: _description_
+    @param y: _description_
+    @param r: _description_
+    @param angle1: _description_
+    @param angle2: _description_
     """
     global _surface
     _make_sure_window_created()
@@ -871,10 +962,16 @@ def filled_sector(x: float, y: float, r: float, angle1: float, angle2: float):
 
 
 def elliptical_sector(x: float, y: float, half_width: float, half_height: float, angle1: float, angle2: float):
-    """
-    Draw a sector portion between angle1 and angle2, of the
+    """Draw a sector portion between angle1 and angle2, of the
     interior of an ellipse centered at (x, y) with a width
     of half_width, and a height of 2.0 * half_height.
+
+    @param x: _description_
+    @param y: _description_
+    @param half_width: _description_
+    @param half_height: _description_
+    @param angle1: _description_
+    @param angle2: _description_
     """
     global _surface
     _make_sure_window_created()
@@ -908,10 +1005,16 @@ def elliptical_sector(x: float, y: float, half_width: float, half_height: float,
 def filled_elliptical_sector(
     x: float, y: float, half_width: float, half_height: float, angle1: float, angle2: float
 ):
-    """
-    Draw a filled sector portion between angle1 and angle2, of
+    """Draw a filled sector portion between angle1 and angle2, of
     the interior of an ellipse centered at (x, y) with a width
     of half_width, and a height of 2.0 * half_height.
+
+    @param x: _description_
+    @param y: _description_
+    @param half_width: _description_
+    @param half_height: _description_
+    @param angle1: _description_
+    @param angle2: _description_
     """
     global _surface
     _make_sure_window_created()
@@ -945,9 +1048,13 @@ def filled_elliptical_sector(
 
 
 def annulus(x: float, y: float, r1: float, r2: float):
-    """
-    Draw an annulus centered at (x, y) with outer
+    """Draw an annulus centered at (x, y) with outer
     radius r1, and inner radius r2.
+
+    @param x: _description_
+    @param y: _description_
+    @param r1: _description_
+    @param r2: _description_
     """
     _make_sure_window_created()
     circle(x, y, r1)
@@ -955,9 +1062,13 @@ def annulus(x: float, y: float, r1: float, r2: float):
 
 
 def filled_annulus(x: float, y: float, r1: float, r2: float):
-    """
-    Draw a filled annulus centered at (x, y) with outer
+    """Draw a filled annulus centered at (x, y) with outer
     radius r1, and inner radius r2.
+
+    @param x: _description_
+    @param y: _description_
+    @param r1: _description_
+    @param r2: _description_
     """
     global _surface
     _make_sure_window_created()
@@ -998,8 +1109,11 @@ def filled_annulus(x: float, y: float, r1: float, r2: float):
 
 
 def text(x: float, y: float, s: str):
-    """
-    Draw string s on the background canvas centered at (x, y).
+    """Draw string s on the background canvas centered at (x, y).
+
+    @param x: _description_
+    @param y: _description_
+    @param s: _description_
     """
     _make_sure_window_created()
     x = float(x)
@@ -1013,10 +1127,13 @@ def text(x: float, y: float, s: str):
 
 
 def picture(filepath: str, x: float = None, y: float = None):
-    """
-    Draw pic on the background canvas centered at (x, y). Filepath
+    """Draw pic on the background canvas centered at (x, y). Filepath
     is specified as a string, and (x, y) defaults to the midpoint
     of the background canvas.
+
+    @param filepath: _description_
+    @param x: _description_, defaults to None
+    @param y: _description_, defaults to None
     """
     global _surface
     _make_sure_window_created()
@@ -1036,18 +1153,22 @@ def picture(filepath: str, x: float = None, y: float = None):
 
 
 def clear(c: Color = WHITE):
-    """
-    Clear the background canvas to color c, where c is an
+    """Clear the background canvas to color c, where c is an
     object of class Color. c defaults to dudraw.WHITE.
+
+    @param c: _description_, defaults to WHITE
     """
     _make_sure_window_created()
     _surface.fill(_pygame_color(c))
 
 
 def clear_rgb(r: float = 255, g: float = 255, b: float = 255):
-    """
-    Clear the background canvas to color defined by
+    """Clear the background canvas to color defined by
     r, g, and b. Defaults to white (255, 255, 255).
+
+    @param r: _description_, defaults to 255
+    @param g: _description_, defaults to 255
+    @param b: _description_, defaults to 255
     """
     c = Color(r, g, b)
     _make_sure_window_created()
@@ -1055,8 +1176,9 @@ def clear_rgb(r: float = 255, g: float = 255, b: float = 255):
 
 
 def save(filepath: str):
-    """
-    Save the window canvas as a .jpg to filepath specified. 
+    """Save the window canvas as a .jpg to filepath specified.
+
+    @param filepath: _description_
     """
     _make_sure_window_created()
     if not filepath.lower().endswith(".jpg"):
@@ -1090,9 +1212,10 @@ def _show_and_wait_forever():
 
 
 def show(msec: float = 0.0):
-    """
-    Copy the background canvas to the window canvas, and
+    """Copy the background canvas to the window canvas, and
     then wait for msec milliseconds. msec defaults to 0.0.
+
+    @param msec: _description_, defaults to 0.0
     """
     if msec == float("inf"):
         _show_and_wait_forever()
@@ -1165,18 +1288,21 @@ def _check_for_events():
 
 
 def has_next_key_typed() -> bool:
-    """
-    Return True if the queue of keys the user typed is not empty.
+    """Return True if the queue of keys the user typed is not empty.
     Otherwise return False.
+
+    @return: _description_
     """
+
     global _keys_typed
     return _keys_typed != []
 
 
 def next_key_typed() -> str:
-    """
-    Remove the first key from the queue of keys that the the user typed,
+    """Remove the first key from the queue of keys that the the user typed,
     and return that key.
+
+    @return: _description_
     """
     global _keys_typed
     return _keys_typed.pop()
@@ -1190,9 +1316,10 @@ def next_key_typed() -> str:
 
 
 def mouse_pressed() -> bool:
-    """
-    Return True if the mouse has been left-clicked since the
+    """Return True if the mouse has been left-clicked since the
     last time mousePressed was called, and False otherwise.
+
+    @return: _description_
     """
     global _mouse_pressed
     if _mouse_pressed:
@@ -1202,11 +1329,13 @@ def mouse_pressed() -> bool:
 
 
 def mouse_x() -> float:
-    """
-    Return the x coordinate in user space of the location at
+    """Return the x coordinate in user space of the location at
     which the mouse was most recently left-clicked. If a left-click
     hasn't happened yet, raise an exception, since mouseX() shouldn't
     be called until mousePressed() returns True.
+
+    @raises Exception: _description_
+    @return: _description_
     """
     global _mouse_pos
     if _mouse_pos:
@@ -1215,11 +1344,13 @@ def mouse_x() -> float:
 
 
 def mouse_y() -> float:
-    """
-    Return the y coordinate in user space of the location at
+    """Return the y coordinate in user space of the location at
     which the mouse was most recently left-clicked. If a left-click
     hasn't happened yet, raise an exception, since mouseY() shouldn't
     be called until mousePressed() returns True.
+
+    @raises Exception: _description_
+    @return: _description_
     """
     global _mouse_pos
     if _mouse_pos:
