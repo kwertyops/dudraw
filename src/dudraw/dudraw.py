@@ -2,7 +2,7 @@
 dudraw.py
 
 The dudraw module defines functions that allow the user to create a
-drawing.  A drawing appears on the canvas.  The canvas appears
+simple 2-dimensional drawing.  A drawing appears on the canvas.  The canvas appears
 in the window.  As a convenience, the module also imports the
 commonly used Color objects defined in the color module.
 """
@@ -147,10 +147,15 @@ def _line_width_pixels() -> float:
 
 
 def set_canvas_size(w: float = _DEFAULT_CANVAS_SIZE, h: float = _DEFAULT_CANVAS_SIZE):
-    """
-    Set the size of the canvas to w pixels wide and h pixels high.
+    """Set the size of the canvas to w pixels wide and h pixels high.
+    
     Calling this function is optional. If you call it, you must do
     so before calling any drawing function.
+
+    @param w: width of canvas in pixels, defaults to 512
+    @param h: height of canvas in pixels, defaults to 512
+    @raises Exception: error if the dudraw window was already created
+    @raises Exception: error if width or height values are non-positive
     """
     global _background
     global _surface
@@ -174,22 +179,28 @@ def set_canvas_size(w: float = _DEFAULT_CANVAS_SIZE, h: float = _DEFAULT_CANVAS_
 
 
 def get_canvas_width() -> float:
-    """
-    Return the width of the current canvas.
+    """Return the width of the current canvas.
+
+
+    @return: the canvas width in pixels
     """
     return abs(_xmax - _xmin)
 
 
 def get_canvas_height() -> float:
-    """
-    Return the height of the current canvas.
+    """Return the height of the current canvas.
+
+    @return: the canvas height in pixels
     """
     return abs(_ymax - _ymin)
 
 
 def get_pixel_color(x: float, y: float) -> Color:
-    """
-    Return the color of the pixel at the given user coordinates.
+    """Return the color of the pixel at the given user coordinates.
+
+    @param x: the x-coordinate of the pixel
+    @param y: the y-coordinate of the pixel
+    @return: the color of the pixel at (x, y)
     """
     _make_sure_window_created()
     c = _surface.get_at((int(_scale_x(x)), int(_scale_y(y))))
@@ -197,9 +208,14 @@ def get_pixel_color(x: float, y: float) -> Color:
 
 
 def set_x_scale(min: float = _DEFAULT_XMIN, max: float = _DEFAULT_XMAX):
-    """
-    Set the x-scale of the canvas such that the minimum x value
-    is min and the maximum x value is max.
+    """Set the x-scale of the canvas such that the minimum y value
+    is min and the maximum y value is max.
+
+    The value of max must be greater than the value of min
+
+    @param min: the minimum value of the x-scale, defaults to 0.0 if no value is passed
+    @param max: the maximum value of the x-scale, defaults to 1.0 if no value is passed
+    @raises Exception: error if the min value is greater or equal to the max value
     """
     global _xmin
     global _xmax
@@ -213,9 +229,14 @@ def set_x_scale(min: float = _DEFAULT_XMIN, max: float = _DEFAULT_XMAX):
 
 
 def set_y_scale(min: float = _DEFAULT_YMIN, max: float = _DEFAULT_YMAX):
-    """
-    Set the y-scale of the canvas such that the minimum y value
+    """ Set the y-scale of the canvas such that the minimum y value
     is min and the maximum y value is max.
+
+    The value of max must be greater than the value of min
+
+    @param min: the minimum value of the y-scale, defaults to 0.0 if no value is passed
+    @param max: the maximum value of the y-scale, defaults to 1.0 if no value is passed
+    @raises Exception: error if the min value is greater or equal to the max value
     """
     global _ymin
     global _ymax
@@ -229,20 +250,29 @@ def set_y_scale(min: float = _DEFAULT_YMIN, max: float = _DEFAULT_YMAX):
 
 
 def set_scale(min: float, max: float):
-    """
-    Set the x-scale and y-scale of the canvas to the same range for
+    """Set the x-scale and y-scale of the canvas to the same range for
     both directions.
+
+    The value of max must be greater than the value of min
+
+    @param min: the minimum value of the x-scale and y-scale, defaults to 0.0 if no value is passed
+    @param max: the maximum value of the x-scale and y-scale, defaults to 1.0 if no value is passed
+    @raises Exception: error if the min value is greater or equal to the max value
     """
     set_x_scale(min, max)
     set_y_scale(min, max)
 
 
 def set_pen_width(w: float = _DEFAULT_PEN_WIDTH):
-    """
-    Set the pen radius to r, thus affecting the subsequent drawing
-    of points and lines. If r is 0.0, then points will be drawn with
-    the minimum possible radius and lines with the minimum possible
+    """Set the pen width/radius to w 
+    
+    This affects the subsequent drawing
+    of points and lines. If w is 0.0, then points will be drawn with
+    the minimum possible width and lines with the minimum possible
     width.
+    @arg w: new value for the pen radius in pixels. This value must be non-negative, defaults to 0.0
+
+    @raises Exception: error thrown if the value of w is negative
     """
     global _pen_width
     w = float(w)
@@ -253,18 +283,22 @@ def set_pen_width(w: float = _DEFAULT_PEN_WIDTH):
 
 
 def set_pen_color(c: Color = _DEFAULT_PEN_COLOR):
-    """
-    Set the pen color to c, where c is an object of class Color.
+    """Set the pen color to c, where c is an object of class Color.
     c defaults to dudraw.BLACK.
+
+    @param c: the new pen color, defaults to black if no value is passed
     """
     global _pen_color
     _pen_color = c
 
 
 def set_pen_color_rgb(r: int = 255, g: int = 255, b: int = 255):
-    """
-    Set the pen color using red, green, and blue values.
+    """Set the pen color using red, green, and blue values.
     Defaults to black.
+
+    @param r: red color value. 0 for minimum red and 255 for maximum red, defaults to 255
+    @param g: green color value. 0 for minimum red and 255 for maximum green, defaults to 255
+    @param b: blue color value. 0 for minimum red and 255 for maximum blue, defaults to 255
     """
     c = Color(r, g, b)
     global _pen_color
@@ -272,23 +306,32 @@ def set_pen_color_rgb(r: int = 255, g: int = 255, b: int = 255):
 
 
 def get_pen_color():
-    """
-    Returns the value of _penColor as an object of class Color.
+    """Return the pen color as an object of class Color.
+
+
+    @return: the current value of pen color. This is an object of class Color
     """
     return _pen_color
 
 
 def set_font_family(f: str = _DEFAULT_FONT_FAMILY):
-    """
-    Set the font family to f (e.g. 'Helvetica' or 'Courier').
+    """Set the font family to f (e.g. 'Helvetica' or 'Courier').
+
+    This changes the font used to draw text on the canvas.
+
+    @param f: the new font used for text on canvas, defaults to "Helvetica" if no font is specified
     """
     global _font_family
     _font_family = f
 
 
 def set_font_size(s: int = _DEFAULT_FONT_SIZE):
-    """
-    Set the font size to s (e.g. 12 or 16).
+    """Set the font size to s (e.g. 12, 14, 16..etc).
+
+    the value of the font size is measured in point. A point is equivalent to about 1.33 pixels
+
+
+    @param s: new font size in point, defaults to 12 if no value is specified
     """
     global _font_size
     _font_size = s
@@ -320,8 +363,12 @@ def _pixel(x: float, y: float):
 
 
 def point(x: float, y: float):
-    """
-    Draw on the background canvas a point at (x, y).
+    """Draw on the canvas a point at coordinates (x, y).
+
+    The placement of the point on the canvas will depend on the values of (x, y) as well as the x-scale and y-scale. Note that if the coordinates are outside the range of min and max x-scale or y-scale then the point won't appear on the canvas
+
+    @param x: the x-coordinate of the point
+    @param y: the y-coordinate of the point
     """
     _make_sure_window_created()
     x = float(x)
@@ -360,8 +407,14 @@ def _thick_line(x0: float, y0: float, x1: float, y1: float, r: float):
 
 
 def line(x0: float, y0: float, x1: float, y1: float):
-    """
-    Draw on the background canvas a line from (x0, y0) to (x1, y1).
+    """Draw on the background canvas a line from (x0, y0) to (x1, y1).
+
+    The placement of the line on the canvas will depend on the values of (x1, y1), (x2, y2) as well as the x-scale and y-scale. Note that if the coordinates are outside the range of min and max x-scale or y-scale then the point won't appear on the canvas
+
+    @param x0: x-coordinate of the first point of the line segment
+    @param y0: y-coordinate of the first point of the line segment
+    @param x1: x-coordinate of the second point of the line segment
+    @param y1: y-coordinate of the second point of the line segment
     """
     _make_sure_window_created()
     x0 = float(x0)

@@ -1150,7 +1150,7 @@
 
         <div class="moduleDocstring">
           <div><p>dudraw.py</p>
-<p>The dudraw module defines functions that allow the user to create a drawing.  A drawing appears on the canvas.  The canvas appears in the window.  As a convenience, the module also imports the commonly used Color objects defined in the color module.</p>
+<p>The dudraw module defines functions that allow the user to create a simple 2-dimensional drawing.  A drawing appears on the canvas.  The canvas appears in the window.  As a convenience, the module also imports the commonly used Color objects defined in the color module.</p>
 </div>
         </div>
 
@@ -1262,7 +1262,7 @@
     
     <td>Function</td>
     <td><code><a href="#get_pen_color" class="internal-link" title="dudraw.dudraw.get_pen_color">get<wbr></wbr>_pen<wbr></wbr>_color</a></code></td>
-    <td>Returns the value of _penColor as an object of class Color.</td>
+    <td>Return the pen color as an object of class Color.</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -1307,7 +1307,7 @@
     
     <td>Function</td>
     <td><code><a href="#point" class="internal-link" title="dudraw.dudraw.point">point</a></code></td>
-    <td>Draw on the background canvas a point at (x, y).</td>
+    <td>Draw on the canvas a point at coordinates (x, y).</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -1342,7 +1342,7 @@
     
     <td>Function</td>
     <td><code><a href="#set_canvas_size" class="internal-link" title="dudraw.dudraw.set_canvas_size">set<wbr></wbr>_canvas<wbr></wbr>_size</a></code></td>
-    <td>Set the size of the canvas to w pixels wide and h pixels high. Calling this function is optional. If you call it, you must do so before calling any drawing function.</td>
+    <td>Set the size of the canvas to w pixels wide and h pixels high.</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -1352,7 +1352,7 @@
     
     <td>Function</td>
     <td><code><a href="#set_font_size" class="internal-link" title="dudraw.dudraw.set_font_size">set<wbr></wbr>_font<wbr></wbr>_size</a></code></td>
-    <td>Set the font size to s (e.g. 12 or 16).</td>
+    <td>Set the font size to s (e.g. 12, 14, 16..etc).</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -1367,7 +1367,7 @@
     
     <td>Function</td>
     <td><code><a href="#set_pen_width" class="internal-link" title="dudraw.dudraw.set_pen_width">set<wbr></wbr>_pen<wbr></wbr>_width</a></code></td>
-    <td>Set the pen radius to r, thus affecting the subsequent drawing of points and lines. If r is 0.0, then points will be drawn with the minimum possible radius and lines with the minimum possible width.</td>
+    <td>Set the pen width/radius to w</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -1377,7 +1377,7 @@
     
     <td>Function</td>
     <td><code><a href="#set_x_scale" class="internal-link" title="dudraw.dudraw.set_x_scale">set<wbr></wbr>_x<wbr></wbr>_scale</a></code></td>
-    <td>Set the x-scale of the canvas such that the minimum x value is min and the maximum x value is max.</td>
+    <td>Set the x-scale of the canvas such that the minimum y value is min and the maximum y value is max.</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -1989,7 +1989,7 @@
     
     
     <div><p>Return the height of the current canvas.</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>float</code></td><td class="fieldArgDesc">the canvas height in pixels</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -2009,7 +2009,7 @@
     
     
     <div><p>Return the width of the current canvas.</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>float</code></td><td class="fieldArgDesc">the canvas width in pixels</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -2028,8 +2028,8 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Returns the value of _penColor as an object of class Color.</p>
-</div>
+    <div><p>Return the pen color as an object of class Color.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td colspan="2">the current value of pen color. This is an object of class Color</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -2049,7 +2049,7 @@
     
     
     <div><p>Return the color of the pixel at the given user coordinates.</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="dudraw.color.Color.html" class="internal-link" title="dudraw.color.Color">Color</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc">the x-coordinate of the pixel</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc">the y-coordinate of the pixel</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code><a href="dudraw.color.Color.html" class="internal-link" title="dudraw.color.Color">Color</a></code></td><td class="fieldArgDesc">the color of the pixel at (x, y)</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -2208,8 +2208,9 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Draw on the background canvas a point at (x, y).</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+    <div><p>Draw on the canvas a point at coordinates (x, y).</p>
+<p>The placement of the point on the canvas will depend on the values of (x, y) as well as the x-scale and y-scale. Note that if the coordinates are outside the range of min and max x-scale or y-scale then the point won't appear on the canvas</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">x:</span><code>float</code></td><td class="fieldArgDesc">the x-coordinate of the point</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">y:</span><code>float</code></td><td class="fieldArgDesc">the y-coordinate of the point</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -2348,8 +2349,9 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Set the size of the canvas to w pixels wide and h pixels high. Calling this function is optional. If you call it, you must do so before calling any drawing function.</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">w:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">h:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+    <div><p>Set the size of the canvas to w pixels wide and h pixels high.</p>
+<p>Calling this function is optional. If you call it, you must do so before calling any drawing function.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">w:</span><code>float</code></td><td class="fieldArgDesc">width of canvas in pixels, defaults to 512</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">h:</span><code>float</code></td><td class="fieldArgDesc">height of canvas in pixels, defaults to 512</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code>Exception</code></td><td>error if the dudraw window was already created</td></tr><tr><td class="fieldArgContainer"><code>Exception</code></td><td>error if width or height values are non-positive</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -2369,7 +2371,8 @@
     
     
     <div><p>Set the font family to f (e.g. 'Helvetica' or 'Courier').</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">f:</span><code>str</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+<p>This changes the font used to draw text on the canvas.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">f:</span><code>str</code></td><td class="fieldArgDesc">the new font used for text on canvas, defaults to "Helvetica" if no font is specified</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -2388,8 +2391,9 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Set the font size to s (e.g. 12 or 16).</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">s:</span><code>int</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+    <div><p>Set the font size to s (e.g. 12, 14, 16..etc).</p>
+<p>the value of the font size is measured in point. A point is equivalent to about 1.33 pixels</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">s:</span><code>int</code></td><td class="fieldArgDesc">new font size in point, defaults to 12 if no value is specified</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -2409,7 +2413,7 @@
     
     
     <div><p>Set the pen color to c, where c is an object of class Color. c defaults to dudraw.BLACK.</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">c:</span><code><a href="dudraw.color.Color.html" class="internal-link" title="dudraw.color.Color">Color</a></code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">c:</span><code><a href="dudraw.color.Color.html" class="internal-link" title="dudraw.color.Color">Color</a></code></td><td class="fieldArgDesc">the new pen color, defaults to black if no value is passed</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -2429,7 +2433,7 @@
     
     
     <div><p>Set the pen color using red, green, and blue values. Defaults to black.</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r:</span><code>int</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">g:</span><code>int</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">b:</span><code>int</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">r:</span><code>int</code></td><td class="fieldArgDesc">red color value. 0 for minimum red and 255 for maximum red, defaults to 255</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">g:</span><code>int</code></td><td class="fieldArgDesc">green color value. 0 for minimum red and 255 for maximum green, defaults to 255</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">b:</span><code>int</code></td><td class="fieldArgDesc">blue color value. 0 for minimum red and 255 for maximum blue, defaults to 255</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -2448,8 +2452,9 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Set the pen radius to r, thus affecting the subsequent drawing of points and lines. If r is 0.0, then points will be drawn with the minimum possible radius and lines with the minimum possible width.</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">w:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+    <div><p>Set the pen width/radius to w</p>
+<p>This affects the subsequent drawing of points and lines. If w is 0.0, then points will be drawn with the minimum possible width and lines with the minimum possible width.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">w:</span><code>float</code></td><td class="fieldArgDesc">new value for the pen radius in pixels. This value must be non-negative, defaults to 0.0</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code>Exception</code></td><td>error thrown if the value of w is negative</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -2469,7 +2474,8 @@
     
     
     <div><p>Set the x-scale and y-scale of the canvas to the same range for both directions.</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">min:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">max:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+<p>The value of max must be greater than the value of min</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">min:</span><code>float</code></td><td class="fieldArgDesc">the minimum value of the x-scale and y-scale, defaults to 0.0 if no value is passed</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">max:</span><code>float</code></td><td class="fieldArgDesc">the maximum value of the x-scale and y-scale, defaults to 1.0 if no value is passed</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code>Exception</code></td><td>error if the min value is greater or equal to the max value</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -2488,8 +2494,9 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Set the x-scale of the canvas such that the minimum x value is min and the maximum x value is max.</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">min:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">max:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+    <div><p>Set the x-scale of the canvas such that the minimum y value is min and the maximum y value is max.</p>
+<p>The value of max must be greater than the value of min</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">min:</span><code>float</code></td><td class="fieldArgDesc">the minimum value of the x-scale, defaults to 0.0 if no value is passed</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">max:</span><code>float</code></td><td class="fieldArgDesc">the maximum value of the x-scale, defaults to 1.0 if no value is passed</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code>Exception</code></td><td>error if the min value is greater or equal to the max value</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -2509,7 +2516,8 @@
     
     
     <div><p>Set the y-scale of the canvas such that the minimum y value is min and the maximum y value is max.</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">min:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">max:</span><code>float</code></td><td class="fieldArgDesc"><span class="undocumented">Undocumented</span></td></tr></table></div>
+<p>The value of max must be greater than the value of min</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Parameters</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">min:</span><code>float</code></td><td class="fieldArgDesc">the minimum value of the y-scale, defaults to 0.0 if no value is passed</td></tr><tr><td class="fieldArgContainer"><span class="fieldArg">max:</span><code>float</code></td><td class="fieldArgDesc">the maximum value of the y-scale, defaults to 1.0 if no value is passed</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code>Exception</code></td><td>error if the min value is greater or equal to the max value</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -3391,7 +3399,7 @@
   <div class="container">
     <a href="index.html">API Documentation</a> for dudraw,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    22.5.1 at 2022-07-14 08:12:33.
+    22.5.1 at 2022-08-13 16:18:49.
   </div>
 
   <!-- Search related scripts needs to be loaded at the end of HTML 
