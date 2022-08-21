@@ -608,7 +608,7 @@ def square(x: float, y: float, r: float):
     @param r: half the width of the square
     """
     _make_sure_window_created()
-    rectangle(x - r, y - r, 2.0 * r, 2.0 * r)
+    rectangle(x, y, r, r)
 
 
 def filled_square(x: float, y: float, r: float):
@@ -620,7 +620,8 @@ def filled_square(x: float, y: float, r: float):
     @param r: half the width of the square
     """
     _make_sure_window_created()
-    filled_rectangle(x - r, y - r, 2.0 * r, 2.0 * r)
+
+    filled_rectangle(x, y, r, r )
 
 
 def polyline(x: Sequence[float], y: Sequence[float]):
@@ -1496,7 +1497,7 @@ def _regression_test():
     set_pen_width(0.01)
     set_pen_color(DARK_RED)
     filled_square(0.5, 0.5, 0.05)
-    show(0.0)
+    show(10000000)
 
     set_pen_width(0.01)
     set_pen_color(DARK_BLUE)
