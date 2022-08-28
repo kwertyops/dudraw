@@ -39,3 +39,5 @@ Original Authors of [StdLib](https://introcs.cs.princeton.edu/java/stdlib/):
     Declan Kahn
     Eddy Rogers
     Andrew Hannum
+    Mohammed Albow
+    Jeff Edgington

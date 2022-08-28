@@ -388,24 +388,6 @@ def point(x: float, y: float):
         )
 
 
-def _thick_line(x0: float, y0: float, x1: float, y1: float, r: float):
-    """
-    Draw on the background canvas a line from (x0, y0) to (x1, y1).
-    Draw the line with a pen whose radius is r.
-    """
-    xs0 = _scale_x(x0)
-    ys0 = _scale_y(y0)
-    xs1 = _scale_x(x1)
-    ys1 = _scale_y(y1)
-    if (abs(xs0 - xs1) < 1.0) and (abs(ys0 - ys1) < 1.0):
-        filled_circle(x0, y0, r)
-        return
-    x_mid = (x0 + x1) / 2
-    y_mid = (y0 + y1) / 2
-    _thick_line(x0, y0, x_mid, y_mid, r)
-    _thick_line(x_mid, y_mid, x1, y1, r)
-
-
 def line(x0: float, y0: float, x1: float, y1: float):
     """Draw on the background canvas a line from (x0, y0) to (x1, y1).
 
@@ -421,21 +403,15 @@ def line(x0: float, y0: float, x1: float, y1: float):
     y0 = float(y0)
     x1 = float(x1)
     y1 = float(y1)
-    line_width = _line_width_pixels()
 
-    if line_width < 2.0:
+    if _pen_width_pixels() < 2.0:
         x0s = _scale_x(x0)
         y0s = _scale_y(y0)
         x1s = _scale_x(x1)
         y1s = _scale_y(y1)
-        pygame.draw.line(_surface, _pygame_color(_pen_color), (x0s, y0s), (x1s, y1s), int(line_width))
+        pygame.draw.line(_surface, _pygame_color(_pen_color), (x0s, y0s), (x1s, y1s), int(_line_width_pixels()))
     else:
-        vec = pygame.Vector2(x1 - x0, y1 - y0)
-        w = vec.rotate(90).normalize()
-        w.scale_to_length(line_width/2.0)
-        xs = [x0 + w.x, x0 - w.x, x1 - w.x, x1 + w.x,]
-        ys = [y0 + w.y, y0 - w.y, y1 - w.y, y1 + w.y,]
-        filled_polygon(xs, ys)
+        polyline((x0, x1), (y0, y1))
 
 
 def circle(x: float, y: float, r: float):
@@ -450,9 +426,9 @@ def circle(x: float, y: float, r: float):
     x = float(x)
     y = float(y)
     r = float(r)
-    ws = _factor_x(2.0 * r)
-    hs = _factor_y(2.0 * r)
     line_width = _line_width_pixels()
+    ws = _factor_x(2.0 * r) + line_width # fudge factor because pygame stroke is inner
+    hs = _factor_y(2.0 * r) + line_width
     if (ws <= 1.0) and (hs <= 1.0):
         # If the radius is too small, then simply draw a pixel.
         _pixel(x, y)
@@ -479,15 +455,17 @@ def filled_circle(x: float, y: float, r: float):
     x = float(x)
     y = float(y)
     r = float(r)
-    ws = _factor_x(2.0 * r)
-    hs = _factor_y(2.0 * r)
+    ws = _factor_x(r)
+    hs = _factor_y(r)
     # If the radius is too small, then simply draw a pixel.
     if (ws <= 1.0) and (hs <= 1.0):
         _pixel(x, y)
     else:
         xs = _scale_x(x)
         ys = _scale_y(y)
-        pygame.draw.ellipse(_surface, _pygame_color(_pen_color), pygame.Rect(xs - ws / 2.0, ys - hs / 2.0, ws, hs), 0)
+
+        pygame.gfxdraw.filled_ellipse(_surface, int(xs), int(ys), int(ws), int(hs), _pygame_color(_pen_color))
+        pygame.gfxdraw.aaellipse(_surface, int(xs), int(ys), int(ws), int(hs), _pygame_color(_pen_color))
 
 
 def ellipse(x: float, y: float, half_width: float, half_height: float):
@@ -535,15 +513,17 @@ def filled_ellipse(x: float, y: float, half_width: float, half_height: float):
     y = float(y)
     half_width = float(half_width)
     half_height = float(half_height)
-    ws = _factor_x(2.0 * half_width)
-    hs = _factor_y(2.0 * half_height)
+    ws = _factor_x(half_width)
+    hs = _factor_y(half_height)
     if (ws <= 1.0) and (hs <= 1.0):
         # If the radius is too small, then simply draw a pixel.
         _pixel(x, y)
     else:
         xs = _scale_x(x)
         ys = _scale_y(y)
-        pygame.draw.ellipse(_surface, _pygame_color(_pen_color), pygame.Rect(xs - ws / 2.0, ys - hs / 2.0, ws, hs), 0)
+
+        pygame.gfxdraw.filled_ellipse(_surface, int(xs), int(ys), int(ws), int(hs), _pygame_color(_pen_color))
+        pygame.gfxdraw.aaellipse(_surface, int(xs), int(ys), int(ws), int(hs), _pygame_color(_pen_color))
 
 
 def rectangle(x: float, y: float, half_width: float, half_height: float):
@@ -634,7 +614,6 @@ def polyline(x: Sequence[float], y: Sequence[float]):
     """
     global _surface
     _make_sure_window_created()
-    line_width = _line_width_pixels()
     inner_points = []
     outer_points = []
 
@@ -645,13 +624,13 @@ def polyline(x: Sequence[float], y: Sequence[float]):
         if i == 0:
             bc = pygame.math.Vector2(c[0] - b[0], c[1] - b[1]).normalize()
             w = bc.rotate(90).normalize()
-            w.scale_to_length(line_width/2.0)
+            w.scale_to_length(_pen_width/2.0)
             inner_points.append((b[0] + w.x, b[1] + w.y))
             outer_points.append((b[0] - w.x, b[1] - w.y))
         elif i == len(x) - 1:
             ba = pygame.math.Vector2(a[0] - b[0], a[1] - b[1]).normalize()
             w = ba.rotate(90).normalize()
-            w.scale_to_length(line_width/2.0)
+            w.scale_to_length(_pen_width/2.0)
             if _intersect(inner_points[-1],
                           (b[0] + w.x, b[1] + w.y), 
                           outer_points[-1], 
@@ -666,8 +645,8 @@ def polyline(x: Sequence[float], y: Sequence[float]):
             bc = pygame.math.Vector2(c[0] - b[0], c[1] - b[1]).normalize()
             angle = math.acos(ba.dot(bc))
             turn = ba.rotate(90).dot(bc) < 0.0
-            ba.scale_to_length(line_width / (2.0 * math.sin(angle)))
-            bc.scale_to_length(line_width / (2.0 * math.sin(angle)))
+            ba.scale_to_length(_pen_width / (2.0 * math.sin(angle)))
+            bc.scale_to_length(_pen_width / (2.0 * math.sin(angle)))
             if turn:
                 inner_points.append((b[0] + ba.x + bc.x, b[1] + ba.y + bc.y))
                 outer_points.append((b[0] - ba.x - bc.x, b[1] - ba.y - bc.y))
@@ -681,8 +660,9 @@ def polyline(x: Sequence[float], y: Sequence[float]):
             _scale_point(inner_points[i+1]),
             _scale_point(outer_points[i+1]),
             _scale_point(outer_points[i]))
-        pygame.draw.polygon(_surface, _pygame_color(_pen_color), points, 0)
 
+        pygame.gfxdraw.filled_polygon(_surface, points, _pygame_color(_pen_color))
+        pygame.gfxdraw.aapolygon(_surface, points, _pygame_color(_pen_color))
 
 def polygon(x: Sequence[float], y: Sequence[float]):
     """Draw on the background canvas a polygon with coordinates
@@ -694,7 +674,6 @@ def polygon(x: Sequence[float], y: Sequence[float]):
     """
     global _surface
     _make_sure_window_created()
-    line_width = _line_width_pixels()
     inner_points = []
     outer_points = []
 
@@ -706,8 +685,8 @@ def polygon(x: Sequence[float], y: Sequence[float]):
         bc = pygame.math.Vector2(c[0] - b[0], c[1] - b[1]).normalize()
         angle = math.acos(ba.dot(bc))
         turn = ba.rotate(90).dot(bc) < 0.0
-        ba.scale_to_length(line_width / (2.0 * math.sin(angle)))
-        bc.scale_to_length(line_width / (2.0 * math.sin(angle)))
+        ba.scale_to_length(_pen_width / (2.0 * math.sin(angle)))
+        bc.scale_to_length(_pen_width / (2.0 * math.sin(angle)))
         if turn:
             inner_points.append((b[0] + ba.x + bc.x, b[1] + ba.y + bc.y))
             outer_points.append((b[0] - ba.x - bc.x, b[1] - ba.y - bc.y))
@@ -721,8 +700,9 @@ def polygon(x: Sequence[float], y: Sequence[float]):
             _scale_point(inner_points[i+1]),
             _scale_point(outer_points[i+1]),
             _scale_point(outer_points[i]))
-        pygame.draw.polygon(_surface, _pygame_color(_pen_color), points, 0)
 
+        pygame.gfxdraw.filled_polygon(_surface, points, _pygame_color(_pen_color))
+        pygame.gfxdraw.aapolygon(_surface, points, _pygame_color(_pen_color))
 
 def filled_polygon(x: Sequence[float], y: Sequence[float]):
     """Draw on the background canvas a filled polygon with coordinates
@@ -746,7 +726,9 @@ def filled_polygon(x: Sequence[float], y: Sequence[float]):
     for i in range(len(x)):
         points.append((x_scaled[i], y_scaled[i]))
     points.append((x_scaled[0], y_scaled[0]))
-    pygame.draw.polygon(_surface, _pygame_color(_pen_color), points, 0)
+
+    pygame.gfxdraw.filled_polygon(_surface, points, _pygame_color(_pen_color))
+    pygame.gfxdraw.aapolygon(_surface, points, _pygame_color(_pen_color))
 
 
 def triangle(x0: float, y0: float, x1: float, y1: float, x2: float, y2: float):
