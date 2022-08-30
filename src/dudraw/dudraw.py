@@ -349,12 +349,12 @@ def _make_sure_window_created():
 
 # -----------------------------------------------------------------------
 
-# Functions to draw shapes, text, and images on the background canvas.
+# Functions to draw shapes, text, and images on the canvas.
 
 
 def _pixel(x: float, y: float):
     """
-    Draw on the background canvas a pixel at (x, y).
+    Draw on the canvas a pixel at (x, y).
     """
     _make_sure_window_created()
     xs = _scale_x(x)
@@ -389,7 +389,7 @@ def point(x: float, y: float):
 
 
 def line(x0: float, y0: float, x1: float, y1: float):
-    """Draw on the background canvas a line from (x0, y0) to (x1, y1).
+    """Draw on the canvas a line from (x0, y0) to (x1, y1).
 
     The placement of the line on the canvas will depend on the values of (x1, y1), (x2, y2) as well as the x-scale and y-scale. Note that if the coordinates are outside the range of min and max x-scale or y-scale then the point won't appear on the canvas
 
@@ -415,7 +415,7 @@ def line(x0: float, y0: float, x1: float, y1: float):
 
 
 def circle(x: float, y: float, r: float):
-    """Draw on the background canvas a circle of radius r centered on
+    """Draw on the canvas a circle of radius r centered on
     (x, y).
 
     @param x: x-coordinate of the center of the circle
@@ -444,7 +444,7 @@ def circle(x: float, y: float, r: float):
 
 
 def filled_circle(x: float, y: float, r: float):
-    """Draw on the background canvas a filled circle of radius r
+    """Draw on the canvas a filled circle of radius r
     centered on (x, y).
 
     @param x: x-coordinate of the center of the circle
@@ -469,7 +469,7 @@ def filled_circle(x: float, y: float, r: float):
 
 
 def ellipse(x: float, y: float, half_width: float, half_height: float):
-    """   Draw on the background canvas an ellipse centered at (x, y) with
+    """   Draw on the canvas an ellipse centered at (x, y) with
     a width of 2.0 * half_width, and a height of 2.0 * half_height.
 
     @param x: x-coordinate of the center of the ellipse
@@ -500,7 +500,7 @@ def ellipse(x: float, y: float, half_width: float, half_height: float):
 
 
 def filled_ellipse(x: float, y: float, half_width: float, half_height: float):
-    """Draw on the background canvas a filled ellipse centered at (x, y)
+    """Draw on the canvas a filled ellipse centered at (x, y)
     with a width of 2.0 * half_width, and a height of 2.0 * half_height.
 
     @param x: x-coordinate of the center of the ellipse
@@ -527,7 +527,7 @@ def filled_ellipse(x: float, y: float, half_width: float, half_height: float):
 
 
 def rectangle(x: float, y: float, half_width: float, half_height: float):
-    """Draw on the background canvas a rectangle of width (2 * halfWidth
+    """Draw on the canvas a rectangle of width (2 * halfWidth
     and height (2 * halfHeight) centered at point (x, y).
 
     @param x: x-coordinate of the center of the rectangle
@@ -554,7 +554,7 @@ def rectangle(x: float, y: float, half_width: float, half_height: float):
 
 
 def filled_rectangle(x: float, y: float, half_width: float, half_height: float):
-    """Draw on the background canvas a rectangle of width (2 * halfWidth
+    """Draw on the canvas a rectangle of width (2 * halfWidth
     and height (2 * halfHeight) centered at point (x, y).
 
     @param x: x-coordinate of the center of the rectangle
@@ -580,7 +580,7 @@ def filled_rectangle(x: float, y: float, half_width: float, half_height: float):
 
 
 def square(x: float, y: float, r: float):
-    """Draw on the background canvas a square whose sides are of length
+    """Draw on the canvas a square whose sides are of length
     2r, centered on (x, y).
 
     @param x: x-coordinate of the center of the square
@@ -592,7 +592,7 @@ def square(x: float, y: float, r: float):
 
 
 def filled_square(x: float, y: float, r: float):
-    """Draw on the background canvas a filled square whose sides are of
+    """Draw on the canvas a filled square whose sides are of
     length 2r, centered on (x, y).
 
     @param x: x-coordinate of the center of the square
@@ -605,7 +605,7 @@ def filled_square(x: float, y: float, r: float):
 
 
 def polyline(x: Sequence[float], y: Sequence[float]):
-    """Draw on the background canvas a polyline with coordinates
+    """Draw on the canvas a polyline with coordinates
     (x[i], y[i]).
 
     The lists x and y must contain the same number of values. The two lists correspond to x-coordinates and y-coordinates of points (x[0], y[0]), (x[1], y[1]), (x[2], y[2]),..., (x[-1], y[-1]) on the polyline. Each point on the polyline connects to the point that follows it so (x_0, x_0) connects to (x[1], y[1]) with a straight line, then (x[1], y[1]) connects to (x[2], y[2]) and so on.
@@ -665,7 +665,7 @@ def polyline(x: Sequence[float], y: Sequence[float]):
         pygame.gfxdraw.aapolygon(_surface, points, _pygame_color(_pen_color))
 
 def polygon(x: Sequence[float], y: Sequence[float]):
-    """Draw on the background canvas a polygon with coordinates
+    """Draw on the canvas a polygon with coordinates
     (x[i], y[i]).
 
     The lists x and y must contain the same number of values. The two lists correspond to x-coordinates and y-coordinates of points (x[0], y[0]), (x[1], y[1]), (x[2], y[2]),..., (x[-1], y[-1]) on the polygon. Each point on the polygon connects to the point that follows it so (x_0, x_0) connects to (x[1], y[1]) with a straight line, then (x[1], y[1]) connects to (x[2], y[2]) and so on until (x[-1], y[-1]) connects to (x[0], y[0]).
@@ -705,7 +705,7 @@ def polygon(x: Sequence[float], y: Sequence[float]):
         pygame.gfxdraw.aapolygon(_surface, points, _pygame_color(_pen_color))
 
 def filled_polygon(x: Sequence[float], y: Sequence[float]):
-    """Draw on the background canvas a filled polygon with coordinates
+    """Draw on the canvas a filled polygon with coordinates
     (x[i], y[i]).
 
     The lists x and y must contain the same number of values. The two lists correspond to x-coordinates and y-coordinates of points (x[0], y[0]), (x[1], y[1]), (x[2], y[2]),..., (x[-1], y[-1]) on the polygon. Each point on the polygon connects to the point that follows it so (x_0, x_0) connects to (x[1], y[1]) with a straight line, then (x[1], y[1]) connects to (x[2], y[2]) and so on until (x[-1], y[-1]) connects to (x[0], y[0]).
@@ -732,7 +732,7 @@ def filled_polygon(x: Sequence[float], y: Sequence[float]):
 
 
 def triangle(x0: float, y0: float, x1: float, y1: float, x2: float, y2: float):
-    """Draw a triangle on the background canvas with corners at (x0, y0),
+    """Draw a triangle on the canvas with corners at (x0, y0),
     (x1, y1), and (x2, y2).
 
     @param x0: x-coordinate of the first point of the triangle
@@ -747,7 +747,7 @@ def triangle(x0: float, y0: float, x1: float, y1: float, x2: float, y2: float):
 
 
 def filled_triangle(x0: float, y0: float, x1: float, y1: float, x2: float, y2: float):
-    """Draw a filled triangle on the background canvas with corners at
+    """Draw a filled triangle on the canvas with corners at
     (x0, y0), (x1, y1), and (x2, y2).
 
     @param x0: x-coordinate of the first point of the triangle
@@ -762,7 +762,7 @@ def filled_triangle(x0: float, y0: float, x1: float, y1: float, x2: float, y2: f
 
 
 def quadrilateral(x0: float, y0: float, x1: float, y1: float, x2: float, y2: float, x3: float, y3: float):
-    """Draw a quadrilateral on the background canvas with corners at (x0, y0),
+    """Draw a quadrilateral on the canvas with corners at (x0, y0),
     (x1, y1), (x2, y2), and (x3, y3).
 
     @param x0: x-coordinate of the first point of the quadrilateral
@@ -779,7 +779,7 @@ def quadrilateral(x0: float, y0: float, x1: float, y1: float, x2: float, y2: flo
 
 
 def filled_quadrilateral(x0: float, y0: float, x1: float, y1: float, x2: float, y2: float, x3: float, y3: float):
-    """Draw a filled quadrilateral on the background canvas with corners at
+    """Draw a filled quadrilateral on the canvas with corners at
     (x0, y0), (x1, y1), (x2, y2), and (x3, y3).
 
     @param x0: x-coordinate of the first point of the quadrilateral
@@ -1104,7 +1104,7 @@ def filled_annulus(x: float, y: float, r1: float, r2: float):
 
 
 def text(x: float, y: float, s: str):
-    """Draw a line of string on the background canvas centered at (x, y).
+    """Draw a line of string on the canvas centered at (x, y).
 
     The string will appear on a single line. Note that (x, y) is the center of the rectangle that bounds the string. The string uses the current font and font size. Font and font size can be modified using the methods: set_font_family and set_font_size
 
@@ -1124,9 +1124,9 @@ def text(x: float, y: float, s: str):
 
 
 def picture(filepath: str, x: float = None, y: float = None):
-    """Draw pic on the background canvas centered at (x, y). 
+    """Draw pic on the canvas centered at (x, y). 
     
-    The file can be of type .jpg, .png, .gif or .bmp.  Filepath is specified as a string, and (x, y) defaults to the midpoint of the background canvas. 
+    The file can be of type .jpg, .png, .gif or .bmp.  Filepath is specified as a string, and (x, y) defaults to the midpoint of the canvas. 
 
     @param filepath: a string representing the path of the image file
     @param x: x-coordinate of the center of the image, defaults to x-coordinate of the center of the canvas
@@ -1150,7 +1150,7 @@ def picture(filepath: str, x: float = None, y: float = None):
 
 
 def clear(c: Color = WHITE):
-    """Clear the background canvas to color c, where c is an
+    """Clear the canvas to color c, where c is an
     object of class Color. c defaults to dudraw.WHITE.
 
     @param c: the color to be used to clear the background, defaults to white
@@ -1160,7 +1160,7 @@ def clear(c: Color = WHITE):
 
 
 def clear_rgb(r: float = 255, g: float = 255, b: float = 255):
-    """Clear the background canvas to color defined by
+    """Clear the canvas to color defined by
     r, g, and b. Defaults to white (255, 255, 255).
 
     @param r: red color value. 0 for minimum red and 255 for maximum red, defaults to 255
@@ -1188,7 +1188,7 @@ def save(filepath: str):
 
 def _show():
     """
-    Copy the background canvas to the window canvas.
+    Copy the canvas to the window canvas.
     """
     _background.blit(_surface, (0, 0))
     pygame.display.flip()
@@ -1197,7 +1197,7 @@ def _show():
 
 def _show_and_wait_forever():
     """
-    Copy the background canvas to the window canvas. Then wait
+    Copy the canvas to the window canvas. Then wait
     forever, that is, until the user closes the dudraw window.
     """
     _make_sure_window_created()
@@ -1209,10 +1209,10 @@ def _show_and_wait_forever():
 
 
 def show(msec: float = 0.0):
-    """Copy the background canvas to the window canvas, and
+    """Copy the canvas to the window canvas, and
     then wait for msec milliseconds. msec defaults to 0.0.
 
-    Note that everything we draw is on the background canvas so won't show on the screen until we call show
+    Note that everything we draw is on the canvas so won't show on the screen until we call show
 
     @param msec: amount of milliseconds to wait after show, defaults to 0.0
     """
