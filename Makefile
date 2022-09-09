@@ -1,4 +1,4 @@
-.PHONY: build release-major release-minor release-patch publish docs
+.PHONY: build release-major release-minor release-patch publish publish-csdu docs
 build:
 	python3 -m build
 
@@ -19,3 +19,6 @@ publish:
 
 docs:
 	pydoctor src/dudraw --html-output=docs
+
+sync:
+	rsync -ravP docs/* intropython@linux.cs.du.edu:~/public_html/dudraw
