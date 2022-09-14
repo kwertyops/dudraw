@@ -621,6 +621,10 @@ def polyline(x: Sequence[float], y: Sequence[float]):
         a = (x[i-1], y[i-1])
         b = (x[i], y[i])
         c = (x[(i+1)%len(x)], y[(i+1)%len(x)])
+        if a == b:
+            a = (x[i-2], y[i-2])
+        if b == c:
+            c = (x[(i+2)%len(x)], y[(i+2)%len(x)])
         if i == 0:
             bc = pygame.math.Vector2(c[0] - b[0], c[1] - b[1]).normalize()
             w = bc.rotate(90).normalize()
@@ -681,6 +685,10 @@ def polygon(x: Sequence[float], y: Sequence[float]):
         a = (x[i-1], y[i-1])
         b = (x[i], y[i])
         c = (x[(i+1)%len(x)], y[(i+1)%len(x)])
+        if a == b:
+            a = (x[i-2], y[i-2])
+        if b == c:
+            c = (x[(i+2)%len(x)], y[(i+2)%len(x)])
         ba = pygame.math.Vector2(a[0] - b[0], a[1] - b[1]).normalize()
         bc = pygame.math.Vector2(c[0] - b[0], c[1] - b[1]).normalize()
         angle = math.acos(ba.dot(bc))
