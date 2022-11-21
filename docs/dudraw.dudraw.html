@@ -403,6 +403,16 @@
         
 
         
+            <div class="itemName"><code><a href="#mouse_dragged" class="internal-link" title="dudraw.dudraw.mouse_dragged">mouse<wbr></wbr>_dragged</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
             <div class="itemName"><code><a href="#mouse_pressed" class="internal-link" title="dudraw.dudraw.mouse_pressed">mouse<wbr></wbr>_pressed</a></code>
             </div>
         
@@ -972,6 +982,16 @@
         
 
         
+            <div class="itemName"><code><a href="#_mouse_dragged" class="internal-link" title="dudraw.dudraw._mouse_dragged">_mouse<wbr></wbr>_dragged</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
             <div class="itemName"><code><a href="#_mouse_pos" class="internal-link" title="dudraw.dudraw._mouse_pos">_mouse<wbr></wbr>_pos</a></code>
             </div>
         
@@ -1271,8 +1291,13 @@
   </tr><tr class="function">
     
     <td>Function</td>
+    <td><code><a href="#mouse_dragged" class="internal-link" title="dudraw.dudraw.mouse_dragged">mouse<wbr></wbr>_dragged</a></code></td>
+    <td>Return True if the mouse is being click-and-dragged on the canvas, and False otherwise.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
     <td><code><a href="#mouse_pressed" class="internal-link" title="dudraw.dudraw.mouse_pressed">mouse<wbr></wbr>_pressed</a></code></td>
-    <td>Return True if the mouse has been left-clicked since the last time mousePressed was called, and False otherwise.</td>
+    <td>Return True if the left mouse button is currently being held down, and False otherwise.</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -1547,6 +1572,11 @@
     
     <td>Variable</td>
     <td><code><a href="#_keys_typed" class="internal-link" title="dudraw.dudraw._keys_typed">_keys<wbr></wbr>_typed</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_mouse_dragged" class="internal-link" title="dudraw.dudraw._mouse_dragged">_mouse<wbr></wbr>_dragged</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="variable private">
     
@@ -2062,7 +2092,7 @@
     
     
     <div><p>Return True if the queue of keys the user typed is not empty. Otherwise return False.</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>bool</code></td><td class="fieldArgDesc">true if a keyboard key is in the queue; false otherwise</td></tr></table></div>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>bool</code></td><td class="fieldArgDesc">True if a keyboard key is in the queue; False otherwise</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -2088,6 +2118,26 @@
 </div><div class="basefunction">
   
   
+  <a name="dudraw.dudraw.mouse_dragged">
+    
+  </a>
+  <a name="mouse_dragged">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">mouse_dragged</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Return True if the mouse is being click-and-dragged on the canvas, and False otherwise.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>bool</code></td><td class="fieldArgDesc">True if the mouse has moved while held; False otherwise</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
   <a name="dudraw.dudraw.mouse_pressed">
     
   </a>
@@ -2102,8 +2152,8 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Return True if the mouse has been left-clicked since the last time mousePressed was called, and False otherwise.</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>bool</code></td><td class="fieldArgDesc">true if the left mouse button has been pressed; false otherwise</td></tr></table></div>
+    <div><p>Return True if the left mouse button is currently being held down, and False otherwise.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>bool</code></td><td class="fieldArgDesc">True if the left mouse button has been pressed; False otherwise</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -3212,6 +3262,26 @@
 </div><div class="basevariable private">
   
   
+  <a name="dudraw.dudraw._mouse_dragged">
+    
+  </a>
+  <a name="_mouse_dragged">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_mouse_dragged</span>: <code>bool</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable private">
+  
+  
   <a name="dudraw.dudraw._mouse_pos">
     
   </a>
@@ -3381,7 +3451,7 @@
   <div class="container">
     <a href="index.html">API Documentation</a> for dudraw,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    22.5.1 at 2022-08-30 14:24:40.
+    22.5.1 at 2022-11-21 14:30:07.
   </div>
 
   <!-- Search related scripts needs to be loaded at the end of HTML 
