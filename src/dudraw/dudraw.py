@@ -60,13 +60,16 @@ _window_created = False
 
 # Keep track of mouse status
 
+# Has the left mouse button been clicked since last check?
+_mouse_clicked = False
+
 # Is the left mouse button being held??
 _mouse_pressed = False
 
 # Is the mouse being click-and-dragged?
 _mouse_dragged = False
 
-# The position of the mouse as of the most recent mouse click
+# The position of the mouse
 _mouse_pos = None
 
 
@@ -1263,6 +1266,7 @@ def _check_for_events():
     # Begin added by Alan J. Broder
     # -------------------------------------------------------------------
     global _mouse_pos
+    global _mouse_clicked
     global _mouse_pressed
     global _mouse_dragged
     # -------------------------------------------------------------------
@@ -1288,6 +1292,7 @@ def _check_for_events():
         # the mouse position as of that press.
         elif (event.type == pygame.MOUSEBUTTONDOWN) and (event.button == 1):
             _mouse_pressed = True
+            _mouse_clicked = True
         # ---------------------------------------------------------------
         # End added by Alan J. Broder
         # ---------------------------------------------------------------
@@ -1327,11 +1332,23 @@ def next_key_typed() -> str:
 # Functions for dealing with mouse clicks
 
 
+def mouse_clicked() -> bool:
+    """Return True if the left mouse button has been pressed since the last check,
+    and False otherwise.
+
+    @return: True if the left mouse button has been pressed since last check; False otherwise
+    """
+    global _mouse_clicked
+    if _mouse_clicked:
+        _mouse_clicked = False
+        return True
+    return False
+
 def mouse_pressed() -> bool:
     """Return True if the left mouse button is currently being held down,
     and False otherwise.
 
-    @return: True if the left mouse button has been pressed; False otherwise
+    @return: True if the left mouse button is pressed; False otherwise
     """
     global _mouse_pressed
     return _mouse_pressed
