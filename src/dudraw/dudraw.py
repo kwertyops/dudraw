@@ -1276,7 +1276,6 @@ def _check_for_events():
     _make_sure_window_created()
 
     for event in pygame.event.get():
-        print(event)
         if event.type == pygame.QUIT:
             sys.exit()
         elif event.type == pygame.KEYDOWN:
