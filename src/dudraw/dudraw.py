@@ -63,14 +63,17 @@ _window_created = False
 # Has the left mouse button been clicked since last check?
 _mouse_clicked = False
 
+# Has the left mouse button been released since last check?
+_mouse_released = False
+
 # Is the left mouse button being held??
-_mouse_pressed = False
+_mouse_is_pressed = False
 
 # Is the mouse being click-and-dragged?
 _mouse_dragged = False
 
 # The position of the mouse
-_mouse_pos = None
+_mouse_pos = (0.0, 0.0)
 
 
 # -----------------------------------------------------------------------
@@ -1267,8 +1270,9 @@ def _check_for_events():
     # -------------------------------------------------------------------
     global _mouse_pos
     global _mouse_clicked
-    global _mouse_pressed
+    global _mouse_is_pressed
     global _mouse_dragged
+    global _mouse_released
     # -------------------------------------------------------------------
     # End added by Alan J. Broder
     # -------------------------------------------------------------------
@@ -1290,14 +1294,15 @@ def _check_for_events():
         # Every time the mouse button is pressed, remember
         # the mouse position as of that press.
         elif (event.type == pygame.MOUSEBUTTONDOWN) and (event.button == 1):
-            _mouse_pressed = True
+            _mouse_is_pressed = True
             _mouse_clicked = True
         # ---------------------------------------------------------------
         # End added by Alan J. Broder
         # ---------------------------------------------------------------
         elif (event.type == pygame.MOUSEBUTTONUP) and (event.button == 1):
-            _mouse_pressed = False
+            _mouse_is_pressed = False
             _mouse_dragged = False
+            _mouse_released = True
 # -----------------------------------------------------------------------
 
 # Functions for retrieving keys
@@ -1343,14 +1348,26 @@ def mouse_clicked() -> bool:
         return True
     return False
 
-def mouse_pressed() -> bool:
+def mouse_released() -> bool:
+    """Return True if the left mouse button has been released since the last check,
+    and False otherwise.
+
+    @return: True if the left mouse button has been released since last check; False otherwise
+    """
+    global _mouse_released
+    if _mouse_released:
+        _mouse_released = False
+        return True
+    return False
+
+def mouse_is_pressed() -> bool:
     """Return True if the left mouse button is currently being held down,
     and False otherwise.
 
     @return: True if the left mouse button is pressed; False otherwise
     """
-    global _mouse_pressed
-    return _mouse_pressed
+    global _mouse_is_pressed
+    return _mouse_is_pressed
 
 
 def mouse_dragged() -> bool:
@@ -1374,10 +1391,7 @@ def mouse_x() -> float:
     @return: the x-coordinate of the location of the mouse
     """
     global _mouse_pos
-    if _mouse_pos:
-        return _user_x(_mouse_pos[0])
-    else:
-        return None
+    return _user_x(_mouse_pos[0])
 
 
 def mouse_y() -> float:
@@ -1390,10 +1404,7 @@ def mouse_y() -> float:
     @return: the y-coordinate of the location of the mouse 
     """
     global _mouse_pos
-    if _mouse_pos:
-        return _user_y(_mouse_pos[1])
-    else:
-        return None
+    return _user_y(_mouse_pos[1])
 
 
 # -----------------------------------------------------------------------
@@ -1547,7 +1558,7 @@ def _regression_test():
     set_pen_color(BLACK)
     print("Left click with the mouse or type a key")
     while True:
-        if mouse_pressed():
+        if mouse_is_pressed():
             filled_circle(mouse_x(), mouse_y(), 0.02)
         if has_next_key_typed():
             print(next_key_typed())

@@ -423,7 +423,17 @@
         
 
         
-            <div class="itemName"><code><a href="#mouse_pressed" class="internal-link" title="dudraw.dudraw.mouse_pressed">mouse<wbr></wbr>_pressed</a></code>
+            <div class="itemName"><code><a href="#mouse_is_pressed" class="internal-link" title="dudraw.dudraw.mouse_is_pressed">mouse<wbr></wbr>_is<wbr></wbr>_pressed</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#mouse_released" class="internal-link" title="dudraw.dudraw.mouse_released">mouse<wbr></wbr>_released</a></code>
             </div>
         
 
@@ -1012,6 +1022,16 @@
         
 
         
+            <div class="itemName"><code><a href="#_mouse_is_pressed" class="internal-link" title="dudraw.dudraw._mouse_is_pressed">_mouse<wbr></wbr>_is<wbr></wbr>_pressed</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
             <div class="itemName"><code><a href="#_mouse_pos" class="internal-link" title="dudraw.dudraw._mouse_pos">_mouse<wbr></wbr>_pos</a></code>
             </div>
         
@@ -1022,7 +1042,7 @@
         
 
         
-            <div class="itemName"><code><a href="#_mouse_pressed" class="internal-link" title="dudraw.dudraw._mouse_pressed">_mouse<wbr></wbr>_pressed</a></code>
+            <div class="itemName"><code><a href="#_mouse_released" class="internal-link" title="dudraw.dudraw._mouse_released">_mouse<wbr></wbr>_released</a></code>
             </div>
         
 
@@ -1321,8 +1341,13 @@
   </tr><tr class="function">
     
     <td>Function</td>
-    <td><code><a href="#mouse_pressed" class="internal-link" title="dudraw.dudraw.mouse_pressed">mouse<wbr></wbr>_pressed</a></code></td>
+    <td><code><a href="#mouse_is_pressed" class="internal-link" title="dudraw.dudraw.mouse_is_pressed">mouse<wbr></wbr>_is<wbr></wbr>_pressed</a></code></td>
     <td>Return True if the left mouse button is currently being held down, and False otherwise.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#mouse_released" class="internal-link" title="dudraw.dudraw.mouse_released">mouse<wbr></wbr>_released</a></code></td>
+    <td>Return True if the left mouse button has been released since the last check, and False otherwise.</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -1611,12 +1636,17 @@
   </tr><tr class="variable private">
     
     <td>Variable</td>
+    <td><code><a href="#_mouse_is_pressed" class="internal-link" title="dudraw.dudraw._mouse_is_pressed">_mouse<wbr></wbr>_is<wbr></wbr>_pressed</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
     <td><code><a href="#_mouse_pos" class="internal-link" title="dudraw.dudraw._mouse_pos">_mouse<wbr></wbr>_pos</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="variable private">
     
     <td>Variable</td>
-    <td><code><a href="#_mouse_pressed" class="internal-link" title="dudraw.dudraw._mouse_pressed">_mouse<wbr></wbr>_pressed</a></code></td>
+    <td><code><a href="#_mouse_released" class="internal-link" title="dudraw.dudraw._mouse_released">_mouse<wbr></wbr>_released</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="variable private">
     
@@ -2188,15 +2218,15 @@
 </div><div class="basefunction">
   
   
-  <a name="dudraw.dudraw.mouse_pressed">
+  <a name="dudraw.dudraw.mouse_is_pressed">
     
   </a>
-  <a name="mouse_pressed">
+  <a name="mouse_is_pressed">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">mouse_pressed</span>():
+    <span class="py-keyword">def</span> <span class="py-defname">mouse_is_pressed</span>():
     
   </div>
   <div class="docstring functionBody">
@@ -2204,6 +2234,26 @@
     
     <div><p>Return True if the left mouse button is currently being held down, and False otherwise.</p>
 <table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>bool</code></td><td class="fieldArgDesc">True if the left mouse button is pressed; False otherwise</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.mouse_released">
+    
+  </a>
+  <a name="mouse_released">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">mouse_released</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Return True if the left mouse button has been released since the last check, and False otherwise.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>bool</code></td><td class="fieldArgDesc">True if the left mouse button has been released since last check; False otherwise</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -3352,15 +3402,15 @@
 </div><div class="basevariable private">
   
   
-  <a name="dudraw.dudraw._mouse_pos">
+  <a name="dudraw.dudraw._mouse_is_pressed">
     
   </a>
-  <a name="_mouse_pos">
+  <a name="_mouse_is_pressed">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">_mouse_pos</span> =
+    <span class="py-defname">_mouse_is_pressed</span>: <code>bool</code> =
     
   </div>
   <div class="functionBody">
@@ -3372,15 +3422,35 @@
 </div><div class="basevariable private">
   
   
-  <a name="dudraw.dudraw._mouse_pressed">
+  <a name="dudraw.dudraw._mouse_pos">
     
   </a>
-  <a name="_mouse_pressed">
+  <a name="_mouse_pos">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">_mouse_pressed</span>: <code>bool</code> =
+    <span class="py-defname">_mouse_pos</span>: <code>tuple[<wbr></wbr>float, <wbr></wbr><span class="rst-variable-ellipsis">...</span>]</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable private">
+  
+  
+  <a name="dudraw.dudraw._mouse_released">
+    
+  </a>
+  <a name="_mouse_released">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_mouse_released</span>: <code>bool</code> =
     
   </div>
   <div class="functionBody">
@@ -3521,7 +3591,7 @@
   <div class="container">
     <a href="index.html">API Documentation</a> for dudraw,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    22.5.1 at 2022-11-29 14:43:34.
+    22.5.1 at 2022-12-03 10:07:24.
   </div>
 
   <!-- Search related scripts needs to be loaded at the end of HTML 
