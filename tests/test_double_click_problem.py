@@ -29,8 +29,8 @@ for i in range(len(elevations)):
         dudraw.set_pen_color_rgb(intensity,intensity,intensity)
         dudraw.point(j,559-i)
 
-while not dudraw.has_next_key_typed():
-    if dudraw.mouse_pressed():
+while len(dudraw.keys_typed()) < 1:
+    if dudraw.mouse_clicked():
         dudraw.set_pen_color(dudraw.WHITE)
         dudraw.filled_rectangle(740,20,20,10)
         dudraw.set_pen_color(dudraw.BLACK)

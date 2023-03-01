@@ -25,7 +25,6 @@ import pygame.font
 # Default Sizes and Values
 
 _BORDER = 0.0
-# _BORDER = 0.05
 _DEFAULT_XMIN = 0.0
 _DEFAULT_XMAX = 1.0
 _DEFAULT_YMIN = 0.0
@@ -49,13 +48,15 @@ _canvas_width = float(_DEFAULT_CANVAS_SIZE)
 _canvas_height = float(_DEFAULT_CANVAS_SIZE)
 _pen_width = None
 _pen_color = _DEFAULT_PEN_COLOR
-_keys_typed = []
+_keys_typed = set()
+_keys_released = set()
+_keys_pressed = set()
 
 # Has the window been created?
 _window_created = False
 
 # -----------------------------------------------------------------------
-# Begin added by Alan J. Broder
+# Begin added by Alan J. Broder, additions/modifications by Andrew Hannum
 # -----------------------------------------------------------------------
 
 # Keep track of mouse status
@@ -1264,6 +1265,8 @@ def _check_for_events():
     """
     global _surface
     global _keys_typed
+    global _keys_released
+    global _keys_pressed
 
     # -------------------------------------------------------------------
     # Begin added by Alan J. Broder
@@ -1283,7 +1286,13 @@ def _check_for_events():
         if event.type == pygame.QUIT:
             sys.exit()
         elif event.type == pygame.KEYDOWN:
-            _keys_typed = [event.unicode] + _keys_typed
+            keycode = pygame.key.name(event.key) if event.unicode == '' else event.unicode
+            _keys_typed.add(keycode)
+            _keys_pressed.add(keycode)
+        elif event.type == pygame.KEYUP:
+            keycode = pygame.key.name(event.key) if event.unicode == '' else event.unicode
+            _keys_released.add(keycode)
+            _keys_pressed.remove(keycode)
         elif event.type == pygame.MOUSEMOTION:
             _mouse_pos = event.pos
             _mouse_dragged = event.buttons[0] == 1
@@ -1308,29 +1317,56 @@ def _check_for_events():
 # Functions for retrieving keys
 
 
-def has_next_key_typed() -> bool:
-    """Return True if the queue of keys the user typed is not empty.
-    Otherwise return False.
+def next_key() -> str:
+    """Return a string representing a key that was typed since the
+    last time this function, or the keys_typed() function was called.
 
-    @return: True if a keyboard key is in the queue; False otherwise
+    @return: a strings representing the key typed
+    """
+    global _keys_typed
+    if len(_keys_typed) == 0:
+        return ''
+    else:
+        k = _keys_typed[0]
+        _keys_typed.remove(k)
+        return k
+
+def keys_typed() -> set[str]:
+    """Return the set of keys that the user has typed since the last
+    time this function was called.
+
+    @return: a set of strings representing the keys typed
     """
 
     global _keys_typed
-    return _keys_typed != []
+    k = _keys_typed
+    _keys_typed = set()
+    return k
 
+def keys_released() -> set[str]:
+    """Return the set of keys that the user has released since the last
+    time this function was called.
 
-def next_key_typed() -> str:
-    """Remove the first key from the queue of keys that the the user typed,
-    and return that key.
-
-    @return: a string representing the next key in the queue
+    @return: a set of strings representing the keys released
     """
-    global _keys_typed
-    return _keys_typed.pop()
+
+    global _keys_released
+    k = _keys_released
+    _keys_released = set()
+    return k
+
+def keys_pressed() -> set[str]:
+    """Return the set of keys that are currently being held down
+    by the user.
+
+    @return: a set of strings representing the keys being held
+    """
+    global _keys_pressed
+    return _keys_pressed.copy()
 
 
 # -----------------------------------------------------------------------
-# Begin added by Alan J. Broder
+# Begin added by Alan J. Broder, additions/modifications by Andrew Hannum
 # -----------------------------------------------------------------------
 
 # Functions for dealing with mouse clicks
@@ -1381,13 +1417,8 @@ def mouse_dragged() -> bool:
 
 
 def mouse_x() -> float:
-    """Return the x coordinate in user space of the location at
-    which the mouse was most recently left-clicked. 
+    """Return the x coordinate in user space of the mouse cursor. 
     
-    If a left-click hasn't happened yet, raise an exception, since mouseX() shouldn't
-    be called until mousePressed() returns True.
-
-    @raises Exception: error if mouse has not been clicked yet
     @return: the x-coordinate of the location of the mouse
     """
     global _mouse_pos
@@ -1395,12 +1426,8 @@ def mouse_x() -> float:
 
 
 def mouse_y() -> float:
-    """Return the y coordinate in user space of the location at
-    which the mouse was most recently left-clicked. 
+    """Return the y coordinate in user space of the mouse cursor.
     
-    If a left-click hasn't happened yet, raise an exception, since mouseY() shouldn't be called until mousePressed() returns True.
-
-    @raises Exception: error if mouse has not been clicked yet
     @return: the y-coordinate of the location of the mouse 
     """
     global _mouse_pos
@@ -1560,8 +1587,9 @@ def _regression_test():
     while True:
         if mouse_is_pressed():
             filled_circle(mouse_x(), mouse_y(), 0.02)
-        if has_next_key_typed():
-            print(next_key_typed())
+        keys = keys_typed()
+        if len(keys) > 0:
+            print(keys)
         show(0.0)
 
     # Never get here.

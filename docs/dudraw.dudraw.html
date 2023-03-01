@@ -383,7 +383,27 @@
         
 
         
-            <div class="itemName"><code><a href="#has_next_key_typed" class="internal-link" title="dudraw.dudraw.has_next_key_typed">has<wbr></wbr>_next<wbr></wbr>_key<wbr></wbr>_typed</a></code>
+            <div class="itemName"><code><a href="#keys_pressed" class="internal-link" title="dudraw.dudraw.keys_pressed">keys<wbr></wbr>_pressed</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#keys_released" class="internal-link" title="dudraw.dudraw.keys_released">keys<wbr></wbr>_released</a></code>
+            </div>
+        
+
+    </li><li class="">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#keys_typed" class="internal-link" title="dudraw.dudraw.keys_typed">keys<wbr></wbr>_typed</a></code>
             </div>
         
 
@@ -463,7 +483,7 @@
         
 
         
-            <div class="itemName"><code><a href="#next_key_typed" class="internal-link" title="dudraw.dudraw.next_key_typed">next<wbr></wbr>_key<wbr></wbr>_typed</a></code>
+            <div class="itemName"><code><a href="#next_key" class="internal-link" title="dudraw.dudraw.next_key">next<wbr></wbr>_key</a></code>
             </div>
         
 
@@ -992,6 +1012,26 @@
         
 
         
+            <div class="itemName"><code><a href="#_keys_pressed" class="internal-link" title="dudraw.dudraw._keys_pressed">_keys<wbr></wbr>_pressed</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
+            <div class="itemName"><code><a href="#_keys_released" class="internal-link" title="dudraw.dudraw._keys_released">_keys<wbr></wbr>_released</a></code>
+            </div>
+        
+
+    </li><li class="private">
+        
+        
+        
+
+        
             <div class="itemName"><code><a href="#_keys_typed" class="internal-link" title="dudraw.dudraw._keys_typed">_keys<wbr></wbr>_typed</a></code>
             </div>
         
@@ -1321,8 +1361,18 @@
   </tr><tr class="function">
     
     <td>Function</td>
-    <td><code><a href="#has_next_key_typed" class="internal-link" title="dudraw.dudraw.has_next_key_typed">has<wbr></wbr>_next<wbr></wbr>_key<wbr></wbr>_typed</a></code></td>
-    <td>Return True if the queue of keys the user typed is not empty. Otherwise return False.</td>
+    <td><code><a href="#keys_pressed" class="internal-link" title="dudraw.dudraw.keys_pressed">keys<wbr></wbr>_pressed</a></code></td>
+    <td>Return the set of keys that are currently being held down by the user.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#keys_released" class="internal-link" title="dudraw.dudraw.keys_released">keys<wbr></wbr>_released</a></code></td>
+    <td>Return the set of keys that the user has released since the last time this function was called.</td>
+  </tr><tr class="function">
+    
+    <td>Function</td>
+    <td><code><a href="#keys_typed" class="internal-link" title="dudraw.dudraw.keys_typed">keys<wbr></wbr>_typed</a></code></td>
+    <td>Return the set of keys that the user has typed since the last time this function was called.</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -1352,17 +1402,17 @@
     
     <td>Function</td>
     <td><code><a href="#mouse_x" class="internal-link" title="dudraw.dudraw.mouse_x">mouse<wbr></wbr>_x</a></code></td>
-    <td>Return the x coordinate in user space of the location at which the mouse was most recently left-clicked.</td>
+    <td>Return the x coordinate in user space of the mouse cursor.</td>
   </tr><tr class="function">
     
     <td>Function</td>
     <td><code><a href="#mouse_y" class="internal-link" title="dudraw.dudraw.mouse_y">mouse<wbr></wbr>_y</a></code></td>
-    <td>Return the y coordinate in user space of the location at which the mouse was most recently left-clicked.</td>
+    <td>Return the y coordinate in user space of the mouse cursor.</td>
   </tr><tr class="function">
     
     <td>Function</td>
-    <td><code><a href="#next_key_typed" class="internal-link" title="dudraw.dudraw.next_key_typed">next<wbr></wbr>_key<wbr></wbr>_typed</a></code></td>
-    <td>Remove the first key from the queue of keys that the the user typed, and return that key.</td>
+    <td><code><a href="#next_key" class="internal-link" title="dudraw.dudraw.next_key">next<wbr></wbr>_key</a></code></td>
+    <td>Return a string representing a key that was typed since the last time this function, or the keys_typed() function was called.</td>
   </tr><tr class="function">
     
     <td>Function</td>
@@ -1617,6 +1667,16 @@
     
     <td>Variable</td>
     <td><code><a href="#_canvas_width" class="internal-link" title="dudraw.dudraw._canvas_width">_canvas<wbr></wbr>_width</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_keys_pressed" class="internal-link" title="dudraw.dudraw._keys_pressed">_keys<wbr></wbr>_pressed</a></code></td>
+    <td><span class="undocumented">Undocumented</span></td>
+  </tr><tr class="variable private">
+    
+    <td>Variable</td>
+    <td><code><a href="#_keys_released" class="internal-link" title="dudraw.dudraw._keys_released">_keys<wbr></wbr>_released</a></code></td>
     <td><span class="undocumented">Undocumented</span></td>
   </tr><tr class="variable private">
     
@@ -2137,22 +2197,62 @@
 </div><div class="basefunction">
   
   
-  <a name="dudraw.dudraw.has_next_key_typed">
+  <a name="dudraw.dudraw.keys_pressed">
     
   </a>
-  <a name="has_next_key_typed">
+  <a name="keys_pressed">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">has_next_key_typed</span>():
+    <span class="py-keyword">def</span> <span class="py-defname">keys_pressed</span>():
     
   </div>
   <div class="docstring functionBody">
     
     
-    <div><p>Return True if the queue of keys the user typed is not empty. Otherwise return False.</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>bool</code></td><td class="fieldArgDesc">True if a keyboard key is in the queue; False otherwise</td></tr></table></div>
+    <div><p>Return the set of keys that are currently being held down by the user.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>set[<wbr></wbr>str]</code></td><td class="fieldArgDesc">a set of strings representing the keys being held</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.keys_released">
+    
+  </a>
+  <a name="keys_released">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">keys_released</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Return the set of keys that the user has released since the last time this function was called.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>set[<wbr></wbr>str]</code></td><td class="fieldArgDesc">a set of strings representing the keys released</td></tr></table></div>
+  </div>
+</div><div class="basefunction">
+  
+  
+  <a name="dudraw.dudraw.keys_typed">
+    
+  </a>
+  <a name="keys_typed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-keyword">def</span> <span class="py-defname">keys_typed</span>():
+    
+  </div>
+  <div class="docstring functionBody">
+    
+    
+    <div><p>Return the set of keys that the user has typed since the last time this function was called.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>set[<wbr></wbr>str]</code></td><td class="fieldArgDesc">a set of strings representing the keys typed</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -2272,9 +2372,8 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Return the x coordinate in user space of the location at which the mouse was most recently left-clicked.</p>
-<p>If a left-click hasn't happened yet, raise an exception, since mouseX() shouldn't be called until mousePressed() returns True.</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>float</code></td><td class="fieldArgDesc">the x-coordinate of the location of the mouse</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code>Exception</code></td><td>error if mouse has not been clicked yet</td></tr></table></div>
+    <div><p>Return the x coordinate in user space of the mouse cursor.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>float</code></td><td class="fieldArgDesc">the x-coordinate of the location of the mouse</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -2293,29 +2392,28 @@
   <div class="docstring functionBody">
     
     
-    <div><p>Return the y coordinate in user space of the location at which the mouse was most recently left-clicked.</p>
-<p>If a left-click hasn't happened yet, raise an exception, since mouseY() shouldn't be called until mousePressed() returns True.</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>float</code></td><td class="fieldArgDesc">the y-coordinate of the location of the mouse</td></tr><tr class="fieldStart"><td class="fieldName" colspan="2">Raises</td></tr><tr><td class="fieldArgContainer"><code>Exception</code></td><td>error if mouse has not been clicked yet</td></tr></table></div>
+    <div><p>Return the y coordinate in user space of the mouse cursor.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>float</code></td><td class="fieldArgDesc">the y-coordinate of the location of the mouse</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
   
-  <a name="dudraw.dudraw.next_key_typed">
+  <a name="dudraw.dudraw.next_key">
     
   </a>
-  <a name="next_key_typed">
+  <a name="next_key">
     
   </a>
   <div class="functionHeader">
     
-    <span class="py-keyword">def</span> <span class="py-defname">next_key_typed</span>():
+    <span class="py-keyword">def</span> <span class="py-defname">next_key</span>():
     
   </div>
   <div class="docstring functionBody">
     
     
-    <div><p>Remove the first key from the queue of keys that the the user typed, and return that key.</p>
-<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>str</code></td><td class="fieldArgDesc">a string representing the next key in the queue</td></tr></table></div>
+    <div><p>Return a string representing a key that was typed since the last time this function, or the keys_typed() function was called.</p>
+<table class="fieldTable"><tr class="fieldStart"><td class="fieldName" colspan="2">Returns</td></tr><tr><td class="fieldArgContainer"><code>str</code></td><td class="fieldArgDesc">a strings representing the key typed</td></tr></table></div>
   </div>
 </div><div class="basefunction">
   
@@ -3342,6 +3440,46 @@
 </div><div class="basevariable private">
   
   
+  <a name="dudraw.dudraw._keys_pressed">
+    
+  </a>
+  <a name="_keys_pressed">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_keys_pressed</span>: <code>set</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable private">
+  
+  
+  <a name="dudraw.dudraw._keys_released">
+    
+  </a>
+  <a name="_keys_released">
+    
+  </a>
+  <div class="functionHeader">
+    
+    <span class="py-defname">_keys_released</span>: <code>set</code> =
+    
+  </div>
+  <div class="functionBody">
+    
+    
+    <div><p class="undocumented">Undocumented</p></div>
+    
+  </div>
+</div><div class="basevariable private">
+  
+  
   <a name="dudraw.dudraw._keys_typed">
     
   </a>
@@ -3350,7 +3488,7 @@
   </a>
   <div class="functionHeader">
     
-    <span class="py-defname">_keys_typed</span>: <code>list</code> =
+    <span class="py-defname">_keys_typed</span>: <code>set</code> =
     
   </div>
   <div class="functionBody">
@@ -3591,7 +3729,7 @@
   <div class="container">
     <a href="index.html">API Documentation</a> for dudraw,
   generated by <a href="https://github.com/twisted/pydoctor/">pydoctor</a>
-    22.5.1 at 2022-12-03 10:07:24.
+    22.5.1 at 2023-03-01 13:32:56.
   </div>
 
   <!-- Search related scripts needs to be loaded at the end of HTML 

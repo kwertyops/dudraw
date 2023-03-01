@@ -532,6 +532,22 @@
             <div class="kind">Variable</div>
             <div class="privacy">PRIVATE</div>
             <div class="summary"><span class="undocumented">Undocumented</span></div>
+          </li><li id="dudraw.dudraw._keys_released">
+            
+            <div class="fullName">dudraw<wbr></wbr>.dudraw<wbr></wbr>._keys<wbr></wbr>_released</div>
+            <div class="url">dudraw.dudraw.html#_keys_released</div>
+            <div class="type">ZopeInterfaceAttribute</div>
+            <div class="kind">Variable</div>
+            <div class="privacy">PRIVATE</div>
+            <div class="summary"><span class="undocumented">Undocumented</span></div>
+          </li><li id="dudraw.dudraw._keys_pressed">
+            
+            <div class="fullName">dudraw<wbr></wbr>.dudraw<wbr></wbr>._keys<wbr></wbr>_pressed</div>
+            <div class="url">dudraw.dudraw.html#_keys_pressed</div>
+            <div class="type">ZopeInterfaceAttribute</div>
+            <div class="kind">Variable</div>
+            <div class="privacy">PRIVATE</div>
+            <div class="summary"><span class="undocumented">Undocumented</span></div>
           </li><li id="dudraw.dudraw._window_created">
             
             <div class="fullName">dudraw<wbr></wbr>.dudraw<wbr></wbr>._window<wbr></wbr>_created</div>
@@ -1068,22 +1084,38 @@
             <div class="kind">Function</div>
             <div class="privacy">PRIVATE</div>
             <div class="summary">Check if any new event has occured (such as a key typed or button pressed).  If a key has been typed, then put that key in a queue.</div>
-          </li><li id="dudraw.dudraw.has_next_key_typed">
+          </li><li id="dudraw.dudraw.next_key">
             
-            <div class="fullName">dudraw<wbr></wbr>.dudraw<wbr></wbr>.has<wbr></wbr>_next<wbr></wbr>_key<wbr></wbr>_typed</div>
-            <div class="url">dudraw.dudraw.html#has_next_key_typed</div>
+            <div class="fullName">dudraw<wbr></wbr>.dudraw<wbr></wbr>.next<wbr></wbr>_key</div>
+            <div class="url">dudraw.dudraw.html#next_key</div>
             <div class="type">ZopeInterfaceFunction</div>
             <div class="kind">Function</div>
             <div class="privacy">PUBLIC</div>
-            <div class="summary">Return True if the queue of keys the user typed is not empty. Otherwise return False.</div>
-          </li><li id="dudraw.dudraw.next_key_typed">
+            <div class="summary">Return a string representing a key that was typed since the last time this function, or the keys_typed() function was called.</div>
+          </li><li id="dudraw.dudraw.keys_typed">
             
-            <div class="fullName">dudraw<wbr></wbr>.dudraw<wbr></wbr>.next<wbr></wbr>_key<wbr></wbr>_typed</div>
-            <div class="url">dudraw.dudraw.html#next_key_typed</div>
+            <div class="fullName">dudraw<wbr></wbr>.dudraw<wbr></wbr>.keys<wbr></wbr>_typed</div>
+            <div class="url">dudraw.dudraw.html#keys_typed</div>
             <div class="type">ZopeInterfaceFunction</div>
             <div class="kind">Function</div>
             <div class="privacy">PUBLIC</div>
-            <div class="summary">Remove the first key from the queue of keys that the the user typed, and return that key.</div>
+            <div class="summary">Return the set of keys that the user has typed since the last time this function was called.</div>
+          </li><li id="dudraw.dudraw.keys_released">
+            
+            <div class="fullName">dudraw<wbr></wbr>.dudraw<wbr></wbr>.keys<wbr></wbr>_released</div>
+            <div class="url">dudraw.dudraw.html#keys_released</div>
+            <div class="type">ZopeInterfaceFunction</div>
+            <div class="kind">Function</div>
+            <div class="privacy">PUBLIC</div>
+            <div class="summary">Return the set of keys that the user has released since the last time this function was called.</div>
+          </li><li id="dudraw.dudraw.keys_pressed">
+            
+            <div class="fullName">dudraw<wbr></wbr>.dudraw<wbr></wbr>.keys<wbr></wbr>_pressed</div>
+            <div class="url">dudraw.dudraw.html#keys_pressed</div>
+            <div class="type">ZopeInterfaceFunction</div>
+            <div class="kind">Function</div>
+            <div class="privacy">PUBLIC</div>
+            <div class="summary">Return the set of keys that are currently being held down by the user.</div>
           </li><li id="dudraw.dudraw.mouse_clicked">
             
             <div class="fullName">dudraw<wbr></wbr>.dudraw<wbr></wbr>.mouse<wbr></wbr>_clicked</div>
@@ -1123,7 +1155,7 @@
             <div class="type">ZopeInterfaceFunction</div>
             <div class="kind">Function</div>
             <div class="privacy">PUBLIC</div>
-            <div class="summary">Return the x coordinate in user space of the location at which the mouse was most recently left-clicked.</div>
+            <div class="summary">Return the x coordinate in user space of the mouse cursor.</div>
           </li><li id="dudraw.dudraw.mouse_y">
             
             <div class="fullName">dudraw<wbr></wbr>.dudraw<wbr></wbr>.mouse<wbr></wbr>_y</div>
@@ -1131,7 +1163,7 @@
             <div class="type">ZopeInterfaceFunction</div>
             <div class="kind">Function</div>
             <div class="privacy">PUBLIC</div>
-            <div class="summary">Return the y coordinate in user space of the location at which the mouse was most recently left-clicked.</div>
+            <div class="summary">Return the y coordinate in user space of the mouse cursor.</div>
           </li><li id="dudraw.dudraw._regression_test">
             
             <div class="fullName">dudraw<wbr></wbr>.dudraw<wbr></wbr>._regression<wbr></wbr>_test</div>

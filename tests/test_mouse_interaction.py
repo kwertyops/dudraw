@@ -1,10 +1,9 @@
 import sys
 import os
-import math
-from numpy import Infinity
 sys.path.append(os.getcwd())
 import src.dudraw as dudraw
 
+dudraw.set_font_size(24)
 while True:
     dudraw.clear()
     if dudraw.mouse_is_pressed():
