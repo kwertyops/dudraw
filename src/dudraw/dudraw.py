@@ -1364,6 +1364,24 @@ def keys_pressed() -> set[str]:
     global _keys_pressed
     return _keys_pressed.copy()
 
+## LEGACY KEYBOARD FUNCTIONS
+
+def has_next_key_typed() -> bool:
+    """Return True if the user has pressed a key since the last
+    call, otherwise False.
+
+    @return: a boolen representing whether a key has been pressed
+    """
+    return len(_keys_typed) > 0
+
+def next_key_typed() -> str:
+    """Return a string representing a key that was typed since the
+    last time this function, or the keys_typed() function was called.
+
+    @return: a strings representing the key typed
+    """
+    return next_key()
+
 
 # -----------------------------------------------------------------------
 # Begin added by Alan J. Broder, additions/modifications by Andrew Hannum
