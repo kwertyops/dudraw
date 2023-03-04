@@ -1327,9 +1327,7 @@ def next_key() -> str:
     if len(_keys_typed) == 0:
         return ''
     else:
-        k = _keys_typed[0]
-        _keys_typed.remove(k)
-        return k
+        return _keys_typed.pop()
 
 def keys_typed() -> set[str]:
     """Return the set of keys that the user has typed since the last
