@@ -9,23 +9,25 @@ objects.
 
 class Color:
     """
-    A Color object models an RGB color.
+    A Color object models an RGB with Alpha Transparency color.
     """
 
     #-------------------------------------------------------------------
 
-    def __init__(self, r:float=0, g:float=0, b:float=0):
+    def __init__(self, r:int=0, g:int=0, b:int=0, a:int=255):
         """
         Construct self such that it has the given red (r),
-        green (g), and blue (b) components.
+        green (g), blue (b), and alpha (a) components.
+        alpha (a) defaults to 255 which is non-transparent solid color.
         """
         self._r = r  # Red component
         self._g = g  # Green component
         self._b = b  # Blue component
+        self._a = a  # Alpha Transparency component
 
     #-------------------------------------------------------------------
 
-    def get_red(self) -> float:
+    def get_red(self) -> int:
         """
         Return the red component of self.
         """
@@ -33,7 +35,7 @@ class Color:
 
     #-------------------------------------------------------------------
 
-    def get_green(self) -> float:
+    def get_green(self) -> int:
         """
         Return the green component of self.
         """
@@ -41,11 +43,19 @@ class Color:
 
     #-------------------------------------------------------------------
 
-    def get_blue(self) -> float:
+    def get_blue(self) -> int:
         """
         Return the blue component of self.
         """
         return self._b
+
+    #-------------------------------------------------------------------
+
+    def get_alpha(self) -> int:
+        """
+        Return the alpha transparency component of self.
+        """
+        return self._a
 
     #-------------------------------------------------------------------
 
@@ -102,9 +112,16 @@ def _main():
     """
     c1 = Color(128, 128, 128)
     print(c1)
-    print(c1.getRed())
-    print(c1.getGreen())
-    print(c1.getBlue())
+    print(c1.get_red())
+    print(c1.get_green())
+    print(c1.get_blue())
+
+    c2 = Color( 128, 64, 32, 16 )
+    print(c2)
+    print(c2.get_red())
+    print(c2.get_green())
+    print(c2.get_blue())
+    print(c2.get_alpha())
 
 if __name__ == '__main__':
     _main()

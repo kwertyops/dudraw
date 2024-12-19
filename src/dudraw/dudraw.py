@@ -13,7 +13,7 @@ import sys
 import math
 from typing import Sequence
 
-from .color import *
+from color import *
 
 os.environ["PYGAME_HIDE_SUPPORT_PROMPT"] = "hide"
 import pygame
@@ -92,7 +92,8 @@ def _pygame_color(c: Color) -> pygame.Color:
     r = c.get_red()
     g = c.get_green()
     b = c.get_blue()
-    return pygame.Color(r, g, b)
+    a = c.get_alpha()
+    return pygame.Color(r, g, b, a)
 
 
 def _ccw(a,b,c):
@@ -302,15 +303,16 @@ def set_pen_color(c: Color = _DEFAULT_PEN_COLOR):
     _pen_color = c
 
 
-def set_pen_color_rgb(r: int = 255, g: int = 255, b: int = 255):
-    """Set the pen color using red, green, and blue values.
-    Defaults to black.
+def set_pen_color_rgb(r: int = 255, g: int = 255, b: int = 255, a: int = 255):
+    """Set the pen color using red, green, blue, and alpha transparency values.
+    Defaults to black with no transparency (solid color).
 
     @param r: red color value. 0 for minimum red and 255 for maximum red, defaults to 255
-    @param g: green color value. 0 for minimum red and 255 for maximum green, defaults to 255
-    @param b: blue color value. 0 for minimum red and 255 for maximum blue, defaults to 255
+    @param g: green color value. 0 for minimum green and 255 for maximum green, defaults to 255
+    @param b: blue color value. 0 for minimum blue and 255 for maximum blue, defaults to 255
+    @param a: alpha transparency value. 0 for transparent and 255 for solid (non-transparent), defaults to 255
     """
-    c = Color(r, g, b)
+    c = Color(r, g, b, a)
     global _pen_color
     _pen_color = c
 
@@ -1177,15 +1179,16 @@ def clear(c: Color = WHITE):
     _surface.fill(_pygame_color(c))
 
 
-def clear_rgb(r: float = 255, g: float = 255, b: float = 255):
+def clear_rgb(r: int = 255, g: int = 255, b: int = 255, a: int = 255):
     """Clear the canvas to color defined by
-    r, g, and b. Defaults to white (255, 255, 255).
+    r, g, b, and a (alpha transparency). Defaults to white (255, 255, 255) with no transparency.
 
     @param r: red color value. 0 for minimum red and 255 for maximum red, defaults to 255
-    @param g: green color value. 0 for minimum red and 255 for maximum green, defaults to 255
-    @param b: blue color value. 0 for minimum red and 255 for maximum blue, defaults to 255   
+    @param g: green color value. 0 for minimum green and 255 for maximum green, defaults to 255
+    @param b: blue color value. 0 for minimum blue and 255 for maximum blue, defaults to 255  
+    @param a: alpha transparency value. 0 for transparent and 255 for no transparency (solid color), defaults to 255 
     """
-    c = Color(r, g, b)
+    c = Color(r, g, b, a)
     _make_sure_window_created()
     _surface.fill(_pygame_color(c))
 
@@ -1549,7 +1552,7 @@ def _regression_test():
     show(0.0)
 
     set_pen_width(0.01)
-    set_pen_color(YELLOW)
+    set_pen_color( Color( 100, 100, 200, 200))
     filled_circle(0.75, 0.25, 0.1)
     show(0.0)
 
