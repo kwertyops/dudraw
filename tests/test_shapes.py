@@ -1,7 +1,6 @@
 import sys
 import os
 
-from numpy import Infinity
 sys.path.append(os.getcwd())
 import src.dudraw as dudraw
 
@@ -106,4 +105,4 @@ dudraw.point(500, 350)
 dudraw.set_pen_color(dudraw.PINK)
 dudraw.filled_elliptical_sector(475, 350, 50, 100, 200, 340)
 
-dudraw.show(Infinity)
+dudraw.show( float('inf') )

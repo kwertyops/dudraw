@@ -1,7 +1,6 @@
 import sys
 import os
 
-from numpy import Infinity
 sys.path.append(os.getcwd())
 import src.dudraw as dudraw
 

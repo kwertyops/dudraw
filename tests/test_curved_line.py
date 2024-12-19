@@ -1,7 +1,7 @@
 import sys
 import os
 import math
-from numpy import Infinity
+
 sys.path.append(os.getcwd())
 import src.dudraw as dudraw
 
@@ -19,4 +19,4 @@ for i in range(1, 200):
     
 dudraw.polyline([p[0] for p in points], [p[1] for p in points])
 
-dudraw.show(Infinity)
+dudraw.show( float('Inf') )

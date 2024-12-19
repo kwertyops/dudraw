@@ -23,5 +23,10 @@ while True:
     rx = rx + vx
     ry = ry + vy
     dudraw.clear(dudraw.GRAY)
+
+    dudraw.set_pen_color_rgb( 50, 255, 50, 255 )
+    dudraw.filled_square( 0.0, 0.0, 0.5 )
+
+    dudraw.set_pen_color_rgb( 200, 200, 200, 100 )
     dudraw.filled_circle(rx, ry, RADIUS)
     dudraw.show(DT)

@@ -1,7 +1,6 @@
 import sys
 import os
 
-from numpy import Infinity
 sys.path.append(os.getcwd())
 import src.dudraw as dudraw
 
@@ -18,4 +17,4 @@ dudraw.filled_square( 300, 300, 200 )
 dudraw.set_pen_color( dudraw.CYAN )
 dudraw.filled_circle( 300, 300, 200 )
 
-dudraw.show( 100000 )
+dudraw.show( 10000 )
